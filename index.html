@@ -4284,84 +4284,148 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
 <div id="cra-sr-live" class="sr-live" role="status" aria-live="polite" aria-atomic="true"></div>
 
 <!-- =====================================================
-     REBRAND LOAD SCREEN — transitions CRSMCA -> CRA
-     Self-contained intro overlay shown on initial page load.
+     BRAND TRANSITION INTRO — three title cards:
+     CRSMCA  ->  CRA  ->  "Same great community, easier to spell."
+     Self-contained, shown once on initial page load.
      ===================================================== -->
 <style>
-  #rebrandLoader{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;
-    background:radial-gradient(120% 120% at 50% 38%, #0E2E5E 0%, #082750 45%, #041E42 100%);
-    opacity:1;animation:rlOut .85s ease 4.8s forwards;}
-  #rebrandLoader .rl__inner{display:flex;flex-direction:column;align-items:center;text-align:center;padding:24px;}
-  #rebrandLoader .rl__word{display:flex;align-items:baseline;justify-content:center;
+  /* Brand transition: the extra letters (S M C) and words ("and Sheet Metal Contractors")
+     fall away with gravity while the survivors close ranks and tighten into CRA, then the punchline. */
+  /* Opaque from the first frame so the website never flashes before the intro */
+  .brand-transition{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;
+    overflow:hidden;background:#0A2750;opacity:1;
+    animation:btOut .9s cubic-bezier(.4,0,.2,1) 13.2s forwards;}
+  /* Slowly drifting navy gradient + vignette for depth */
+  .brand-transition::before{content:"";position:absolute;inset:-5%;
+    background:radial-gradient(120% 120% at 50% 40%, #1E437A 0%, #123163 48%, #0A2750 100%);
+    transform:scale(1.07);animation:btDrift 14s cubic-bezier(.2,.6,.3,1) forwards;}
+  .bt-morph,.bt-mark,.bt-punch{position:absolute;inset:0;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;text-align:center;padding:24px;will-change:opacity,transform,filter;}
+  /* Scene 1 (whole lockup) fades in together; later fades out as a unit */
+  .bt-morph{opacity:0;animation:btGroupIn 1.4s cubic-bezier(.16,1,.3,1) .7s both, btFadeOut .8s cubic-bezier(.4,0,.7,.25) 6.7s forwards;}
+  /* Logo mark beat — the Carolinas "states" graphic fades in between CRA and the punchline */
+  .bt-mark{opacity:0;animation:btMarkIn .9s cubic-bezier(.16,1,.3,1) 7.0s both, btMarkZoom 1.1s cubic-bezier(.5,0,.5,1) 8.7s forwards;}
+  .bt-mark svg{width:clamp(150px,26vw,300px);height:auto;}
+  /* The states zoom up and the screen flips to white for the payoff line */
+  .bt-white{position:absolute;inset:0;background:#FFFFFF;opacity:0;animation:btWhite .7s ease 9.0s forwards;}
+  .bt-punch{opacity:1;animation:btPunchOut .6s cubic-bezier(.4,0,.7,.25) 11.2s forwards;}
+  /* "Same great community," is the accented hero; "easier to spell." is the lighter kicker */
+  .bt-punch__l1{font-family:"astoria-condensed","astoria",Arial,sans-serif;font-weight:700;color:#2B7BB3;
+    text-transform:uppercase;letter-spacing:.01em;font-size:clamp(42px,9.5vw,108px);line-height:1;opacity:0;
+    animation:btPop2 .8s cubic-bezier(.34,1.3,.5,1) 9.6s both;}
+  .bt-punch__l2{font-family:"astoria","astoria-condensed",Arial,sans-serif;font-weight:400;color:#0A2750;
+    text-transform:uppercase;letter-spacing:.09em;font-size:clamp(18px,3.8vw,38px);line-height:1.2;margin-top:.2em;opacity:0;
+    animation:btPop .7s cubic-bezier(.16,1,.3,1) 9.85s both;}
+  /* Welcome bridge — eases the hand-off into the live homepage */
+  .bt-welcome{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;opacity:0;
+    animation:btWelcomeIn .7s cubic-bezier(.16,1,.3,1) 11.5s both;}
+  .bt-welcome__txt{font-family:"astoria-condensed","astoria",Arial,sans-serif;font-weight:700;color:#0A2750;
+    text-transform:uppercase;letter-spacing:.02em;font-size:clamp(30px,6.5vw,76px);line-height:1.1;max-width:min(92vw,900px);}
+  .bt-welcome__txt span{color:#2B7BB3;}
+  /* Title row — flex so survivors slide together once the gaps close */
+  .bt-word{display:flex;justify-content:center;align-items:flex-start;
     font-family:"astoria-condensed","astoria",Arial,sans-serif;font-weight:700;color:#FFFFFF;
-    font-size:clamp(60px,16vw,140px);line-height:1;letter-spacing:.03em;text-transform:uppercase;}
-  #rebrandLoader .rl__l{display:inline-block;max-width:1.15em;overflow:hidden;opacity:0;transform:translateY(20px);
-    animation:rlIn .7s cubic-bezier(.2,.7,.3,1) forwards;}
-  #rebrandLoader .rl__l:nth-child(1){animation-delay:.15s}
-  #rebrandLoader .rl__l:nth-child(2){animation-delay:.32s}
-  #rebrandLoader .rl__l:nth-child(3){animation-delay:.49s}
-  #rebrandLoader .rl__l:nth-child(4){animation-delay:.66s}
-  #rebrandLoader .rl__l:nth-child(5){animation-delay:.83s}
-  #rebrandLoader .rl__l:nth-child(6){animation-delay:1.00s}
-  /* middle letters S, M, C collapse away to reveal C R A */
-  #rebrandLoader .rl__drop{animation:rlIn .7s cubic-bezier(.2,.7,.3,1) forwards,
-    rlDrop 1s cubic-bezier(.7,0,.25,1) 2.2s forwards;}
-  #rebrandLoader .rl__keep{animation:rlIn .7s cubic-bezier(.2,.7,.3,1) forwards,
-    rlKeep 1s cubic-bezier(.7,0,.25,1) 2.2s forwards;}
-  #rebrandLoader .rl__bar{height:4px;width:0;background:#4B9CD3;border-radius:2px;margin-top:20px;
-    animation:rlBar .85s ease 3.3s forwards;}
-  #rebrandLoader .rl__tag{margin-top:24px;opacity:0;transform:translateY(12px);
-    animation:rlTag .9s ease 3.6s forwards;}
-  #rebrandLoader .rl__tagline{display:block;color:#FFFFFF;font-family:"astoria","astoria-condensed",Arial,sans-serif;
-    font-weight:700;font-size:clamp(19px,3.4vw,32px);letter-spacing:.01em;}
-  #rebrandLoader .rl__sub{display:block;margin-top:9px;color:#7DB7DD;
-    font-family:"astoria",Arial,Helvetica,sans-serif;font-weight:400;font-size:clamp(11px,2vw,14px);
-    text-transform:uppercase;letter-spacing:.22em;}
-  @keyframes rlIn{to{opacity:1;transform:translateY(0)}}
-  @keyframes rlDrop{to{max-width:0;opacity:0;transform:scale(.2);margin-left:-.04em}}
-  @keyframes rlKeep{60%{color:#4B9CD3}to{color:#FFFFFF;transform:scale(1.04)}}
-  @keyframes rlBar{to{width:min(58vw,360px)}}
-  @keyframes rlTag{to{opacity:1;transform:translateY(0)}}
-  @keyframes rlOut{to{opacity:0;visibility:hidden}}
-  html.rl-lock,html.rl-lock body{overflow:hidden;}
+    font-size:clamp(64px,17vw,150px);line-height:1;letter-spacing:.02em;text-transform:uppercase;}
+  .bt-l{display:inline-block;max-width:1.15em;}
+  /* Extras drop away together (4.4s); width is held so survivors stay put.
+     ONLY after they are fully gone does the gap close (5.5s) so C R A slide together into CRA. */
+  .bt-l.fall{animation:btFall .9s cubic-bezier(.45,.05,.75,.45) 3.2s forwards,
+    btCollapse .7s cubic-bezier(.5,0,.2,1) 4.3s forwards;}
+  /* Subtitle — words drop at the SAME time as the letters, then close up together */
+  .bt-sub{margin-top:clamp(12px,1.8vw,22px);color:#B7CEE2;text-align:center;
+    font-family:"astoria-condensed","astoria",Arial,sans-serif;font-weight:400;text-transform:uppercase;
+    font-size:clamp(15px,3vw,26px);letter-spacing:.16em;line-height:1.35;max-width:min(95vw,860px);}
+  .bt-w{display:inline-block;max-width:16em;white-space:pre;}
+  .bt-w.fall{animation:btWordFall .9s cubic-bezier(.45,.05,.75,.45) 3.2s forwards,
+    btCollapse .7s cubic-bezier(.5,0,.2,1) 4.3s forwards;}
+  .brand-transition__message{font-family:"astoria-condensed","astoria",Arial,sans-serif;font-weight:700;color:#FFFFFF;
+    text-transform:uppercase;font-size:clamp(34px,7vw,78px);line-height:1.1;letter-spacing:.01em;max-width:min(92vw,920px);}
+  @keyframes btDrift{to{transform:scale(1)}}
+  @keyframes btGroupIn{from{opacity:0;transform:translateY(24px) scale(.975);filter:blur(9px)} to{opacity:1;transform:none;filter:blur(0)}}
+  @keyframes btMarkIn{from{opacity:0;transform:scale(.9);filter:blur(8px)} to{opacity:1;transform:none;filter:blur(0)}}
+  @keyframes btMarkZoom{to{opacity:0;transform:scale(7);filter:blur(2px)}}
+  @keyframes btWhite{to{opacity:1}}
+  @keyframes btPop{from{opacity:0;transform:translateY(14px) scale(.97)} to{opacity:1;transform:none}}
+  @keyframes btPop2{from{opacity:0;transform:scale(.86)} to{opacity:1;transform:none}}
+  @keyframes btPunchOut{to{opacity:0;transform:translateY(-12px);filter:blur(4px)}}
+  @keyframes btWelcomeIn{from{opacity:0;transform:translateY(18px) scale(.985);filter:blur(6px)} to{opacity:1;transform:none;filter:blur(0)}}
+  /* Homepage flow-in once the intro hands off (class added by the intro script) */
+  html.cra-entered .site-header{animation:craNavIn .8s cubic-bezier(.16,1,.3,1) both;}
+  html.cra-entered #page-home .hero__eyebrow{animation:craUp .7s cubic-bezier(.16,1,.3,1) .15s both;}
+  html.cra-entered #page-home .hero__headline{animation:craUp .75s cubic-bezier(.16,1,.3,1) .28s both;}
+  html.cra-entered #page-home .hero__lede{animation:craUp .75s cubic-bezier(.16,1,.3,1) .44s both;}
+  html.cra-entered #page-home .hero__ctas{animation:craUp .75s cubic-bezier(.16,1,.3,1) .6s both;}
+  html.cra-entered #page-home .hero__trust-row{animation:craUp .75s cubic-bezier(.16,1,.3,1) .74s both;}
+  @keyframes craNavIn{from{opacity:0;transform:translateY(-22px)} to{opacity:1;transform:none}}
+  @keyframes craUp{from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:none}}
+  @keyframes btFadeIn{from{opacity:0;transform:translateY(12px) scale(.99)} to{opacity:1;transform:none}}
+  @keyframes btFadeOut{to{opacity:0;transform:translateY(-16px) scale(1.015);filter:blur(5px)}}
+  @keyframes btFall{to{opacity:0;transform:translateY(150px) rotate(12deg);filter:blur(3px)}}
+  @keyframes btWordFall{to{opacity:0;transform:translateY(66px) rotate(6deg);filter:blur(3px)}}
+  @keyframes btCollapse{to{max-width:0}}
+  @keyframes btOut{to{opacity:0;visibility:hidden}}
+  html.bt-lock,html.bt-lock body{overflow:hidden;}
   @media (prefers-reduced-motion: reduce){
-    #rebrandLoader{animation:rlOut .4s ease 1.8s forwards;}
-    #rebrandLoader .rl__l,#rebrandLoader .rl__drop,#rebrandLoader .rl__keep{animation:none;opacity:1;transform:none;}
-    #rebrandLoader .rl__drop{display:none;}
-    #rebrandLoader .rl__bar{animation:none;width:min(58vw,360px);}
-    #rebrandLoader .rl__tag{animation:none;opacity:1;transform:none;}
+    .brand-transition{animation:btOut .5s ease 2.6s forwards;}
+    .brand-transition::before{animation:none;transform:scale(1);}
+    .bt-morph,.bt-mark{display:none;}
+    .bt-l,.bt-w,.bt-word{animation:none;}
+    .bt-white{opacity:1;animation:none;}
+    .bt-punch{opacity:1;animation:none;}
+    .bt-punch__l1,.bt-punch__l2{opacity:1;animation:none;transform:none;}
+    .bt-welcome{display:none;}
+    html.cra-entered .site-header,
+    html.cra-entered #page-home .hero__eyebrow,
+    html.cra-entered #page-home .hero__headline,
+    html.cra-entered #page-home .hero__lede,
+    html.cra-entered #page-home .hero__ctas,
+    html.cra-entered #page-home .hero__trust-row{animation:none;}
   }
 </style>
-<div id="rebrandLoader" role="status" aria-label="Carolinas Roofing Association — formerly CRSMCA">
-  <div class="rl__inner">
-    <div class="rl__word" aria-hidden="true">
-      <span class="rl__l rl__keep">C</span>
-      <span class="rl__l rl__keep">R</span>
-      <span class="rl__l rl__drop">S</span>
-      <span class="rl__l rl__drop">M</span>
-      <span class="rl__l rl__drop">C</span>
-      <span class="rl__l rl__keep">A</span>
+<div class="brand-transition" id="brandTransition" role="img" aria-label="Carolinas Roofing Association brand transition">
+  <div class="bt-morph" aria-hidden="true">
+    <div class="bt-word">
+      <span class="bt-l keep">C</span><span class="bt-l keep">R</span><span class="bt-l fall">S</span><span class="bt-l fall">M</span><span class="bt-l fall">C</span><span class="bt-l keep">A</span>
     </div>
-    <div class="rl__bar" aria-hidden="true"></div>
-    <div class="rl__tag">
-      <span class="rl__tagline">Carolinas Roofing Association</span>
-      <span class="rl__sub">Formerly CRSMCA · A new name, the same commitment since 1943</span>
-    </div>
+    <div class="bt-sub"><span class="bt-w keep">Carolinas </span><span class="bt-w keep">Roofing </span><span class="bt-w fall">and </span><span class="bt-w fall">Sheet </span><span class="bt-w fall">Metal </span><span class="bt-w fall">Contractors </span><span class="bt-w keep">Association</span></div>
+  </div>
+  <div class="bt-mark" aria-hidden="true">
+    <svg viewBox="26 32 374 253" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+      <polygon points="225.14 135.57 172.86 135.57 172.86 123.29 164.9 119.73 157.7 115.88 103.74 115.88 73.41 123.86 62.35 140.64 75.23 150.08 84.79 150.08 99.58 179.49 113.55 190.22 134.24 217.11 144.49 224.19 151.07 252.19 154.29 252.19 163.54 271.78 170.35 277.16 176.3 262.43 187.18 262.43 187.18 256.22 213.61 246.11 215.95 236 226.05 236 268.03 183.14 271.15 183.14 225.14 135.57" fill="#FFFFFF"/>
+      <path d="M279.21,181.14l-50.43-52.14c-.38-.39-.9-.61-1.44-.61h-47.3v-8.46c0-.79-.46-1.5-1.19-1.83l-10.71-4.78-8.2-4.39c-.29-.16-.61-.24-.94-.24h-55.92c-.17,0-.34.02-.51.07l-31.37,8.26h-36.74v-3.29h.02c1.1,0,2-.9,2-2v-13.55h23.16c.41,0,.81-.13,1.15-.36l22.09-15.45c.34-.24.6-.58.74-.97l2.34-6.54,5.36-3.38,5.12,5.27c.38.39.9.61,1.44.61.05,0,.1,0,.16,0,.59-.05,1.14-.36,1.48-.84l7.11-10.13,14.4,1.94c.09.01.18.02.27.02.74,0,1.42-.41,1.77-1.07l6.34-12.1h7.75c.95,0,1.76-.66,1.96-1.59l2.78-13.33,241.89,2.44-.23.64c-.14.39-.15.82-.04,1.21l2.67,9.34-18.8,10.12c-.6.32-.99.92-1.05,1.6-.05.68.24,1.33.77,1.75l10.11,7.77c.2.15.43.27.67.34l14.68,4.19-1.24,9.94-10.92,8.87-15.25-5.81c-.23-.09-.47-.13-.71-.13-.29,0-.58.06-.85.19l-13.22,6.22c-.61.29-1.03.86-1.13,1.52-.1.67.15,1.33.65,1.78l6.17,5.49-1.87,11.23h-4.52c-.87,0-1.65.57-1.91,1.4-.26.83.04,1.74.76,2.24l7.77,5.44c.34.24.74.36,1.15.36.36,0,.71-.09,1.03-.29l6.75-4.05,5.16,3.09-3.39,6.77-33.99,6.04c-.44.08-.85.31-1.15.64l-35.94,40.53h-16.68Z" fill="#FFFFFF"/>
+    </svg>
+  </div>
+  <div class="bt-white" aria-hidden="true"></div>
+  <div class="bt-punch" aria-hidden="true">
+    <div class="bt-punch__l1">Same great community,</div>
+    <div class="bt-punch__l2">easier to spell.</div>
+  </div>
+  <div class="bt-welcome" aria-hidden="true">
+    <div class="bt-welcome__txt">Welcome to <span>our new website</span></div>
   </div>
 </div>
 <script>
 (function(){
-  var el = document.getElementById('rebrandLoader');
+  var el = document.getElementById('brandTransition');
   if(!el) return;
   var root = document.documentElement;
-  root.classList.add('rl-lock');
+  root.classList.add('bt-lock');
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var wait = reduce ? 2200 : 5650;
-  function done(){ root.classList.remove('rl-lock'); if(el && el.parentNode){ el.parentNode.removeChild(el); } }
-  setTimeout(done, wait);
-  // Allow click/tap or Esc to skip the intro
-  el.addEventListener('click', done);
-  document.addEventListener('keydown', function(e){ if(e.key==='Escape') done(); });
+  var wait = reduce ? 3300 : 14300;        // remove overlay
+  var revealAt = reduce ? 2400 : 13200;    // homepage flows in as the overlay clears
+  var entered = false, done = false;
+  function enter(){ if(entered) return; entered = true; root.classList.add('cra-entered'); }
+  function finish(){
+    if(done) return; done = true;
+    enter();
+    root.classList.remove('bt-lock');
+    if(el && el.parentNode){ el.parentNode.removeChild(el); }
+  }
+  setTimeout(enter, revealAt);
+  setTimeout(finish, wait);
+  // Allow users to skip the intro (homepage still flows in)
+  el.addEventListener('click', finish);
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') finish(); });
 })();
 </script>
 
