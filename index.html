@@ -34,6 +34,8 @@
   <meta name="twitter:description" content="Membership, education, events, advocacy, and industry relationships for roofing contractors, vendors, manufacturers, and service providers across North and South Carolina. Since 1943.">
   <meta name="twitter:image" content="https://www.carolinasroofing.org/og-cra-default.jpg">
 
+  <!-- Brand font: Astoria (Adobe Fonts / Typekit) -->
+  <link rel="stylesheet" href="https://use.typekit.net/aje8ykd.css">
   <!-- Fonts: Archivo Black (display) + Manrope (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -4288,32 +4290,32 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
 <style>
   #rebrandLoader{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;
     background:radial-gradient(120% 120% at 50% 38%, #0E2E5E 0%, #082750 45%, #041E42 100%);
-    opacity:1;animation:rlOut .7s ease 3.5s forwards;}
+    opacity:1;animation:rlOut .85s ease 4.8s forwards;}
   #rebrandLoader .rl__inner{display:flex;flex-direction:column;align-items:center;text-align:center;padding:24px;}
   #rebrandLoader .rl__word{display:flex;align-items:baseline;justify-content:center;
-    font-family:Georgia,'Times New Roman',serif;font-weight:800;color:#FFFFFF;
-    font-size:clamp(54px,15vw,132px);line-height:1;letter-spacing:.02em;}
-  #rebrandLoader .rl__l{display:inline-block;max-width:1.15em;overflow:hidden;opacity:0;transform:translateY(18px);
-    animation:rlIn .55s cubic-bezier(.2,.7,.3,1) forwards;}
-  #rebrandLoader .rl__l:nth-child(1){animation-delay:.10s}
-  #rebrandLoader .rl__l:nth-child(2){animation-delay:.20s}
-  #rebrandLoader .rl__l:nth-child(3){animation-delay:.30s}
-  #rebrandLoader .rl__l:nth-child(4){animation-delay:.40s}
-  #rebrandLoader .rl__l:nth-child(5){animation-delay:.50s}
-  #rebrandLoader .rl__l:nth-child(6){animation-delay:.60s}
+    font-family:"astoria-condensed","astoria",Arial,sans-serif;font-weight:700;color:#FFFFFF;
+    font-size:clamp(60px,16vw,140px);line-height:1;letter-spacing:.03em;text-transform:uppercase;}
+  #rebrandLoader .rl__l{display:inline-block;max-width:1.15em;overflow:hidden;opacity:0;transform:translateY(20px);
+    animation:rlIn .7s cubic-bezier(.2,.7,.3,1) forwards;}
+  #rebrandLoader .rl__l:nth-child(1){animation-delay:.15s}
+  #rebrandLoader .rl__l:nth-child(2){animation-delay:.32s}
+  #rebrandLoader .rl__l:nth-child(3){animation-delay:.49s}
+  #rebrandLoader .rl__l:nth-child(4){animation-delay:.66s}
+  #rebrandLoader .rl__l:nth-child(5){animation-delay:.83s}
+  #rebrandLoader .rl__l:nth-child(6){animation-delay:1.00s}
   /* middle letters S, M, C collapse away to reveal C R A */
-  #rebrandLoader .rl__drop{animation:rlIn .55s cubic-bezier(.2,.7,.3,1) forwards,
-    rlDrop .8s cubic-bezier(.7,0,.25,1) 1.6s forwards;}
-  #rebrandLoader .rl__keep{animation:rlIn .55s cubic-bezier(.2,.7,.3,1) forwards,
-    rlKeep .8s cubic-bezier(.7,0,.25,1) 1.6s forwards;}
-  #rebrandLoader .rl__bar{height:4px;width:0;background:#4B9CD3;border-radius:2px;margin-top:18px;
-    animation:rlBar .7s ease 2.35s forwards;}
-  #rebrandLoader .rl__tag{margin-top:22px;opacity:0;transform:translateY(10px);
-    animation:rlTag .7s ease 2.55s forwards;}
-  #rebrandLoader .rl__tagline{display:block;color:#FFFFFF;font-family:Georgia,'Times New Roman',serif;
-    font-weight:700;font-size:clamp(18px,3.4vw,30px);letter-spacing:.01em;}
-  #rebrandLoader .rl__sub{display:block;margin-top:8px;color:#7DB7DD;
-    font-family:Arial,Helvetica,sans-serif;font-size:clamp(11px,2vw,14px);
+  #rebrandLoader .rl__drop{animation:rlIn .7s cubic-bezier(.2,.7,.3,1) forwards,
+    rlDrop 1s cubic-bezier(.7,0,.25,1) 2.2s forwards;}
+  #rebrandLoader .rl__keep{animation:rlIn .7s cubic-bezier(.2,.7,.3,1) forwards,
+    rlKeep 1s cubic-bezier(.7,0,.25,1) 2.2s forwards;}
+  #rebrandLoader .rl__bar{height:4px;width:0;background:#4B9CD3;border-radius:2px;margin-top:20px;
+    animation:rlBar .85s ease 3.3s forwards;}
+  #rebrandLoader .rl__tag{margin-top:24px;opacity:0;transform:translateY(12px);
+    animation:rlTag .9s ease 3.6s forwards;}
+  #rebrandLoader .rl__tagline{display:block;color:#FFFFFF;font-family:"astoria","astoria-condensed",Arial,sans-serif;
+    font-weight:700;font-size:clamp(19px,3.4vw,32px);letter-spacing:.01em;}
+  #rebrandLoader .rl__sub{display:block;margin-top:9px;color:#7DB7DD;
+    font-family:"astoria",Arial,Helvetica,sans-serif;font-weight:400;font-size:clamp(11px,2vw,14px);
     text-transform:uppercase;letter-spacing:.22em;}
   @keyframes rlIn{to{opacity:1;transform:translateY(0)}}
   @keyframes rlDrop{to{max-width:0;opacity:0;transform:scale(.2);margin-left:-.04em}}
@@ -4323,7 +4325,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
   @keyframes rlOut{to{opacity:0;visibility:hidden}}
   html.rl-lock,html.rl-lock body{overflow:hidden;}
   @media (prefers-reduced-motion: reduce){
-    #rebrandLoader{animation:rlOut .4s ease 1.3s forwards;}
+    #rebrandLoader{animation:rlOut .4s ease 1.8s forwards;}
     #rebrandLoader .rl__l,#rebrandLoader .rl__drop,#rebrandLoader .rl__keep{animation:none;opacity:1;transform:none;}
     #rebrandLoader .rl__drop{display:none;}
     #rebrandLoader .rl__bar{animation:none;width:min(58vw,360px);}
@@ -4354,7 +4356,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
   var root = document.documentElement;
   root.classList.add('rl-lock');
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var wait = reduce ? 1750 : 4250;
+  var wait = reduce ? 2200 : 5650;
   function done(){ root.classList.remove('rl-lock'); if(el && el.parentNode){ el.parentNode.removeChild(el); } }
   setTimeout(done, wait);
   // Allow click/tap or Esc to skip the intro
