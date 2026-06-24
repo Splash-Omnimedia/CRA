@@ -11,7 +11,10 @@
   <link rel="canonical" href="https://www.carolinasroofing.org/">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#041E42"><!-- mirrors --color-navy; meta theme-color cannot resolve CSS vars -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23041E42'/%3E%3Cpath d='M12 38L32 16l20 22v6H12z' fill='%23F2A900'/%3E%3Cpath d='M20 44V36l12-13 12 13v8z' fill='%23041E42' opacity='.18'/%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" href="apple-touch-icon.png" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta name="theme-color" content="#041E42">
 
   <!-- [Placeholder] Open Graph image — replace with 1200x630 share asset before launch -->
   <!-- Open Graph -->
@@ -349,7 +352,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-vis
 /* ---------- Utility ---------- */
 .container { width: 100%; max-width: var(--container); margin: 0 auto; padding: 0 24px; }
 .container--narrow { max-width: var(--container-narrow); }
-.visually-hidden, .sr-live { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+.visually-hidden, .sr-only, .sr-live { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 .skip-link {
   position: absolute;
   top: -100px;
@@ -559,6 +562,50 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
   background: var(--color-gold);
   border-radius: 2px;
 }
+
+/* About dropdown menu */
+.primary-nav .has-dropdown { position: relative; }
+.primary-nav .has-dropdown > a { display: inline-flex; align-items: center; gap: 5px; }
+.primary-nav .dropdown-caret { width: 12px; height: 12px; transition: transform 0.2s ease; }
+.primary-nav .has-dropdown:hover .dropdown-caret,
+.primary-nav .has-dropdown:focus-within .dropdown-caret { transform: rotate(180deg); }
+.nav-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 50%;
+  margin: 0; padding: 6px;
+  list-style: none;
+  min-width: 210px;
+  background: var(--color-navy-2, #082750);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px;
+  box-shadow: 0 14px 34px rgba(0,0,0,0.40);
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transform: translateX(-50%) translateY(6px);
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
+  z-index: 60;
+}
+.primary-nav .has-dropdown:hover .nav-dropdown,
+.primary-nav .has-dropdown:focus-within .nav-dropdown {
+  opacity: 1; visibility: visible; pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+.nav-dropdown::before {
+  content: ''; position: absolute; top: -5px; left: 50%; transform: translateX(-50%) rotate(45deg);
+  width: 10px; height: 10px; background: var(--color-navy-2, #082750);
+  border-left: 1px solid rgba(255,255,255,0.12); border-top: 1px solid rgba(255,255,255,0.12);
+}
+.nav-dropdown li { display: block; }
+.nav-dropdown a {
+  display: block; width: 100%;
+  padding: 9px 14px;
+  font-size: 0.9rem; font-weight: 600;
+  color: var(--color-on-dark);
+  border-radius: 8px; white-space: nowrap;
+}
+.nav-dropdown a:hover, .nav-dropdown a:focus-visible { background: rgba(255,255,255,0.09); color: var(--color-gold); }
+.nav-dropdown a.is-active { color: var(--color-gold); }
+.nav-dropdown a.is-active::after { display: none; }
 
 .header-ctas { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
 .header-ctas .btn { padding: 11px 18px; font-size: 0.9rem; }
@@ -2583,55 +2630,74 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
 /* Newsletter — horizontal full-width row */
 .footer-newsletter {
   display: grid;
-  grid-template-columns: 1fr 1.3fr;
-  gap: 48px;
+  grid-template-columns: 1fr 1.15fr;
+  gap: clamp(28px, 4vw, 64px);
   align-items: center;
-  padding: 28px clamp(24px, 3vw, 40px);
+  padding: clamp(28px, 3vw, 40px) clamp(24px, 3vw, 44px);
   margin-bottom: 48px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.10);
-  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(75,156,211,0.10), rgba(255,255,255,0.04));
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 18px;
 }
 @media (max-width: 880px) {
-  .footer-newsletter { grid-template-columns: 1fr; gap: 18px; }
+  .footer-newsletter { grid-template-columns: 1fr; gap: 20px; }
 }
-.footer-newsletter__text { display: flex; flex-direction: column; gap: 6px; }
+.footer-newsletter__text { display: flex; flex-direction: column; gap: 8px; }
+.footer-newsletter__eyebrow {
+  display: inline-flex; align-items: center; gap: 7px;
+  color: var(--color-carolina, #7DB7DD);
+  font-size: 0.72rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.16em;
+}
 .footer-newsletter__head {
   display: block;
   color: var(--color-bone);
   font-family: var(--font-headline);
-  font-size: 1.25rem;
+  font-size: clamp(1.35rem, 2.4vw, 1.6rem);
   font-weight: 400;
-  letter-spacing: -0.005em;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
 }
 .footer-newsletter__sub {
   display: block;
   color: var(--color-on-dark-3);
-  font-size: 0.9rem;
-  line-height: 1.5;
-  max-width: 420px;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  max-width: 440px;
 }
-.footer-newsletter__form { display: flex; flex-direction: column; gap: 4px; }
-.footer-newsletter__row {
+.footer-newsletter__form { display: flex; flex-direction: column; gap: 10px; }
+/* Unified input + button group */
+.footer-newsletter__group {
   display: flex;
+  align-items: center;
   gap: 8px;
-  flex-wrap: wrap;
+  padding: 7px 7px 7px 16px;
+  background: rgba(255,255,255,0.07);
+  border: 1.5px solid rgba(255,255,255,0.16);
+  border-radius: 14px;
+  transition: border-color 0.18s, background 0.18s, box-shadow 0.18s;
 }
+.footer-newsletter__group:focus-within {
+  border-color: var(--color-carolina, #7DB7DD);
+  background: rgba(255,255,255,0.10);
+  box-shadow: 0 0 0 4px rgba(75,156,211,0.18);
+}
+.footer-newsletter__group .nl-mail { color: var(--color-on-dark-3); flex-shrink: 0; display: flex; }
 .footer-newsletter input {
   flex: 1;
-  min-width: 200px;
-  padding: 14px 16px;
-  border-radius: 10px;
-  border: 1px solid rgba(255,255,255,0.18);
-  background: rgba(255,255,255,0.06);
+  min-width: 0;
+  padding: 11px 4px;
+  border: 0;
+  background: transparent;
   color: var(--color-bone);
   font-family: inherit;
-  font-size: 0.98rem;
+  font-size: 1rem;
 }
 .footer-newsletter input::placeholder { color: var(--color-on-dark-3); }
-.footer-newsletter input:focus { outline: none; border-color: var(--color-gold); background: rgba(255,255,255,0.09); }
+.footer-newsletter input:focus { outline: none; }
 .footer-newsletter button {
-  padding: 14px 26px;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 24px;
   border-radius: 10px;
   border: 0;
   background: var(--color-gold);
@@ -2643,9 +2709,16 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
   transition: background 0.18s, transform 0.18s;
   white-space: nowrap;
 }
-.footer-newsletter button:hover { background: var(--color-gold-2); transform: translateY(-1px); }
-.footer-note { font-size: 0.78rem; color: var(--color-on-dark-3); margin-top: 8px; }
-.footer-status { width: 100%; font-size: 0.78rem; color: var(--color-gold); margin-top: 2px; min-height: 16px; }
+.footer-newsletter button svg { transition: transform 0.18s; }
+.footer-newsletter button:hover { background: var(--color-gold-2); }
+.footer-newsletter button:hover svg { transform: translateX(3px); }
+@media (max-width: 480px) {
+  .footer-newsletter__group { flex-wrap: wrap; padding: 10px; }
+  .footer-newsletter input { width: 100%; flex-basis: 100%; padding: 8px 6px; }
+  .footer-newsletter button { width: 100%; justify-content: center; }
+}
+.footer-note { display: inline-flex; align-items: center; gap: 6px; font-size: 0.78rem; color: var(--color-on-dark-3); margin: 0; }
+.footer-status { width: 100%; font-size: 0.8rem; color: var(--color-carolina, #7DB7DD); margin: 0; min-height: 16px; }
 
 .footer-col h5 {
   color: var(--color-bone);
@@ -4270,7 +4343,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
     <div class="rl__bar" aria-hidden="true"></div>
     <div class="rl__tag">
       <span class="rl__tagline">Carolinas Roofing Association</span>
-      <span class="rl__sub">Formerly CRSMCA · Serving NC &amp; SC since 1943</span>
+      <span class="rl__sub">Formerly CRSMCA · A new name, the same commitment since 1943</span>
     </div>
   </div>
 </div>
@@ -4308,9 +4381,16 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
         <li><a href="#education" data-page="education">Education</a></li>
         <li><a href="#directory" data-page="directory">Directory</a></li>
         <li><a href="#partners" data-page="partners">Partners</a></li>
-        <li><a href="#about" data-page="about">About</a></li>
-        <li><a href="#board" data-page="board">Board Members</a></li>
-        <li><a href="#past-presidents" data-page="past-presidents">Past Presidents</a></li>
+        <li class="has-dropdown">
+          <a href="#about" data-page="about" aria-haspopup="true">About
+            <svg class="dropdown-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <ul class="nav-dropdown" role="list" aria-label="About">
+            <li><a href="#about" data-page="about">About CRA</a></li>
+            <li><a href="#board" data-page="board">Board Members</a></li>
+            <li><a href="#past-presidents" data-page="past-presidents">Past Presidents</a></li>
+          </ul>
+        </li>
         <li><a href="#contact" data-page="contact">Contact</a></li>
       </ul>
 
@@ -4360,8 +4440,8 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
     <li><a href="#directory" data-page="directory">Member Directory</a></li>
     <li><a href="#partners" data-page="partners">Partners &amp; Sponsors</a></li>
     <li><a href="#about" data-page="about">About CRA</a></li>
-    <li><a href="#board" data-page="board">Board Members</a></li>
-    <li><a href="#past-presidents" data-page="past-presidents">Past Presidents</a></li>
+    <li><a href="#board" data-page="board" style="padding-left:26px;opacity:.85;">↳ Board Members</a></li>
+    <li><a href="#past-presidents" data-page="past-presidents" style="padding-left:26px;opacity:.85;">↳ Past Presidents</a></li>
     <li><a href="#contact" data-page="contact">Contact</a></li>
   </ul>
   <div class="mobile-nav__util">
@@ -4404,7 +4484,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
             </a>
             <a class="btn btn--secondary btn--lg" href="#events" data-page="events" data-event="cta-view-events">View Upcoming Events</a>
             <a class="hero__tertiary" href="#benefits-guide" data-event="cta-benefits-guide">
-              Get the 2026 Member Benefits Guide
+              Explore Member Benefits
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
             </a>
           </div>
@@ -4674,11 +4754,11 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         </span>
         <div>
-          <span class="eleaders__lbl">Emerging Leaders</span>
+          <span class="eleaders__lbl">Next Generation</span>
           <h4>The next generation of Carolinas roofing leadership.</h4>
-          <p>The association supports owners under 40, second-generation operators, and rising field leaders through dedicated programming, mentorship, and leadership development.</p>
+          <p>The association is focused on engaging the next generation of Carolinas roofing leadership, including younger owners, second-generation operators, and rising field leaders.</p>
         </div>
-        <a class="btn btn--ghost" href="#education" data-page="education">Learn More</a>
+        <a class="btn btn--ghost" href="#membership" data-page="membership">Learn About Membership</a>
       </div>
     </div>
   </section>
@@ -4813,7 +4893,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
           <div class="member-spotlight">
             <span class="member-spotlight__lbl">Since 1943</span>
             <blockquote>The strength of this association comes from members who donate their time and talents to keep CRA growing and improve services to the membership.</blockquote>
-            <cite>Carolinas Roofing &amp; Sheet Metal Contractors Association</cite>
+            <cite>Carolinas Roofing Association</cite>
           </div>
         </div>
       </div>
@@ -4859,26 +4939,24 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
       <div class="lead-magnet__inner">
         <div class="lead-magnet__content">
           <span class="eyebrow">Not ready to apply yet?</span>
-          <h2 id="lm-heading">Get the 2026 Carolinas Roofing Member Benefits Guide.</h2>
-          <p>A clear, no-pressure overview of what membership includes, who it's for, what the Carolinas Roofing Expo covers, and how the Self-Insurers Fund works. Sent straight to your inbox.</p>
-          <form class="lead-magnet__form" id="benefitsGuideForm" novalidate aria-label="Request the Member Benefits Guide">
-            <label for="bgEmail" class="sr-only">Email address</label>
-            <input id="bgEmail" name="email" type="email" placeholder="Your work email" autocomplete="email" required>
-            <button type="submit">Send Me the Guide</button>
-            <p class="lead-magnet__status" id="benefitsGuideStatus" role="status" aria-live="polite"></p>
-          </form>
-          <p class="lead-magnet__note">No obligation. Unsubscribe any time. We won't share your email.</p>
+          <h2 id="lm-heading">Explore CRA membership.</h2>
+          <p>Get an overview of CRA membership categories, benefits, events, education opportunities, directory visibility, sponsorship opportunities, and qualifying member programs.</p>
+          <div class="lead-magnet__form" style="gap:10px;">
+            <a class="btn btn--accent" href="#membership" data-page="membership" data-event="cta-view-benefits">View Member Benefits</a>
+            <a class="btn btn--secondary" href="#contact" data-page="contact" data-event="cta-membership-info">Request Membership Information</a>
+          </div>
+          <p class="lead-magnet__note">No obligation. The association team will follow up with the information you need.</p>
         </div>
-        <aside class="lead-magnet__visual" aria-label="Inside the Member Benefits Guide">
-          <span class="lead-magnet__visual-label">Inside the guide</span>
-          <div class="lead-magnet__visual-title">2026 Member Benefits Guide</div>
+        <aside class="lead-magnet__visual" aria-label="What CRA membership includes">
+          <span class="lead-magnet__visual-label">Membership at a glance</span>
+          <div class="lead-magnet__visual-title">CRA Member Benefits</div>
           <ul class="lead-magnet__visual-list">
             <li>What membership includes, by category</li>
-            <li>Carolinas Roofing Expo · Mar 16–18, 2027</li>
-            <li>Education programs &amp; calendar overview</li>
+            <li>Events, education &amp; networking across the Carolinas</li>
+            <li>Member directory visibility</li>
             <li>How the Self-Insurers Fund works</li>
             <li>Sponsorship &amp; exhibiting opportunities</li>
-            <li>Real member outcomes &amp; stories</li>
+            <li>Qualifying member programs</li>
           </ul>
         </aside>
       </div>
@@ -4907,7 +4985,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
           <span class="plan-step__num">Step 02</span>
           <h4>Apply or contact the association.</h4>
           <p>Submit a membership application or send a question. The team will route it to the right membership, event, or sponsorship contact.</p>
-          <div class="plan-step__outcome">A real person responds within one business day.</div>
+          <div class="plan-step__outcome">A member of the association team will follow up with next steps.</div>
         </div>
         <div class="plan-step">
           <span class="plan-step__num">Step 03</span>
@@ -5174,11 +5252,6 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
         </form>
       </div>
 
-      <div class="placeholder-banner" role="note">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="18" height="18"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        <div><strong>Featured Members.</strong> Premium directory placements held by association members. <a href="#contact" data-page="contact" class="tlink">Inquire about a featured spot →</a></div>
-      </div>
-
       <div class="dir-grid" id="directoryGrid">
         <!-- Populated by JS -->
       </div>
@@ -5208,44 +5281,44 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
           <span class="pillar-card__num">01</span>
           <h4>Safety &amp; Risk</h4>
           <p>OSHA, fall protection, jobsite practices, and risk programs designed for roofing teams in the field.</p>
-          <div class="pillar-sessions"><strong>Example sessions</strong>Fall Protection for Steep-Slope Crews · OSHA 10 &amp; 30 for Roofing · Building a Field Safety Culture</div>
+          <div class="pillar-sessions"><strong>Potential topics may include</strong>Fall Protection for Steep-Slope Crews · OSHA 10 &amp; 30 for Roofing · Building a Field Safety Culture</div>
         </div>
         <div class="pillar-card reveal delay-1">
           <span class="pillar-card__num">02</span>
           <h4>Business Operations</h4>
           <p>Estimating, scheduling, financials, and the systems that separate well-run companies from busy ones.</p>
-          <div class="pillar-sessions"><strong>Example sessions</strong>Job Costing That Actually Works · Cash Flow for Roofing Owners · Building a Service Department</div>
+          <div class="pillar-sessions"><strong>Potential topics may include</strong>Job Costing That Actually Works · Cash Flow for Roofing Owners · Building a Service Department</div>
         </div>
         <div class="pillar-card reveal delay-2">
           <span class="pillar-card__num">03</span>
           <h4>Sales &amp; Estimating</h4>
           <p>Practical sales process, estimating accuracy, and pricing for both residential and commercial roofing work.</p>
-          <div class="pillar-sessions"><strong>Example sessions</strong>Selling Without Discounting · Commercial Estimating Walkthrough · Residential Closing Strategy</div>
+          <div class="pillar-sessions"><strong>Potential topics may include</strong>Selling Without Discounting · Commercial Estimating Walkthrough · Residential Closing Strategy</div>
         </div>
         <div class="pillar-card reveal">
           <span class="pillar-card__num">04</span>
           <h4>Workforce Development</h4>
           <p>Recruiting, training, and retaining the next generation of roofing crews and field leaders.</p>
-          <div class="pillar-sessions"><strong>Example sessions</strong>Recruiting in a Tight Carolinas Labor Market · Building a Crew Lead Pipeline · Emerging Leaders Track</div>
+          <div class="pillar-sessions"><strong>Potential topics may include</strong>Recruiting in a Tight Carolinas Labor Market · Building a Crew Lead Pipeline · Developing Next-Generation Leaders</div>
         </div>
         <div class="pillar-card reveal delay-1">
           <span class="pillar-card__num">05</span>
           <h4>Legal &amp; Regulatory</h4>
           <p>Insurance, licensing, code, and labor changes summarized for owners across NC and SC.</p>
-          <div class="pillar-sessions"><strong>Example sessions</strong>NC &amp; SC License Update · Contract Pitfalls for Roofers · Workers' Comp &amp; the SIF</div>
+          <div class="pillar-sessions"><strong>Potential topics may include</strong>NC &amp; SC License Update · Contract Pitfalls for Roofers · Workers' Comp &amp; the SIF</div>
         </div>
         <div class="pillar-card reveal delay-2">
           <span class="pillar-card__num">06</span>
           <h4>Technical &amp; Product</h4>
           <p>Manufacturer-led sessions on systems, specification, and what's working in the field today.</p>
-          <div class="pillar-sessions"><strong>Example sessions</strong>Single-Ply Membrane Showdown · Metal Roofing Specification · Underlayment &amp; Ventilation Update</div>
+          <div class="pillar-sessions"><strong>Potential topics may include</strong>Single-Ply Membrane Showdown · Metal Roofing Specification · Underlayment &amp; Ventilation Update</div>
         </div>
       </div>
 
       <div class="edu-cert-banner reveal">
         <div>
-          <h3>Certification &amp; credentialing pathways are in development.</h3>
-          <p>As part of the association's long-term commitment to raising industry standards, structured certification tracks are being designed for owners, foremen, and field teams.</p>
+          <h3>Expanded education pathways are part of CRA's long-term vision.</h3>
+          <p>The association is exploring expanded education pathways for owners, foremen, and field teams as part of its long-term vision.</p>
         </div>
         <a class="btn btn--accent" href="#education" data-page="education" data-event="cta-explore-education">Explore Education</a>
       </div>
@@ -5361,29 +5434,10 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
 
       <div class="partner-logos reveal">
         <div class="partner-logos__tier">
-          <span class="partner-logos__tier-label">Elite Partners</span>
-          <div class="partner-logos__grid partner-logos__grid--elite" aria-label="Elite partner companies">
+          <span class="partner-logos__tier-label">Elite Member Partners</span>
+          <div class="partner-logos__grid partner-logos__grid--elite" aria-label="Elite Member Partners">
             <div class="partner-logo partner-logo--elite">Splash Omnimedia</div>
             <div class="partner-logo partner-logo--elite">Brand Buzz</div>
-          </div>
-        </div>
-
-        <div class="partner-logos__tier">
-          <span class="partner-logos__tier-label">Station Sponsors</span>
-          <div class="partner-logos__grid partner-logos__grid--station" aria-label="Station sponsor companies">
-            <div class="partner-logo">Mid-Atlantic Roofing Supply</div>
-            <div class="partner-logo">Soprema</div>
-            <div class="partner-logo">838 Coatings</div>
-            <div class="partner-logo">RTE Roofing Tools &amp; Equipment</div>
-            <div class="partner-logo">ACS Atlantic Construction Sales</div>
-          </div>
-        </div>
-
-        <div class="partner-logos__tier">
-          <span class="partner-logos__tier-label">Red Clay Sponsors</span>
-          <div class="partner-logos__grid partner-logos__grid--redclay" aria-label="Red clay sponsor companies">
-            <div class="partner-logo partner-logo--redclay">Metal Deck Supply</div>
-            <div class="partner-logo partner-logo--redclay">QXO</div>
           </div>
         </div>
       </div>
@@ -5554,7 +5608,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
             <span class="faq-item__icon" aria-hidden="true">+</span>
           </button>
           <div class="faq-item__body" id="faq-15" role="region">
-            <div class="faq-item__body-inner">A team member responds within one business day to confirm your details, walk you through your membership category, and answer any questions. Once your membership is active, you receive access to events, the directory, education resources, and association communications. There's no obligation to attend or participate — but most new members get involved quickly.</div>
+            <div class="faq-item__body-inner">A member of the association team will follow up to confirm your details, walk you through your membership category, and answer any questions. Once your membership is active, you receive access to events, the directory, education resources, and association communications. There's no obligation to attend or participate — but most new members get involved quickly.</div>
           </div>
         </div>
 
@@ -5588,7 +5642,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
       <div class="cta-band__ctas">
         <a class="btn btn--primary btn--lg" href="#apply" data-page="apply" data-event="cta-start-membership">Start Membership Application</a>
         <a class="btn btn--secondary btn--lg" href="#events" data-page="events" data-event="cta-view-events">View Upcoming Events</a>
-        <a class="btn btn--secondary btn--lg" href="#benefits-guide" data-event="cta-benefits-guide">Get the Member Benefits Guide</a>
+        <a class="btn btn--secondary btn--lg" href="#benefits-guide" data-event="cta-benefits-guide">Explore Member Benefits</a>
       </div>
     </div>
   </section>
@@ -5984,7 +6038,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
             <figcaption>Eight decades of regional leadership — built on relationships.</figcaption>
           </figure>
           <h2>About CRA</h2>
-          <p>The Carolinas Roofing &amp; Sheet Metal Contractors Association, Inc. (CRA) was formed in 1943 by a group of contractors. The main objective for CRA is to promote and safeguard the common business interests of its members and to improve business conditions by educating all persons concerning the roofing and sheet metal business and industry, and to support the development and progress of the roofing and sheet metal industry in the Carolinas.</p>
+          <p>The Carolinas Roofing Association (CRA) — formerly the Carolinas Roofing &amp; Sheet Metal Contractors Association — was formed in 1943 by a group of contractors. The main objective for CRA is to promote and safeguard the common business interests of its members and to improve business conditions by educating all persons concerning the roofing and sheet metal business and industry, and to support the development and progress of the roofing and sheet metal industry in the Carolinas.</p>
 
           <h2>Our mission</h2>
           <p>To promote and safeguard the common business interests of its members and to improve conditions by educating all persons concerning the roofing and sheet metal business and industry. To work for the development and progress of the roofing and sheet metal business industry and to work with individuals' organizations and governmental agencies toward the achievement of a stronger profession of the roofing and sheet metal industry.</p>
@@ -6031,7 +6085,8 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
 <style>
   .board-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 22px; margin: 28px 0 8px; }
   .board-card { border: 1px solid rgba(0,0,0,0.10); border-radius: 14px; padding: 22px; background: #fff; display: flex; flex-direction: column; gap: 10px; }
-  .board-card__photo { width: 84px; height: 84px; border-radius: 50%; background: linear-gradient(135deg,#e7ecef,#cfd9de); display: flex; align-items: center; justify-content: center; font-size: 0.62rem; line-height: 1.2; text-align: center; color: #5a6b73; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700; padding: 6px; }
+  .board-card__photo { width: 84px; height: 84px; border-radius: 50%; background: linear-gradient(135deg,#0E2E5E,#041E42); display: flex; align-items: center; justify-content: center; font-size: 1.6rem; line-height: 1; text-align: center; color: #fff; text-transform: uppercase; letter-spacing: 0.04em; font-weight: 800; font-family: var(--font-headline, Georgia, serif); }
+  .board-card__photo svg { width: 40px; height: 40px; color: #7DB7DD; }
   .board-card__name { font-size: 1.12rem; font-weight: 800; margin: 4px 0 0; }
   .board-card__role { color: var(--color-gold, #b8862f); font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; }
   .board-card__org { color: #4a5a62; font-size: 0.95rem; }
@@ -6049,7 +6104,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
       </nav>
       <span class="eyebrow">Leadership · CRA Executive Team &amp; Staff</span>
       <h1>Board <em>Members</em></h1>
-      <p class="lede">Meet the Executive Team and staff who lead the Carolinas Roofing &amp; Sheet Metal Contractors Association — volunteer industry leaders and the professionals who keep the association running for members across North and South Carolina.</p>
+      <p class="lede">The Carolinas Roofing Association is guided by leaders and staff who support roofing professionals across North Carolina and South Carolina. Additional bios and headshots will be added as they are finalized.</p>
     </div>
   </section>
 
@@ -6061,7 +6116,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
       <p class="muted">Officers elected from the CRA membership.</p>
       <div class="board-grid">
         <article class="board-card">
-          <div class="board-card__photo">Pending Headshot</div>
+          <div class="board-card__photo" aria-hidden="true"></div>
           <span class="board-card__role">President</span>
           <h3 class="board-card__name">Hunter Steed</h3>
           <span class="board-card__org">Wayne Roofing &amp; Sheet Metal</span>
@@ -6069,7 +6124,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
           <p class="board-card__bio">Bio Coming Soon</p>
         </article>
         <article class="board-card">
-          <div class="board-card__photo">Pending Headshot</div>
+          <div class="board-card__photo" aria-hidden="true"></div>
           <span class="board-card__role">Co-President</span>
           <h3 class="board-card__name">Tim Smart</h3>
           <span class="board-card__org">QXO</span>
@@ -6077,7 +6132,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
           <p class="board-card__bio">Bio Coming Soon</p>
         </article>
         <article class="board-card">
-          <div class="board-card__photo">Pending Headshot</div>
+          <div class="board-card__photo" aria-hidden="true"></div>
           <span class="board-card__role">Vice President</span>
           <h3 class="board-card__name">Joshua Dernosek</h3>
           <span class="board-card__org">C L Burks Construction</span>
@@ -6085,7 +6140,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
           <p class="board-card__bio">Bio Coming Soon</p>
         </article>
         <article class="board-card">
-          <div class="board-card__photo">Pending Headshot</div>
+          <div class="board-card__photo" aria-hidden="true"></div>
           <span class="board-card__role">Co-Vice President</span>
           <h3 class="board-card__name">Steve Hall</h3>
           <span class="board-card__org">Mid-Atlantic Roofing Supply</span>
@@ -6093,7 +6148,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
           <p class="board-card__bio">Bio Coming Soon</p>
         </article>
         <article class="board-card">
-          <div class="board-card__photo">Pending Headshot</div>
+          <div class="board-card__photo" aria-hidden="true"></div>
           <span class="board-card__role">Treasurer</span>
           <h3 class="board-card__name">Stephen Trites</h3>
           <span class="board-card__org">Radco Roofing</span>
@@ -6101,7 +6156,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
           <p class="board-card__bio">Bio Coming Soon</p>
         </article>
         <article class="board-card">
-          <div class="board-card__photo">Pending Headshot</div>
+          <div class="board-card__photo" aria-hidden="true"></div>
           <span class="board-card__role">Co-Treasurer</span>
           <h3 class="board-card__name">Dalton Abrams</h3>
           <span class="board-card__org">ABC Supply Co., Inc.</span>
@@ -6109,7 +6164,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
           <p class="board-card__bio">Bio Coming Soon</p>
         </article>
         <article class="board-card">
-          <div class="board-card__photo">Pending Headshot</div>
+          <div class="board-card__photo" aria-hidden="true"></div>
           <span class="board-card__role">Secretary</span>
           <h3 class="board-card__name">To Be Announced</h3>
           <span class="board-card__org">&nbsp;</span>
@@ -6117,7 +6172,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
           <p class="board-card__bio">Bio Coming Soon</p>
         </article>
         <article class="board-card">
-          <div class="board-card__photo">Pending Headshot</div>
+          <div class="board-card__photo" aria-hidden="true"></div>
           <span class="board-card__role">Past President</span>
           <h3 class="board-card__name">Robert Hodges</h3>
           <span class="board-card__org">RK HydroVac</span>
@@ -6125,7 +6180,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
           <p class="board-card__bio">Bio Coming Soon</p>
         </article>
         <article class="board-card">
-          <div class="board-card__photo">Pending Headshot</div>
+          <div class="board-card__photo" aria-hidden="true"></div>
           <span class="board-card__role">Past President</span>
           <h3 class="board-card__name">Mark Cameron</h3>
           <span class="board-card__org">Mid-States Asphalt</span>
@@ -6137,7 +6192,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
       <h2 class="board-group-label" style="font-size:1.6rem;text-transform:none;letter-spacing:0;margin-top:40px;">Advisors &amp; Counsel</h2>
       <div class="board-grid">
         <article class="board-card">
-          <div class="board-card__photo">Pending Headshot</div>
+          <div class="board-card__photo" aria-hidden="true"></div>
           <span class="board-card__role">General Counsel</span>
           <h3 class="board-card__name">Brian Schoolman</h3>
           <span class="board-card__org">Safran Law Offices</span>
@@ -6145,7 +6200,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
           <p class="board-card__bio">Bio Coming Soon</p>
         </article>
         <article class="board-card">
-          <div class="board-card__photo">Pending Headshot</div>
+          <div class="board-card__photo" aria-hidden="true"></div>
           <span class="board-card__role">CPA</span>
           <h3 class="board-card__name">Doug Gentile</h3>
           <span class="board-card__org">&nbsp;</span>
@@ -6157,7 +6212,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
       <h2 style="margin-top:40px;">CRA Staff</h2>
       <div class="board-grid">
         <article class="board-card">
-          <div class="board-card__photo">Pending Headshot</div>
+          <div class="board-card__photo" aria-hidden="true"></div>
           <span class="board-card__role">Executive Director</span>
           <h3 class="board-card__name">Carla Sims</h3>
           <span class="board-card__org">CRA</span>
@@ -6165,7 +6220,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
           <p class="board-card__bio">Bio Coming Soon</p>
         </article>
         <article class="board-card">
-          <div class="board-card__photo">Pending Headshot</div>
+          <div class="board-card__photo" aria-hidden="true"></div>
           <span class="board-card__role">Administrator</span>
           <h3 class="board-card__name">Heather Braun</h3>
           <span class="board-card__org">CRA</span>
@@ -6206,9 +6261,10 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
       <h2>Past Presidents</h2>
       <p class="muted">Honoring those who have led the Carolinas Roofing Association.</p>
       <ul class="page-list">
-        <li><strong>Robert Hodges</strong> — RK HydroVac <span class="placeholder-tag" style="margin-left:8px;">Term dates to be confirmed</span></li>
-        <li><strong>Mark Cameron</strong> — Mid-States Asphalt <span class="placeholder-tag" style="margin-left:8px;">Term dates to be confirmed</span></li>
+        <li><strong>Robert Hodges</strong> — RK HydroVac</li>
+        <li><strong>Mark Cameron</strong> — Mid-States Asphalt</li>
       </ul>
+      <p class="muted" style="margin-top:1.25rem;">Additional Past Presidents and term details will be added as historical records are finalized.</p>
 
       <div class="page-cta-row" style="margin-top:2.5rem;">
         <a class="btn btn--ghost" href="#board" data-page="board">View Current Board Members</a>
@@ -6237,7 +6293,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
       <div class="contact-grid">
         <div class="contact-form-wrap">
           <h2>Send us a message</h2>
-          <p class="muted" style="margin-bottom: 18px;">A team member responds within one business day. No obligation — ask about membership, events, sponsorship, the Expo, or anything else.</p>
+          <p class="muted" style="margin-bottom: 18px;">A member of the association team will follow up. No obligation — ask about membership, events, sponsorship, the Expo, or anything else.</p>
           <form class="simple-form" id="contactForm" novalidate>
             <div class="form-row">
               <label for="cf-name">Full Name <span aria-hidden="true">*</span></label>
@@ -6322,7 +6378,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
     <div class="container">
       <div class="signin-wrap">
         <div class="signin-prototype-note" role="note">
-          <strong>Prototype notice:</strong> Member sign-in is not yet active. The login form is a placeholder until the association connects a member portal. For real assistance, <a href="#contact" data-page="contact">contact the association</a>.
+          Member login access will be connected during final implementation. This page is included for review of the planned member access experience. For assistance, <a href="#contact" data-page="contact">contact the association</a>.
         </div>
         <form class="simple-form simple-form--signin" id="signinForm" novalidate>
           <div class="form-row">
@@ -6376,8 +6432,8 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
         <aside class="page-body__aside">
           <div class="aside-card">
             <span class="eyebrow">Note</span>
-            <h3>Prototype placeholder</h3>
-            <p>This privacy policy is a placeholder for the prototype. The final version should be reviewed and approved by the association's counsel.</p>
+            <h3>Under review</h3>
+            <p>This privacy policy is provided for review and will be finalized before launch.</p>
           </div>
         </aside>
       </div>
@@ -6401,6 +6457,8 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
 
   <section class="page-body apply-section">
     <div class="container">
+
+      <p class="apply-review-note" style="background:rgba(75,156,211,0.08);border:1px solid rgba(75,156,211,0.28);border-left:4px solid var(--color-carolina,#4B9CD3);border-radius:8px;padding:12px 16px;margin:0 0 22px;font-size:0.9rem;color:var(--color-ink-2,#2B374C);">Application details, including dues and terms, are included for client review and will be finalized before launch.</p>
 
       <!-- Wizard progress -->
       <ol class="apply-steps" aria-label="Application steps">
@@ -6893,17 +6951,30 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
 
     <form class="footer-newsletter" id="newsletterForm" novalidate aria-label="Subscribe to association updates">
       <div class="footer-newsletter__text">
-        <span class="footer-newsletter__head">Stay in the loop</span>
-        <span class="footer-newsletter__sub">Association news, upcoming events, and Carolinas updates — straight to your inbox.</span>
+        <span class="footer-newsletter__eyebrow">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          CRA Newsletter
+        </span>
+        <span class="footer-newsletter__head">Stay connected to the Carolinas roofing community.</span>
+        <span class="footer-newsletter__sub">Event invites, member resources, and industry news — delivered a few times a month. No spam, ever.</span>
       </div>
       <div class="footer-newsletter__form">
-        <div class="footer-newsletter__row">
-          <label for="nlEmail" class="sr-only">Email address</label>
-          <input id="nlEmail" name="email" type="email" placeholder="Your email address" autocomplete="email" required>
-          <button type="submit">Subscribe</button>
+        <label for="nlEmail" class="sr-only">Email address</label>
+        <div class="footer-newsletter__group">
+          <span class="nl-mail" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </span>
+          <input id="nlEmail" name="email" type="email" placeholder="Enter your email address" autocomplete="email" required>
+          <button type="submit">
+            Subscribe
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
         </div>
         <p class="footer-status" id="newsletterStatus" role="status" aria-live="polite"></p>
-        <p class="footer-note">Association updates only. Unsubscribe any time.</p>
+        <p class="footer-note">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Association updates only. Unsubscribe any time.
+        </p>
       </div>
     </form>
 
@@ -6918,7 +6989,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
       <div class="footer-col">
         <h5>Education &amp; Advancement</h5>
         <a href="#education" data-page="education">Programs</a>
-        <a href="#education" data-page="education">Certifications</a>
+        <a href="#education" data-page="education">Education Topics</a>
         <a href="#education" data-page="education">Safety Initiatives</a>
         <a href="#education" data-page="education">Workforce Development</a>
       </div>
@@ -7075,7 +7146,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
       directory:  'Search the Carolinas Roofing Association member directory — contractors, vendors, manufacturers, and service providers across North and South Carolina.',
       partners:   'Partner with the Carolinas Roofing Association — sponsorship, exhibiting, and associate membership for vendors, manufacturers, and service providers in the Carolinas roofing market.',
       about:      'About the Carolinas Roofing Association — a regional trade association serving North and South Carolina roofing professionals since 1943.',
-      contact:    'Contact the Carolinas Roofing Association — questions about membership, the Carolinas Roofing Expo, sponsorship, education, or anything else. We respond within one business day.',
+      contact:    'Contact the Carolinas Roofing Association — questions about membership, the Carolinas Roofing Expo, sponsorship, education, or anything else.',
       board:      'CRA Board Members — the Executive Team and staff who lead the Carolinas Roofing Association.',
       'past-presidents': 'CRA Past Presidents — recognizing the individuals who have led the association since 1943.',
       signin:     'Member sign in — access member-only resources, event registration, and directory tools at the Carolinas Roofing Association.',
@@ -7151,15 +7222,9 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
     });
   });
 
-  /* ===== DIRECTORY (featured member ads — 6 paid spots) ===== */
-  const directoryData = [
-    { name: 'Carolina Crest Roofing Co.',     state: 'NC', city: 'Charlotte',    type: 'Contractor',   focus: 'Residential',      tag: 'Member · Residential Contractor', logo: '', featured: true },
-    { name: 'Piedmont Commercial Roofing',    state: 'NC', city: 'Raleigh',      type: 'Contractor',   focus: 'Commercial',       tag: 'Member · Commercial Contractor',  logo: '', featured: true },
-    { name: 'Palmetto Roof Systems',          state: 'SC', city: 'Columbia',     type: 'Contractor',   focus: 'Commercial',       tag: 'Member · Commercial Contractor',  logo: '', featured: true },
-    { name: 'Blue Ridge Residential Roofing', state: 'NC', city: 'Asheville',    type: 'Contractor',   focus: 'Residential',      tag: 'Member · Residential Contractor', logo: '', featured: true },
-    { name: 'Triangle Roofing Supply',        state: 'NC', city: 'Durham',       type: 'Vendor',       focus: 'Distribution',     tag: 'Associate · Supplier',            logo: '', featured: true },
-    { name: 'Southern Roof Manufacturing',    state: 'SC', city: 'Greenville',   type: 'Manufacturer', focus: 'Metal & Membrane', tag: 'Associate · Manufacturer',        logo: '', featured: true }
-  ];
+  /* ===== DIRECTORY ===== */
+  /* Live directory data is connected during final implementation. No sample companies are shown for client review. */
+  const directoryData = [];
 
   const directoryCardHTML = (item) => {
     const logoBlock = item.logo
@@ -7212,7 +7277,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
 
     const html = filtered.length
       ? filtered.map(directoryCardHTML).join('')
-      : '<p class="muted" style="grid-column:1/-1; padding:1rem 0;">No members match those filters. Try clearing chips or adjusting your search.</p>';
+      : '<p class="muted" style="grid-column:1/-1; padding:1.25rem 0;">The public member directory will display approved member information, including company name, member type/category, city/state, website, and email.</p>';
 
     const grids = [$('#directoryGrid'), $('#directoryGridPage')].filter(Boolean);
     grids.forEach(g => { g.innerHTML = html; });
@@ -7264,10 +7329,8 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
     });
   };
 
-  handleFormStub('contactForm',  'contactStatus',  'Thanks — your message has been received. A team member responds within one business day. No obligation.');
+  handleFormStub('contactForm',  'contactStatus',  'Thanks — your message has been received. A member of the association team will follow up. No obligation.');
   handleFormStub('newsletterForm', 'newsletterStatus', 'Subscribed. Watch your inbox for association updates.');
-  handleFormStub('benefitsGuideForm', 'benefitsGuideStatus', 'On its way — check your inbox for the 2026 Member Benefits Guide. No obligation.');
-  handleFormStub('expoPreviewForm', 'expoPreviewStatus', 'On its way — check your inbox for the Carolinas Roofing Expo Preview.');
 
   const signinForm = $('#signinForm');
   if (signinForm) {
@@ -7275,7 +7338,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
       e.preventDefault();
       const status = $('#signinStatus');
       if (status) {
-        status.textContent = 'Member sign-in is a prototype placeholder. Connect to your member portal to enable real authentication.';
+        status.textContent = 'Member login access will be connected during final implementation.';
         status.classList.add('is-success');
       }
     });
@@ -7719,6 +7782,23 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
 
     update();
     startAuto();
+  });
+})();
+</script>
+
+<script>
+/* Board member avatars: fill initials (or a neutral silhouette for unnamed roles) */
+(function(){
+  var silhouette = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-7 8-7s8 3 8 7"/></svg>';
+  document.querySelectorAll('.board-card').forEach(function(card){
+    var photo = card.querySelector('.board-card__photo');
+    var nameEl = card.querySelector('.board-card__name');
+    if(!photo || !nameEl) return;
+    var name = nameEl.textContent.trim();
+    if(!name || /announced/i.test(name)){ photo.innerHTML = silhouette; return; }
+    var parts = name.split(/\s+/).filter(Boolean);
+    var initials = (parts[0][0] || '') + (parts.length > 1 ? parts[parts.length-1][0] : '');
+    photo.textContent = initials.toUpperCase();
   });
 })();
 </script>
