@@ -677,7 +677,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
   color: var(--color-on-dark);
   border-top: 1px solid rgba(255,255,255,0.06);
   border-bottom: 1px solid rgba(255,255,255,0.06);
-  padding: 20px 0;
+  padding: 14px 0;
 }
 .partner-bar__inner {
   display: flex;
@@ -707,8 +707,8 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
 }
 .partner-bar__logos {
   display: flex;
-  align-items: stretch;
-  gap: 14px;
+  align-items: center;
+  gap: 22px;
   flex: 1 1 auto;
   flex-wrap: wrap;
 }
@@ -717,24 +717,14 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
   flex: 1 1 0;
   align-items: center;
   justify-content: center;
-  min-height: 104px;
-  padding: 16px 22px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.14);
-  border-radius: var(--radius-md);
+  padding: 8px 11px;
+  background: transparent;
+  border: none;
   color: var(--color-bone);
-  font-weight: 700;
-  font-size: 1rem;
-  letter-spacing: 0.01em;
-  white-space: nowrap;
-  transition: background var(--transition-base), border-color var(--transition-base), transform var(--transition-base);
+  transition: opacity var(--transition-base);
 }
-.partner-bar__logo:hover {
-  background: rgba(255,255,255,0.07);
-  border-color: rgba(255,255,255,0.25);
-  transform: translateY(-1px);
-}
-.partner-bar__logo img { height: 64px; width: auto; max-width: 100%; object-fit: contain; display: block; margin: 0 auto; }
+.partner-bar__logo:hover { opacity: 0.82; }
+.partner-bar__logo img { width: 100%; max-width: 147px; height: auto; object-fit: contain; display: block; margin: 0 auto; }
 .partner-bar__logo--placeholder {
   background: transparent;
   border-style: dashed;
@@ -2150,6 +2140,8 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
 .dir-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 14px; flex-wrap: wrap; margin: 0 0 18px; }
 .dir-tools { display: flex; gap: 10px; flex-wrap: wrap; }
 .dir-tools .btn { padding: 9px 16px; font-size: 0.85rem; }
+.dir-clear-btn { background: none; border: none; color: var(--color-carolina-deep); font-size: 0.85rem; font-weight: 600; cursor: pointer; text-decoration: underline; padding: 6px 6px; }
+.dir-clear-btn:hover, .dir-clear-btn:focus-visible { color: var(--color-navy); }
 
 /* ===== MEMBER ZONE ===== */
 .mz-in { display: none; }
@@ -4561,10 +4553,8 @@ html.mz-auth .mz-out { display: none; }
           <ul class="nav-dropdown" role="list" aria-label="Resources">
             <li><a href="#helpful-links" data-page="helpful-links">Helpful Links</a></li>
             <li><a href="#faqs" data-page="faqs">FAQs</a></li>
-            <li><a href="#legal-updates" data-page="legal-updates">Legal Update Column</a></li>
             <li><a href="#sif" data-page="sif">Self-Insurers Fund</a></li>
             <li><a href="#publications" data-page="publications">Publications</a></li>
-            <li><a href="#articles" data-page="articles">Articles</a></li>
           </ul>
         </li>
         <li class="has-dropdown">
@@ -4625,10 +4615,8 @@ html.mz-auth .mz-out { display: none; }
     <li><a href="#resources" data-page="resources">Resources</a></li>
     <li><a href="#helpful-links" data-page="helpful-links" style="padding-left:26px;opacity:.85;">↳ Helpful Links</a></li>
     <li><a href="#faqs" data-page="faqs" style="padding-left:26px;opacity:.85;">↳ FAQs</a></li>
-    <li><a href="#legal-updates" data-page="legal-updates" style="padding-left:26px;opacity:.85;">↳ Legal Update Column</a></li>
     <li><a href="#sif" data-page="sif" style="padding-left:26px;opacity:.85;">↳ Self-Insurers Fund</a></li>
     <li><a href="#publications" data-page="publications" style="padding-left:26px;opacity:.85;">↳ Publications</a></li>
-    <li><a href="#articles" data-page="articles" style="padding-left:26px;opacity:.85;">↳ Articles</a></li>
     <li><a href="#about" data-page="about">About CRA</a></li>
     <li><a href="#board" data-page="board" style="padding-left:26px;opacity:.85;">↳ Board Members</a></li>
     <li><a href="#past-presidents" data-page="past-presidents" style="padding-left:26px;opacity:.85;">↳ Past Presidents</a></li>
@@ -5996,10 +5984,8 @@ html.mz-auth .mz-out { display: none; }
           <ul class="page-list">
             <li><a href="#helpful-links" data-page="helpful-links"><strong>Helpful Links</strong></a> — industry, licensing, and regulatory links relevant to Carolinas roofing professionals.</li>
             <li><a href="#faqs" data-page="faqs"><strong>FAQs</strong></a> — answers to common questions about membership, programs, and events.</li>
-            <li><a href="#legal-updates" data-page="legal-updates"><strong>Legal Update Column</strong></a> — legal and regulatory updates for North and South Carolina roofing.</li>
             <li><a href="#sif" data-page="sif"><strong>Self-Insurers Fund</strong></a> — the CRSMC workers' compensation group fund for qualifying members.</li>
             <li><a href="#publications" data-page="publications"><strong>Publications</strong></a> — association publications, including the <em>Carolinas Contacts</em> publication.</li>
-            <li><a href="#articles" data-page="articles"><strong>Articles</strong></a> — industry articles and member features.</li>
           </ul>
         </div>
         <aside class="page-body__aside">
@@ -6015,6 +6001,91 @@ html.mz-auth .mz-out { display: none; }
   </section>
 </div>
 
+<!-- Publications & Helpful Links shared styles -->
+<style>
+/* Section intro */
+.section-head { max-width: 760px; margin: 0 0 28px; }
+.section-head h2 { margin-bottom: 10px; }
+.section-head p { color: var(--color-ink-2); line-height: 1.7; margin: 0; }
+.section-block { margin-top: clamp(48px, 6vw, 72px); }
+.section-block:first-of-type { margin-top: 0; }
+
+/* Featured publication cards */
+.pub-featured {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+}
+.pub-card {
+  display: flex; flex-direction: column;
+  background: #fff;
+  border: 1px solid var(--color-line);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.pub-card:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(4,30,66,0.12); border-color: var(--color-line-2); }
+.pub-card__cover {
+  position: relative;
+  aspect-ratio: 8.5 / 11;
+  background: var(--color-paper);
+  border-bottom: 1px solid var(--color-line);
+  overflow: hidden;
+}
+.pub-card__cover img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
+.pub-card__body { padding: 16px 18px 18px; display: flex; flex-direction: column; flex: 1; }
+.pub-card__tag { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; color: var(--color-carolina-deep); margin-bottom: 6px; }
+.pub-card__title { font-family: var(--font-headline); font-size: 1.05rem; color: var(--color-navy); line-height: 1.25; margin-bottom: 14px; }
+.pub-card__body .btn { margin-top: auto; width: 100%; }
+
+/* Archive — grouped by year */
+.pub-archive { display: grid; gap: 28px; }
+.pub-year__label {
+  font-family: var(--font-headline); font-size: 1.15rem; color: var(--color-navy);
+  padding-bottom: 8px; margin-bottom: 16px; border-bottom: 2px solid var(--color-line);
+}
+.pub-year__grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px;
+}
+.pub-row {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  background: #fff; border: 1px solid var(--color-line); border-radius: 10px;
+  padding: 12px 14px 12px 16px; transition: border-color .18s ease, background .18s ease;
+}
+.pub-row:hover { border-color: var(--color-carolina-2); background: var(--color-paper); }
+.pub-row__title { font-size: 0.94rem; color: var(--color-ink); font-weight: 600; }
+.pub-row__link {
+  flex: 0 0 auto; display: inline-flex; align-items: center; gap: 5px;
+  font-size: 0.82rem; font-weight: 700; color: var(--color-carolina-deep); text-decoration: none;
+  white-space: nowrap;
+}
+.pub-row__link:hover { color: var(--color-navy); text-decoration: underline; }
+
+/* Resource callout (media kit etc.) */
+.pub-resources { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
+
+/* Helpful links — category groups */
+.links-groups { display: grid; gap: clamp(40px, 5vw, 56px); }
+.links-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 18px;
+}
+.link-card {
+  display: flex; flex-direction: column;
+  background: #fff; border: 1px solid var(--color-line); border-radius: 14px;
+  padding: 22px 22px 20px; transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.link-card:hover { transform: translateY(-3px); box-shadow: 0 12px 26px rgba(4,30,66,0.10); border-color: var(--color-line-2); }
+.link-card__name { font-family: var(--font-headline); font-size: 1.08rem; color: var(--color-navy); line-height: 1.3; margin-bottom: 8px; }
+.link-card__desc { font-size: 0.9rem; color: var(--color-ink-2); line-height: 1.6; margin-bottom: 18px; flex: 1; }
+.link-card .btn { align-self: flex-start; }
+.link-card .btn svg { margin-left: 6px; }
+
+@media (max-width: 640px) {
+  .pub-featured { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 16px; }
+  .pub-card__title { font-size: 0.95rem; }
+}
+</style>
+
 <!-- HELPFUL LINKS PAGE -->
 <div class="page" id="page-helpful-links" data-page-id="helpful-links" hidden>
   <section class="page-hero page-hero--photo">
@@ -6025,7 +6096,7 @@ html.mz-auth .mz-out { display: none; }
       </nav>
       <span class="eyebrow">Resources · Helpful Links</span>
       <h1><em>Helpful Links</em></h1>
-      <p class="lede">Curated links to industry, licensing, and regulatory resources for Carolinas roofing professionals.</p>
+      <p class="lede">Connecting members and visitors with relevant roofing, construction, safety, government, and industry resources across the Carolinas and beyond.</p>
       <div class="page-hero__ctas">
         <a class="btn btn--primary btn--lg" href="#contact" data-page="contact">Suggest a Link</a>
         <a class="btn btn--secondary btn--lg" href="#resources" data-page="resources">All Resources</a>
@@ -6034,21 +6105,160 @@ html.mz-auth .mz-out { display: none; }
   </section>
   <section class="page-body">
     <div class="container">
-      <div class="page-body__grid">
-        <div class="page-body__main">
-          <h2>Industry and regulatory links</h2>
-          <p>This section is designed to house helpful links and external resources — including state licensing boards, regulatory agencies, and industry organizations across North and South Carolina — as the association continues building out its new website.</p>
-          <p>If there's a resource you'd like to see listed here, <a href="#contact" data-page="contact">let the association know</a>.</p>
-        </div>
-        <aside class="page-body__aside">
-          <div class="aside-card">
-            <span class="eyebrow">Resources</span>
-            <h3>Explore more</h3>
-            <p>Browse all member resources.</p>
-            <a class="btn btn--secondary" href="#resources" data-page="resources">All Resources</a>
+      <div class="links-groups">
+
+        <div class="section-block">
+          <div class="section-head">
+            <h2>Roofing &amp; Sheet Metal Industry Organizations</h2>
+            <p>National and regional associations advancing the roofing and sheet metal trades through standards, training, and advocacy.</p>
           </div>
-        </aside>
+          <div class="links-grid">
+            <div class="link-card">
+              <span class="link-card__name">National Roofing Contractors Association (NRCA)</span>
+              <p class="link-card__desc">One of the construction industry's oldest trade associations, representing professional roofing contractors nationwide.</p>
+              <a class="btn btn--secondary" href="http://www.nrca.net" target="_blank" rel="noopener noreferrer">Visit Website<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+            </div>
+            <div class="link-card">
+              <span class="link-card__name">SMACNA</span>
+              <p class="link-card__desc">Sheet Metal and Air Conditioning Contractors' National Association, supporting sheet metal and HVAC professionals.</p>
+              <a class="btn btn--secondary" href="http://www.smacna.org/" target="_blank" rel="noopener noreferrer">Visit Website<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+            </div>
+            <div class="link-card">
+              <span class="link-card__name">SPRI</span>
+              <p class="link-card__desc">Association representing sheet membrane and component suppliers to the commercial roofing industry.</p>
+              <a class="btn btn--secondary" href="http://www.spri.org/" target="_blank" rel="noopener noreferrer">Visit Website<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+            </div>
+            <div class="link-card">
+              <span class="link-card__name">Tile Roofing Institute</span>
+              <p class="link-card__desc">Industry organization dedicated to the use and advancement of clay and concrete tile roofing.</p>
+              <a class="btn btn--secondary" href="http://www.tileroofing.org/" target="_blank" rel="noopener noreferrer">Visit Website<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+            </div>
+            <div class="link-card">
+              <span class="link-card__name">Cedar Shake &amp; Shingle Bureau</span>
+              <p class="link-card__desc">Bureau promoting quality standards for cedar shake and shingle roofing products.</p>
+              <a class="btn btn--secondary" href="http://www.cedarbureau.org/" target="_blank" rel="noopener noreferrer">Visit Website<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+            </div>
+            <div class="link-card">
+              <span class="link-card__name">Virginia Association of Roofing Professionals</span>
+              <p class="link-card__desc">Regional association serving roofing professionals in the neighboring Virginia market.</p>
+              <a class="btn btn--secondary" href="http://www.varoofingprofessionals.org/" target="_blank" rel="noopener noreferrer">Visit Website<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-block">
+          <div class="section-head">
+            <h2>Government &amp; Regulatory Resources</h2>
+            <p>State labor, licensing, and regulatory agencies for North and South Carolina.</p>
+          </div>
+          <div class="links-grid">
+            <div class="link-card">
+              <span class="link-card__name">NC Department of Labor</span>
+              <p class="link-card__desc">North Carolina's agency for workplace safety, labor standards, and occupational regulation.</p>
+              <a class="btn btn--secondary" href="http://www.nclabor.com/" target="_blank" rel="noopener noreferrer">Visit Website<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+            </div>
+            <div class="link-card">
+              <span class="link-card__name">SC Department of Labor, Licensing &amp; Regulation</span>
+              <p class="link-card__desc">South Carolina's agency overseeing professional licensing, labor, and regulatory compliance.</p>
+              <a class="btn btn--secondary" href="http://www.llr.state.sc.us/" target="_blank" rel="noopener noreferrer">Visit Website<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-block">
+          <div class="section-head">
+            <h2>Codes, Standards &amp; Specifications</h2>
+            <p>Organizations that develop the building codes, construction specifications, and standards roofing professionals rely on.</p>
+          </div>
+          <div class="links-grid">
+            <div class="link-card">
+              <span class="link-card__name">Construction Specifications Institute (CSI)</span>
+              <p class="link-card__desc">Organization advancing construction documentation standards and specification practices.</p>
+              <a class="btn btn--secondary" href="http://www.csinet.org/" target="_blank" rel="noopener noreferrer">Visit Website<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+            </div>
+            <div class="link-card">
+              <span class="link-card__name">Council of American Building Officials (CABO)</span>
+              <p class="link-card__desc">Resource focused on building codes and the work of code officials across the country.</p>
+              <a class="btn btn--secondary" href="http://www.cabo.org/" target="_blank" rel="noopener noreferrer">Visit Website<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+            </div>
+            <div class="link-card">
+              <span class="link-card__name">Construction Industry Management Council (CIMC)</span>
+              <p class="link-card__desc">Council supporting management and best practices within the construction industry.</p>
+              <a class="btn btn--secondary" href="http://www.cimcpbc.com/" target="_blank" rel="noopener noreferrer">Visit Website<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-block">
+          <div class="section-head">
+            <h2>Engineering &amp; Design Professionals</h2>
+            <p>National societies representing the engineers and architects who partner on roofing and building projects.</p>
+          </div>
+          <div class="links-grid">
+            <div class="link-card">
+              <span class="link-card__name">American Institute of Architects (AIA)</span>
+              <p class="link-card__desc">Professional organization for licensed architects and design professionals.</p>
+              <a class="btn btn--secondary" href="http://www.aia.org/" target="_blank" rel="noopener noreferrer">Visit Website<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+            </div>
+            <div class="link-card">
+              <span class="link-card__name">American Society of Civil Engineers (ASCE)</span>
+              <p class="link-card__desc">Professional society representing civil engineers and advancing engineering standards.</p>
+              <a class="btn btn--secondary" href="http://www.asce.org/" target="_blank" rel="noopener noreferrer">Visit Website<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+            </div>
+            <div class="link-card">
+              <span class="link-card__name">National Society of Professional Engineers (NSPE)</span>
+              <p class="link-card__desc">Organization representing licensed professional engineers across all disciplines.</p>
+              <a class="btn btn--secondary" href="http://www.nspe.org/" target="_blank" rel="noopener noreferrer">Visit Website<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+            </div>
+            <div class="link-card">
+              <span class="link-card__name">American Council of Engineering Companies (ACEC)</span>
+              <p class="link-card__desc">National association representing engineering firms and consulting engineers.</p>
+              <a class="btn btn--secondary" href="http://www.acec.org/" target="_blank" rel="noopener noreferrer">Visit Website<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-block">
+          <div class="section-head">
+            <h2>Business &amp; Partner Resources</h2>
+            <p>Insurance and legal partners serving the roofing and construction community.</p>
+          </div>
+          <div class="links-grid">
+            <div class="link-card">
+              <span class="link-card__name">AssuredPartners</span>
+              <p class="link-card__desc">Insurance brokerage providing risk management and coverage solutions for businesses.</p>
+              <a class="btn btn--secondary" href="http://www.assuredpartners.com" target="_blank" rel="noopener noreferrer">Visit Website<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+            </div>
+            <div class="link-card">
+              <span class="link-card__name">Safran Law Offices</span>
+              <p class="link-card__desc">Law firm with experience in construction and related legal matters.</p>
+              <a class="btn btn--secondary" href="http://www.safranlaw.com/" target="_blank" rel="noopener noreferrer">Visit Website<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-block">
+          <div class="section-head">
+            <h2>Safety &amp; Health Resources</h2>
+            <p>Resources addressing occupational health and safety concerns relevant to roofing workers.</p>
+          </div>
+          <div class="links-grid">
+            <div class="link-card">
+              <span class="link-card__name">Mesothelioma Justice Network</span>
+              <p class="link-card__desc">Resource on asbestos exposure risks and related health information for roofers.</p>
+              <a class="btn btn--secondary" href="http://www.asbestos.net/occupations/roofers/" target="_blank" rel="noopener noreferrer">Visit Website<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+            </div>
+          </div>
+        </div>
+
       </div>
+
+      <aside class="aside-card aside-card--dark" style="margin-top:clamp(48px,6vw,72px);max-width:760px;">
+        <span class="eyebrow" style="color: var(--color-gold);">Members</span>
+        <h3>Know a resource we should add?</h3>
+        <p>If there's an industry, government, or safety resource you'd like to see listed here, let the association office know.</p>
+        <a class="btn btn--accent" href="#contact" data-page="contact">Suggest a Link</a>
+      </aside>
     </div>
   </section>
 </div>
@@ -6139,30 +6349,230 @@ html.mz-auth .mz-out { display: none; }
       </nav>
       <span class="eyebrow">Resources · Publications</span>
       <h1><em>Publications</em></h1>
-      <p class="lede">Association publications, including the <em>Carolinas Contacts</em> publication.</p>
+      <p class="lede">Members and industry professionals can access the association's publications, newsletters, updates, and materials — anchored by the bi-monthly <em>Carolinas Contacts</em> magazine.</p>
       <div class="page-hero__ctas">
-        <a class="btn btn--primary btn--lg" href="#contact" data-page="contact">Contact the Association</a>
+        <a class="btn btn--primary btn--lg" href="https://crsmca.org/images/downloads/Publications/july_aug_2025_cc_magazine.pdf" target="_blank" rel="noopener noreferrer">Read the Latest Issue</a>
         <a class="btn btn--secondary btn--lg" href="#resources" data-page="resources">All Resources</a>
       </div>
     </div>
   </section>
   <section class="page-body">
     <div class="container">
-      <div class="page-body__grid">
-        <div class="page-body__main">
-          <h2>Association publications</h2>
-          <p>This section is designed to feature the association's publications, including the <em>Carolinas Contacts</em> publication and other member materials, as the association continues building out its new website.</p>
-          <p>To request a current publication, <a href="#contact" data-page="contact">contact the association</a>.</p>
-        </div>
-        <aside class="page-body__aside">
-          <div class="aside-card">
-            <span class="eyebrow">Resources</span>
-            <h3>Explore more</h3>
-            <p>Browse all member resources.</p>
-            <a class="btn btn--secondary" href="#resources" data-page="resources">All Resources</a>
-          </div>
-        </aside>
+
+      <div class="section-head" style="margin-bottom:clamp(40px,5vw,56px);">
+        <h2>About <em>Carolinas Contacts</em></h2>
+        <p><em>Carolinas Contacts</em> is the association's bi-monthly magazine — published six times a year and distributed by email and here on the CRA website. Each issue brings member spotlights, project features, legal and code updates, and leadership insights from across the Carolinas roofing and sheet metal community.</p>
       </div>
+
+      <!-- FEATURED / RECENT -->
+      <div class="section-block">
+        <div class="section-head">
+          <h2>Recent Issues</h2>
+          <p>The latest editions of <em>Carolinas Contacts</em>. Click any cover to read the full issue.</p>
+        </div>
+        <div class="pub-featured">
+          <div class="pub-card">
+            <a class="pub-card__cover" href="https://crsmca.org/images/downloads/Publications/july_aug_2025_cc_magazine.pdf" target="_blank" rel="noopener noreferrer" aria-label="Read July–August 2025 issue">
+              <img src="https://crsmca.org/images/downloads/Publications/cover_july_aug2025___copy.png" alt="Carolinas Contacts cover, July–August 2025" loading="lazy">
+            </a>
+            <div class="pub-card__body">
+              <span class="pub-card__tag">Latest Issue</span>
+              <span class="pub-card__title">July–August 2025</span>
+              <a class="btn btn--primary" href="https://crsmca.org/images/downloads/Publications/july_aug_2025_cc_magazine.pdf" target="_blank" rel="noopener noreferrer">View Publication</a>
+            </div>
+          </div>
+          <div class="pub-card">
+            <a class="pub-card__cover" href="https://crsmca.org/images/downloads/Publications/may_june_2025_cc_magazine.pdf" target="_blank" rel="noopener noreferrer" aria-label="Read May–June 2025 issue">
+              <img src="https://crsmca.org/images/downloads/Publications/may_june_2025_cc_magazine.png" alt="Carolinas Contacts cover, May–June 2025" loading="lazy">
+            </a>
+            <div class="pub-card__body">
+              <span class="pub-card__tag">2025</span>
+              <span class="pub-card__title">May–June 2025</span>
+              <a class="btn btn--secondary" href="https://crsmca.org/images/downloads/Publications/may_june_2025_cc_magazine.pdf" target="_blank" rel="noopener noreferrer">View Publication</a>
+            </div>
+          </div>
+          <div class="pub-card">
+            <a class="pub-card__cover" href="https://crsmca.org/images/downloads/Publications/march_april2025_cc_magazine___copy.pdf" target="_blank" rel="noopener noreferrer" aria-label="Read March–April 2025 issue">
+              <img src="https://crsmca.org/images/downloads/Publications/march_april2025_cc_magazine_cover.png" alt="Carolinas Contacts cover, March–April 2025" loading="lazy">
+            </a>
+            <div class="pub-card__body">
+              <span class="pub-card__tag">2025</span>
+              <span class="pub-card__title">March–April 2025</span>
+              <a class="btn btn--secondary" href="https://crsmca.org/images/downloads/Publications/march_april2025_cc_magazine___copy.pdf" target="_blank" rel="noopener noreferrer">View Publication</a>
+            </div>
+          </div>
+          <div class="pub-card">
+            <a class="pub-card__cover" href="https://crsmca.org/images/downloads/Publications/jan_feb2025_cc_magazine_web.pdf" target="_blank" rel="noopener noreferrer" aria-label="Read January–February 2025 issue">
+              <img src="https://crsmca.org/images/downloads/Publications/jan_feb2025_cc_magazine_cover2.png" alt="Carolinas Contacts cover, January–February 2025" loading="lazy">
+            </a>
+            <div class="pub-card__body">
+              <span class="pub-card__tag">2025</span>
+              <span class="pub-card__title">January–February 2025</span>
+              <a class="btn btn--secondary" href="https://crsmca.org/images/downloads/Publications/jan_feb2025_cc_magazine_web.pdf" target="_blank" rel="noopener noreferrer">View Publication</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ASSOCIATION RESOURCES -->
+      <div class="section-block">
+        <div class="section-head">
+          <h2>Association Materials</h2>
+          <p>Advertising information and special association publications.</p>
+        </div>
+        <div class="pub-resources">
+          <div class="link-card">
+            <span class="link-card__name">2025 Media Kit</span>
+            <p class="link-card__desc">Advertising rates and details for <em>Carolinas Contacts</em>, reaching decision-makers and professionals across the Carolinas roofing industry. To reserve ad space, contact the CRA office at 704.909.0116.</p>
+            <a class="btn btn--secondary" href="https://crsmca.org/images/downloads/Publications/2025mediakit.pdf" target="_blank" rel="noopener noreferrer">View Media Kit</a>
+          </div>
+          <div class="link-card">
+            <span class="link-card__name">Hurricane Relief Donation</span>
+            <p class="link-card__desc">Information on supporting hurricane relief efforts within the Carolinas roofing community.</p>
+            <a class="btn btn--secondary" href="https://crsmca.org/images/downloads/Publications/donationrelief_10072024.pdf" target="_blank" rel="noopener noreferrer">View Details</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ARCHIVE -->
+      <div class="section-block">
+        <div class="section-head">
+          <h2>Magazine Archive</h2>
+          <p>Browse past issues of <em>Carolinas Contacts</em> by year. Each links to the full PDF.</p>
+        </div>
+        <div class="pub-archive">
+
+          <div class="pub-year">
+            <h3 class="pub-year__label">2024</h3>
+            <div class="pub-year__grid">
+              <div class="pub-row"><span class="pub-row__title">November–December 2024</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/novemberdecember2024_web.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+              <div class="pub-row"><span class="pub-row__title">Double Issue: Jul/Aug–Sep/Oct 2024</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/final_julyaug_septoct2024web.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+              <div class="pub-row"><span class="pub-row__title">March–April 2024</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/final_crsmcamar_apr2024_web.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+              <div class="pub-row"><span class="pub-row__title">January–February 2024</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/crsmcajan_feb2024issueweb.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+            </div>
+          </div>
+
+          <div class="pub-year">
+            <h3 class="pub-year__label">2023</h3>
+            <div class="pub-year__grid">
+              <div class="pub-row"><span class="pub-row__title">November–December 2023</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/crsmcanov_dec2023issue_web.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+              <div class="pub-row"><span class="pub-row__title">September–October 2023</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/crsmcasept_oct2023issue_web.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+              <div class="pub-row"><span class="pub-row__title">July–August 2023</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/july_aug2023_web.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+              <div class="pub-row"><span class="pub-row__title">May–June 2023</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/may_jun2023issue_final_web_.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+              <div class="pub-row"><span class="pub-row__title">March–April 2023</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/mar_apr2023__web_.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+              <div class="pub-row"><span class="pub-row__title">January–February 2023</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/jan_feb2023.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+              <div class="pub-row"><span class="pub-row__title">Special Edition: January 2023</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/specialed_expomagazine_jan2023.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+            </div>
+          </div>
+
+          <div class="pub-year">
+            <h3 class="pub-year__label">2022</h3>
+            <div class="pub-year__grid">
+              <div class="pub-row"><span class="pub-row__title">September–December 2022</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/crsmca_sept_dec2022_issue.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+              <div class="pub-row"><span class="pub-row__title">July–August 2022</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/crsmca_cc_julyaug2022.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+              <div class="pub-row"><span class="pub-row__title">May–June 2022</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/final_mayjune2022_web.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+              <div class="pub-row"><span class="pub-row__title">March–April 2022</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/crsmca_marapr2022.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+              <div class="pub-row"><span class="pub-row__title">January–February 2022</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/crsmca_janfeb2022issueweb.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+            </div>
+          </div>
+
+          <div class="pub-year">
+            <h3 class="pub-year__label">2021</h3>
+            <div class="pub-year__grid">
+              <div class="pub-row"><span class="pub-row__title">November–December 2021</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/final_novdec2021web.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+              <div class="pub-row"><span class="pub-row__title">July–August 2021</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/crsmca_julyaug21.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+              <div class="pub-row"><span class="pub-row__title">May–June 2021</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/crsmca_mayjune21_forweb.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+              <div class="pub-row"><span class="pub-row__title">March–April 2021</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/crsmca_marapr21_forweb.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+              <div class="pub-row"><span class="pub-row__title">January–February 2021</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/crsmca_janfeb21_web_vf__1_.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+            </div>
+          </div>
+
+          <div class="pub-year">
+            <h3 class="pub-year__label">2020</h3>
+            <div class="pub-year__grid">
+              <div class="pub-row"><span class="pub-row__title">November–December 2020</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/crsmca_novdec20_lowres_vf.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+              <div class="pub-row"><span class="pub-row__title">September–October 2020</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/crsmca_septoct20_pageturns.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+              <div class="pub-row"><span class="pub-row__title">July–August 2020</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/crsmca_julyaug20_vf_print.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+              <div class="pub-row"><span class="pub-row__title">May–June 2020</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/crsmca_mayjun20_email_vf.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+              <div class="pub-row"><span class="pub-row__title">March–April 2020</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/crsmca_marapr20_online_vf.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+              <div class="pub-row"><span class="pub-row__title">January–February 2020</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/crsmca_janfeb20_web.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+            </div>
+          </div>
+
+          <div class="pub-year">
+            <h3 class="pub-year__label">2019</h3>
+            <div class="pub-year__grid">
+              <div class="pub-row"><span class="pub-row__title">November–December 2019</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/crsmca_novdec19_lowres.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+              <div class="pub-row"><span class="pub-row__title">September–October 2019</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/crsmca_septoct19_vf_lowres.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+              <div class="pub-row"><span class="pub-row__title">July–August 2019</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/crsmca_julyaug19_vf_lowres.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+              <div class="pub-row"><span class="pub-row__title">May–June 2019</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/crsmca_mayjune19_vf_lowres.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+              <div class="pub-row"><span class="pub-row__title">March–April 2019</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/crsmca_marapr19_lowres_vf.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+              <div class="pub-row"><span class="pub-row__title">January–February 2019</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/crsmca_janfeb19_vf.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+            </div>
+          </div>
+
+          <div class="pub-year">
+            <h3 class="pub-year__label">2018</h3>
+            <div class="pub-year__grid">
+              <div class="pub-row"><span class="pub-row__title">November–December 2018</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/crsmca_novdec18_vf.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+              <div class="pub-row"><span class="pub-row__title">September–October 2018</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/crsmca_septoct18_vf.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+              <div class="pub-row"><span class="pub-row__title">July–August 2018</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/crsmca_julyaug18_v2.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+              <div class="pub-row"><span class="pub-row__title">May–June 2018</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/crsmca_mayjune18_final2.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+              <div class="pub-row"><span class="pub-row__title">March–April 2018</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/crsmca_marapr_vf_print.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+              <div class="pub-row"><span class="pub-row__title">January–February 2018</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/crsmca_janfeb18_vf_web.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+            </div>
+          </div>
+
+          <div class="pub-year">
+            <h3 class="pub-year__label">2017</h3>
+            <div class="pub-year__grid">
+              <div class="pub-row"><span class="pub-row__title">November–December 2017</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/crsmca_novdec17.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+              <div class="pub-row"><span class="pub-row__title">September–October 2017</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/crsmca_setpoct17_v1.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+              <div class="pub-row"><span class="pub-row__title">July–August 2017</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/crsmca_julyaug_vf.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+              <div class="pub-row"><span class="pub-row__title">May–June 2017</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/crsmca_mayjune_vf.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+              <div class="pub-row"><span class="pub-row__title">March–April 2017</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/crsmca_marapr_lowres.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+              <div class="pub-row"><span class="pub-row__title">January–February 2017</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/crsmca_janfeb_vf.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+            </div>
+          </div>
+
+          <div class="pub-year">
+            <h3 class="pub-year__label">2016</h3>
+            <div class="pub-year__grid">
+              <div class="pub-row"><span class="pub-row__title">November–December 2016</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/crsmca_novdec2016_2.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+              <div class="pub-row"><span class="pub-row__title">July–August 2016</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/crsmca_julyaugust_final.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+              <div class="pub-row"><span class="pub-row__title">May–June 2016</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/crsmca_mayjune2016_vf.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+            </div>
+          </div>
+
+          <div class="pub-year">
+            <h3 class="pub-year__label">2015</h3>
+            <div class="pub-year__grid">
+              <div class="pub-row"><span class="pub-row__title">November–December 2015</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/nov_dec2015_final.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+              <div class="pub-row"><span class="pub-row__title">September–October 2015</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/crsmcasept_oct2015.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+              <div class="pub-row"><span class="pub-row__title">May–August 2015</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/may_august_contacts_2015.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+              <div class="pub-row"><span class="pub-row__title">January–April 2015</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/january_april_contacts_2015.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+            </div>
+          </div>
+
+          <div class="pub-year">
+            <h3 class="pub-year__label">2014</h3>
+            <div class="pub-year__grid">
+              <div class="pub-row"><span class="pub-row__title">September–December 2014</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/september_december_contacts_2014.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+              <div class="pub-row"><span class="pub-row__title">July–August 2014</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/july_august_contacts_2014.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+              <div class="pub-row"><span class="pub-row__title">May–June 2014</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/may_june2014.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+              <div class="pub-row"><span class="pub-row__title">January–April 2014</span><a class="pub-row__link" href="https://crsmca.org/images/downloads/Publications/janapril2014issue.pdf" target="_blank" rel="noopener noreferrer">View PDF →</a></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <aside class="aside-card aside-card--dark" style="margin-top:clamp(48px,6vw,72px);max-width:760px;">
+        <span class="eyebrow" style="color: var(--color-gold);">Get Involved</span>
+        <h3>Have a story or project to feature?</h3>
+        <p>Whether you have a standout project, an industry insight, or a company milestone to share, contact the CRA office to be featured in an upcoming issue of <em>Carolinas Contacts</em>.</p>
+        <a class="btn btn--accent" href="#contact" data-page="contact">Contact the Association</a>
+      </aside>
     </div>
   </section>
 </div>
@@ -6214,7 +6624,7 @@ html.mz-auth .mz-out { display: none; }
         <a href="#home" data-page="home">Home</a><span aria-hidden="true">/</span><a href="#resources" data-page="resources">Resources</a><span aria-hidden="true">/</span><span>Self-Insurers Fund</span>
       </nav>
       <span class="eyebrow">Member Program · Workers' Compensation</span>
-      <h1>The CRSMC <em>Self-Insurers Fund</em></h1>
+      <h1>The CRA <em>Self-Insurers Fund</em></h1>
       <p class="lede">The CRSMC – Self-Insurers Fund is the oldest workers' compensation group fund in the Carolinas — and it could be saving you money.</p>
       <div class="page-hero__ctas">
         <a class="btn btn--primary btn--lg" href="mailto:kerriann.spratt@assuredpartners.com?subject=Self-Insurers%20Fund%20%E2%80%93%20Workers'%20Compensation%20Inquiry" data-event="cta-sif-quote">Request a Quote</a>
@@ -6437,6 +6847,7 @@ html.mz-auth .mz-out { display: none; }
             <button class="filter-chip" type="button" aria-pressed="false" data-filter="sustaining">Sustaining</button>
             <button class="filter-chip" type="button" aria-pressed="false" data-filter="nc">North Carolina</button>
             <button class="filter-chip" type="button" aria-pressed="false" data-filter="sc">South Carolina</button>
+            <button class="dir-clear-btn" type="button" id="dirClearPage" hidden>Clear filters</button>
           </div>
         </form>
       </div>
@@ -7169,13 +7580,6 @@ html.mz-auth .mz-out { display: none; }
             </div>
             <a class="btn btn--secondary" href="#publications" data-page="publications">View</a>
           </div>
-          <div class="res-item" data-cat="publications" data-title="legislative regulatory industry updates">
-            <div class="res-item__main">
-              <span class="res-item__title">Legislative &amp; Industry Updates</span><span class="res-item__cat">Publications</span>
-              <p class="res-item__desc">Legal and regulatory updates relevant to Carolinas roofing professionals.</p>
-            </div>
-            <a class="btn btn--secondary" href="#legal-updates" data-page="legal-updates">View</a>
-          </div>
         </div>
         <p class="muted res-empty" id="mzResEmpty" hidden style="padding:1rem 0;">No resources match your search. Try a different term or category.</p>
 
@@ -7775,10 +8179,8 @@ html.mz-auth .mz-out { display: none; }
             <li><a href="#resources" data-page="resources">Resources</a></li>
             <li><a href="#helpful-links" data-page="helpful-links">Helpful Links</a></li>
             <li><a href="#faqs" data-page="faqs">FAQs</a></li>
-            <li><a href="#legal-updates" data-page="legal-updates">Legal Update Column</a></li>
             <li><a href="#sif" data-page="sif">Self-Insurers Fund</a></li>
             <li><a href="#publications" data-page="publications">Publications</a></li>
-            <li><a href="#articles" data-page="articles">Articles</a></li>
             <li><a href="#about" data-page="about">About CRA</a></li>
             <li><a href="#board" data-page="board">Board Members</a></li>
             <li><a href="#past-presidents" data-page="past-presidents">Past Presidents</a></li>
@@ -7894,10 +8296,8 @@ html.mz-auth .mz-out { display: none; }
         <h5>Resources</h5>
         <a href="#helpful-links" data-page="helpful-links">Helpful Links</a>
         <a href="#faqs" data-page="faqs">FAQs</a>
-        <a href="#legal-updates" data-page="legal-updates">Legal Update Column</a>
         <a href="#sif" data-page="sif">Self-Insurers Fund</a>
         <a href="#publications" data-page="publications">Publications</a>
-        <a href="#articles" data-page="articles">Articles</a>
       </div>
 
       <div class="footer-col">
@@ -8016,7 +8416,7 @@ html.mz-auth .mz-out { display: none; }
     const titles = {
       home:       'Carolinas Roofing Association — The Regional Home for Carolinas Roofing Professionals',
       membership: 'Membership — Carolinas Roofing Association',
-      sif:        'CRSMC Self-Insurers Fund — Carolinas Roofing Association',
+      sif:        'CRA Self-Insurers Fund — Carolinas Roofing Association',
       resources:  'Resources — Carolinas Roofing Association',
       'helpful-links': 'Helpful Links — Carolinas Roofing Association',
       faqs:       'FAQs — Carolinas Roofing Association',
@@ -8194,14 +8594,21 @@ html.mz-auth .mz-out { display: none; }
   const dirPageChips  = $('#filterChipsPage');
   const dirPageCount  = $('#dirCountPage');
   const renderDirPage = () => dirRenderGrid(dirPageGrid, { query: dirPageSearch ? dirPageSearch.value : '', chips: dirChipsActive(dirPageChips), countEl: dirPageCount });
+  const dirClearPage = $('#dirClearPage');
+  const dirUpdateClear = () => { if (dirClearPage) dirClearPage.hidden = !((dirPageSearch && dirPageSearch.value.trim()) || dirChipsActive(dirPageChips).length); };
+  if (dirClearPage) dirClearPage.addEventListener('click', () => {
+    if (dirPageSearch) dirPageSearch.value = '';
+    if (dirPageChips) $$('.filter-chip', dirPageChips).forEach(c => c.setAttribute('aria-pressed', 'false'));
+    renderDirPage(); dirUpdateClear();
+  });
 
   if (dirHomeSearch) dirHomeSearch.addEventListener('input', renderDirHome);
-  if (dirPageSearch) dirPageSearch.addEventListener('input', renderDirPage);
+  if (dirPageSearch) dirPageSearch.addEventListener('input', () => { renderDirPage(); dirUpdateClear(); });
   document.addEventListener('click', (e) => {
     const chip = e.target.closest('.filter-chip');
     if (!chip) return;
     chip.setAttribute('aria-pressed', chip.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
-    if (chip.closest('#filterChipsPage')) renderDirPage(); else renderDirHome();
+    if (chip.closest('#filterChipsPage')) { renderDirPage(); dirUpdateClear(); } else renderDirHome();
   });
   /* ----- Directory export / print / PDF (respects active search + filters) ----- */
   const dirPageFiltered = () => {
@@ -8281,6 +8688,7 @@ th,td{text-align:left;padding:6px 8px;border-bottom:1px solid #ddd;vertical-alig
 
   renderDirHome();
   renderDirPage();
+  dirUpdateClear();
 
   /* ===== REVEAL ON SCROLL ===== */
   if (!prefersReducedMotion && 'IntersectionObserver' in window) {
