@@ -4472,8 +4472,20 @@ html.mz-auth .mz-out { display: none; }
     html.cra-entered #page-home .hero__ctas,
     html.cra-entered #page-home .hero__trust-row{animation:none;}
   }
+  /* Skip intro button */
+  .bt-skip{position:absolute;bottom:24px;right:24px;z-index:5;display:inline-flex;align-items:center;gap:7px;
+    padding:9px 16px;border-radius:999px;border:1.5px solid rgba(255,255,255,0.45);
+    background:rgba(255,255,255,0.10);color:#FFFFFF;font-family:inherit;font-size:0.82rem;font-weight:700;
+    letter-spacing:0.04em;cursor:pointer;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);
+    transition:background .2s,border-color .2s,transform .2s;}
+  .bt-skip:hover{background:rgba(255,255,255,0.20);border-color:rgba(255,255,255,0.75);transform:translateY(-1px);}
+  .bt-skip:focus-visible{outline:2px solid #FFFFFF;outline-offset:2px;}
+  @media (max-width:480px){ .bt-skip{bottom:16px;right:16px;font-size:0.78rem;padding:8px 14px;} }
 </style>
 <div class="brand-transition" id="brandTransition" role="img" aria-label="Carolinas Roofing Association brand transition">
+  <button type="button" class="bt-skip" id="btSkip" aria-label="Skip intro animation">Skip Intro
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="13 17 18 12 13 7"/><polyline points="6 17 11 12 6 7"/></svg>
+  </button>
   <div class="bt-morph" aria-hidden="true">
     <div class="bt-word">
       <span class="bt-l keep">C</span><span class="bt-l keep">R</span><span class="bt-l fall">S</span><span class="bt-l fall">M</span><span class="bt-l fall">C</span><span class="bt-l keep">A</span>
@@ -4516,6 +4528,8 @@ html.mz-auth .mz-out { display: none; }
   setTimeout(finish, wait);
   // Allow users to skip the intro (homepage still flows in)
   el.addEventListener('click', finish);
+  var skipBtn = document.getElementById('btSkip');
+  if(skipBtn){ skipBtn.addEventListener('click', function(ev){ ev.stopPropagation(); finish(); }); }
   document.addEventListener('keydown', function(e){ if(e.key === 'Escape') finish(); });
 })();
 </script>
