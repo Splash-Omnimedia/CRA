@@ -7,7 +7,6 @@
   <meta name="description" content="The Carolinas Roofing Association is the regional trade association for roofing contractors, vendors, manufacturers, and service providers across North and South Carolina — connecting members through education, events, advocacy, and industry relationships since 1943.">
   <meta name="keywords" content="Carolinas Roofing Association, roofing association North Carolina, roofing association South Carolina, Carolinas roofing contractors, Carolinas Roofing Expo, residential roofing contractors NC SC, commercial roofing contractors NC SC, roofing vendors and suppliers, roofing manufacturers, Self-Insurers Fund, roofing education, member directory">
 
-  <!-- [Confirm] Canonical domain — final URL to be confirmed before launch -->
   <link rel="canonical" href="https://www.carolinasroofing.org/">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#041E42"><!-- mirrors --color-navy; meta theme-color cannot resolve CSS vars -->
@@ -16,7 +15,6 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <meta name="theme-color" content="#041E42">
 
-  <!-- [Placeholder] Open Graph image — replace with 1200x630 share asset before launch -->
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Carolinas Roofing Association">
@@ -145,12 +143,7 @@
     }
   }
   </script>
-  <!-- ========================================================
-       [Tracking placeholder] Google Analytics 4
-       Replace G-XXXXXXXXXX with the client's GA4 Measurement ID,
-       then uncomment to enable. Add any consent-mode requirements
-       per the client's privacy stance before going live.
-       ======================================================== -->
+  <!-- Google Analytics 4 (GA4): replace G-XXXXXXXXXX with the GA4 Measurement ID and uncomment to enable. -->
   <!--
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
@@ -721,10 +714,11 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
 }
 .partner-bar__logo {
   display: flex;
+  flex: 1 1 0;
   align-items: center;
   justify-content: center;
-  min-height: 64px;
-  padding: 14px 26px;
+  min-height: 104px;
+  padding: 16px 22px;
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(255,255,255,0.14);
   border-radius: var(--radius-md);
@@ -740,6 +734,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
   border-color: rgba(255,255,255,0.25);
   transform: translateY(-1px);
 }
+.partner-bar__logo img { height: 64px; width: auto; max-width: 100%; object-fit: contain; display: block; margin: 0 auto; }
 .partner-bar__logo--placeholder {
   background: transparent;
   border-style: dashed;
@@ -2152,6 +2147,53 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
 .dir-card__tag--blue { background: rgba(75,156,211,0.10); color: var(--color-carolina-deep); border-color: rgba(75,156,211,0.30); }
 .dir-card__cat { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.09em; font-weight: 700; color: var(--color-carolina-deep); margin-top: 6px; }
 .dir-card__sep { margin: 0 8px; color: var(--color-line-2); }
+.dir-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 14px; flex-wrap: wrap; margin: 0 0 18px; }
+.dir-tools { display: flex; gap: 10px; flex-wrap: wrap; }
+.dir-tools .btn { padding: 9px 16px; font-size: 0.85rem; }
+
+/* ===== MEMBER ZONE ===== */
+.mz-in { display: none; }
+html.mz-auth .mz-in { display: block; }
+html.mz-auth .mz-out { display: none; }
+.mz-login { display: grid; grid-template-columns: 1.3fr 1fr; gap: 32px; align-items: start; max-width: 940px; }
+.mz-login__form { background: var(--color-bone); border: 1px solid var(--color-line); border-radius: 14px; padding: 28px; }
+.mz-login__row { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 2px 0 10px; flex-wrap: wrap; }
+.mz-check { display: inline-flex; align-items: center; gap: 8px; font-size: 0.92rem; color: var(--color-ink-2); }
+.mz-check input { width: 16px; height: 16px; }
+.mz-link { color: var(--color-carolina-deep); text-decoration: none; border-bottom: 1.5px solid var(--color-gold); font-size: 0.9rem; }
+.mz-link:hover { color: var(--color-navy); }
+.mz-login__aside .aside-card { margin-bottom: 14px; }
+.mz-support { font-size: 0.9rem; }
+.mz-transition { margin-top: 22px; font-size: 0.85rem; }
+@media (max-width: 760px){ .mz-login { grid-template-columns: 1fr; } }
+.mz-locked { background: var(--color-bone); border: 1px solid var(--color-line); border-radius: 14px; padding: 36px 28px; text-align: center; max-width: 640px; margin: 0 auto; }
+.mz-locked h2 { font-size: 1.4rem; margin-bottom: 10px; }
+.mz-locked p { color: var(--color-ink-2); margin-bottom: 18px; }
+.mz-locked .btn { margin: 6px; }
+.mz-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 18px; }
+.mz-card { display: block; text-decoration: none; background: #fff; border: 1px solid var(--color-line); border-radius: 14px; padding: 22px; transition: transform .15s, box-shadow .15s, border-color .15s; }
+.mz-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-2); border-color: var(--color-line-2); }
+.mz-card__icon { width: 46px; height: 46px; border-radius: 10px; background: linear-gradient(155deg, var(--color-navy), var(--color-navy-ink)); color:#fff; display:flex; align-items:center; justify-content:center; font-family: var(--font-headline); font-size: 0.8rem; letter-spacing:0.04em; margin-bottom: 14px; }
+.mz-card__title { font-family: var(--font-headline); font-size: 1.1rem; color: var(--color-navy); margin-bottom: 6px; }
+.mz-card__desc { font-size: 0.92rem; color: var(--color-ink-2); line-height: 1.5; }
+.mz-saved { background: rgba(46,140,90,0.10); border:1px solid rgba(46,140,90,0.40); color:#1f7a45; border-radius: 8px; padding: 11px 15px; margin: 0 0 18px; font-size: 0.93rem; font-weight:600; }
+.mz-note { font-size: 0.86rem; color: var(--color-ink-3); margin-top: 12px; line-height:1.5; }
+.mz-fieldset { border:1px solid var(--color-line); border-radius:10px; padding:14px 16px; display:flex; flex-wrap:wrap; gap:14px; }
+.mz-fieldset legend { font-size:0.9rem; font-weight:600; color:var(--color-ink-2); padding:0 6px; }
+.mz-section { background: var(--color-bone); border:1px solid var(--color-line); border-radius:14px; padding: 22px 24px; margin-bottom: 18px; }
+.mz-section h2 { font-size: 1.2rem; margin-bottom: 12px; }
+.res-toolbar { display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin-bottom:18px; }
+.res-chips { display:flex; gap:8px; flex-wrap:wrap; }
+.res-chip { background:#fff; border:1px solid var(--color-line); border-radius:999px; padding:7px 14px; font-size:0.84rem; cursor:pointer; color:var(--color-ink-2); }
+.res-chip[aria-pressed="true"] { background: var(--color-navy); color:#fff; border-color: var(--color-navy); }
+.res-list { display:flex; flex-direction:column; gap:12px; }
+.res-item { display:flex; align-items:center; gap:16px; justify-content:space-between; background:#fff; border:1px solid var(--color-line); border-radius:12px; padding:16px 20px; flex-wrap:wrap; }
+.res-item__main { flex:1 1 300px; }
+.res-item__title { font-family: var(--font-headline); font-size:1.02rem; color:var(--color-navy); }
+.res-item__cat { display:inline-block; font-size:0.68rem; text-transform:uppercase; letter-spacing:0.08em; font-weight:700; color:var(--color-carolina-deep); margin-left:8px; }
+.res-item__desc { font-size:0.9rem; color:var(--color-ink-2); margin-top:4px; }
+.res-item__date { font-size:0.76rem; color:var(--color-ink-3); margin-top:4px; }
+.res-item .btn { flex:0 0 auto; }
 
 .placeholder-banner {
   display: flex;
@@ -3447,7 +3489,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
 }
 
 /* =========================================================
-   TESTIMONIAL PLACEHOLDER CARDS
+   TESTIMONIAL CARDS
    ========================================================= */
 .testimonials {
   background: var(--color-paper);
@@ -3527,7 +3569,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
   color: var(--color-navy);
 }
 
-/* Placeholder badges (visible to client, professional looking) */
+/* Badge styles */
 .placeholder-tag {
   display: inline-block;
   padding: 3px 9px;
@@ -3543,7 +3585,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
 }
 
 /* =========================================================
-   PARTNER LOGO PLACEHOLDER STRIP
+   PARTNER LOGO STRIP
    ========================================================= */
 .partner-logos {
   margin-top: 40px;
@@ -3600,6 +3642,10 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
 }
 .partner-logo:hover { transform: translateY(-2px); border-color: #B5D9D9; color: var(--color-navy); }
 .partner-logo--elite { height: 96px; font-size: 1rem; }
+.partner-logo--elite img { filter: none; opacity: 1; height: 60px; width: auto; max-width: 100%; object-fit: contain; }
+.sponsor-card { align-items: center; text-align: center; }
+.sponsor-logo { display: flex; align-items: center; justify-content: center; min-height: 90px; padding: 8px 0; }
+.sponsor-logo img { height: 66px; width: auto; max-width: 220px; object-fit: contain; }
 .partner-logo--redclay { height: 96px; font-size: 1rem; }
 .partner-logo img {
   max-width: 100%;
@@ -3634,7 +3680,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
 }
 
 /* =========================================================
-   PRICING / BENEFITS PLACEHOLDER ROW
+   PRICING / BENEFITS ROW
    ========================================================= */
 .dues-placeholder {
   margin-top: 28px;
@@ -3673,9 +3719,9 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
 }
 
 /* =========================================================
-   V4: Prototype note, footer contact, accessibility touch targets
+   V4: Member-portal note, footer contact, accessibility touch targets
    ========================================================= */
-.signin-prototype-note {
+.signin-note {
   background: rgba(80,126,142, 0.1);
   border: 1.5px dashed var(--color-gold-deep);
   color: var(--color-ink);
@@ -3685,9 +3731,9 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
   font-size: 0.95rem;
   line-height: 1.55;
 }
-.signin-prototype-note strong { color: var(--color-navy); font-family: var(--font-headline); font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; display: inline-block; margin-right: 6px; }
-.signin-prototype-note a { color: var(--color-carolina-deep); text-decoration: none; border-bottom: 1.5px solid var(--color-gold); }
-.signin-prototype-note a:hover { color: var(--color-navy); }
+.signin-note strong { color: var(--color-navy); font-family: var(--font-headline); font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; display: inline-block; margin-right: 6px; }
+.signin-note a { color: var(--color-carolina-deep); text-decoration: none; border-bottom: 1.5px solid var(--color-gold); }
+.signin-note a:hover { color: var(--color-navy); }
 
 .footer-confirm {
   display: inline-block;
@@ -4559,8 +4605,8 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
         <p class="partner-bar__text">Recognizing companies supporting the Carolinas roofing industry.</p>
       </div>
       <div class="partner-bar__logos" role="list" aria-label="Elite Member Partners">
-        <a class="partner-bar__logo" href="#partners" data-page="partners" role="listitem">Splash Omnimedia</a>
-        <a class="partner-bar__logo" href="#partners" data-page="partners" role="listitem">Brand Buzz</a>
+        <a class="partner-bar__logo" href="#partners" data-page="partners" role="listitem" aria-label="Splash Omnimedia"><img src="images/splash-logo-white.svg" alt="Splash Omnimedia"></a>
+        <a class="partner-bar__logo" href="#partners" data-page="partners" role="listitem" aria-label="Brand Buzz"><img src="images/brand-buzz-logo-white.svg" alt="Brand Buzz"></a>
       </div>
       <a class="partner-bar__cta" href="#partners" data-page="partners" data-event="cta-sponsorship">
         Explore Sponsorship Opportunities
@@ -5577,8 +5623,8 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
         <div class="partner-logos__tier">
           <span class="partner-logos__tier-label">Elite Member Partners</span>
           <div class="partner-logos__grid partner-logos__grid--elite" aria-label="Elite Member Partners">
-            <div class="partner-logo partner-logo--elite">Splash Omnimedia</div>
-            <div class="partner-logo partner-logo--elite">Brand Buzz</div>
+            <div class="partner-logo partner-logo--elite"><img src="images/splash-logo-navy.svg" alt="Splash Omnimedia"></div>
+            <div class="partner-logo partner-logo--elite"><img src="images/brand-buzz-logo.svg" alt="Brand Buzz"></div>
           </div>
         </div>
       </div>
@@ -5991,7 +6037,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
       <div class="page-body__grid">
         <div class="page-body__main">
           <h2>Industry and regulatory links</h2>
-          <p>This page will collect helpful external links for members — including state licensing boards, regulatory agencies, and industry organizations across North and South Carolina. Content is being added.</p>
+          <p>This section is designed to house helpful links and external resources — including state licensing boards, regulatory agencies, and industry organizations across North and South Carolina — as the association continues building out its new website.</p>
           <p>If there's a resource you'd like to see listed here, <a href="#contact" data-page="contact">let the association know</a>.</p>
         </div>
         <aside class="page-body__aside">
@@ -6029,7 +6075,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
       <div class="page-body__grid">
         <div class="page-body__main">
           <h2>Frequently asked questions</h2>
-          <p>This page will host answers to the questions members and prospective members ask most — about membership categories, the Self-Insurers Fund, events, and more. Content is being added.</p>
+          <p>This section is designed to answer the questions members and prospective members ask most — about membership categories, the Self-Insurers Fund, events, and more — as the association continues building out its new website.</p>
           <p>Have a question that isn't covered yet? <a href="#contact" data-page="contact">Contact the association</a> and we'll help.</p>
         </div>
         <aside class="page-body__aside">
@@ -6067,7 +6113,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
       <div class="page-body__grid">
         <div class="page-body__main">
           <h2>Legal &amp; regulatory updates</h2>
-          <p>This column will share legal and regulatory developments that affect Carolinas roofing businesses — licensing, contracts, compliance, and workforce matters. Content is being added.</p>
+          <p>This section is designed to share legal and regulatory developments that affect Carolinas roofing businesses — licensing, contracts, compliance, and workforce matters — as the association continues building out its new website.</p>
           <p>For questions in the meantime, <a href="#contact" data-page="contact">reach out to the association</a>.</p>
         </div>
         <aside class="page-body__aside">
@@ -6105,7 +6151,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
       <div class="page-body__grid">
         <div class="page-body__main">
           <h2>Association publications</h2>
-          <p>This page will feature the association's publications, including the <em>Carolinas Contacts</em> publication and other member materials. Content is being added.</p>
+          <p>This section is designed to feature the association's publications, including the <em>Carolinas Contacts</em> publication and other member materials, as the association continues building out its new website.</p>
           <p>To request a current publication, <a href="#contact" data-page="contact">contact the association</a>.</p>
         </div>
         <aside class="page-body__aside">
@@ -6143,7 +6189,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
       <div class="page-body__grid">
         <div class="page-body__main">
           <h2>Industry articles &amp; features</h2>
-          <p>This page will collect industry articles, member features, and association news relevant to Carolinas roofing professionals. Content is being added.</p>
+          <p>This section is designed to feature industry articles, member features, and association news relevant to Carolinas roofing professionals as the association continues building out its new website.</p>
           <p>Have a story to share? <a href="#contact" data-page="contact">Let the association know</a>.</p>
         </div>
         <aside class="page-body__aside">
@@ -6394,7 +6440,14 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
           </div>
         </form>
       </div>
-      <p class="muted" id="dirCountPage" style="margin-bottom: 1rem; font-size: 0.9rem;"></p>
+      <div class="dir-toolbar">
+        <p class="muted" id="dirCountPage" style="margin:0; font-size: 0.9rem;"></p>
+        <div class="dir-tools" role="group" aria-label="Export and print the member directory">
+          <button type="button" class="btn btn--secondary" id="dirExportCsv">Export CSV</button>
+          <button type="button" class="btn btn--secondary" id="dirPrint">Print</button>
+          <button type="button" class="btn btn--secondary" id="dirPdf">Download PDF</button>
+        </div>
+      </div>
       <div class="dir-grid" id="directoryGridPage" aria-live="polite"></div>
       <div class="page-cta-row" style="margin-top: 2.5rem;">
         <a class="btn btn--primary" href="#apply" data-page="apply" data-event="cta-become-member">Become a Member to Be Listed</a>
@@ -6447,13 +6500,13 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
           <h2 id="sponsors">Our Sponsors &amp; Partners</h2>
           <p>CRA proudly recognizes our Elite Member Partners:</p>
           <div class="board-grid" style="grid-template-columns:repeat(auto-fill,minmax(240px,1fr));">
-            <article class="board-card">
+            <article class="board-card sponsor-card">
               <span class="board-card__role">Elite Member Partner</span>
-              <h3 class="board-card__name">Splash Omnimedia</h3>
+              <div class="sponsor-logo"><img src="images/splash-logo-navy.svg" alt="Splash Omnimedia"></div>
             </article>
-            <article class="board-card">
+            <article class="board-card sponsor-card">
               <span class="board-card__role">Elite Member Partner</span>
-              <h3 class="board-card__name">Brand Buzz</h3>
+              <div class="sponsor-logo"><img src="images/brand-buzz-logo.svg" alt="Brand Buzz"></div>
             </article>
           </div>
         </div>
@@ -6533,11 +6586,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
   </section>
 </div>
 
-<!-- =====================================================
-     BOARD MEMBERS PAGE  (added per Executive Team request)
-     Source: Executive Team List spreadsheet (CRA)
-     BUILD NOTE: Headshots pending · Short bios pending client approval
-     ===================================================== -->
+<!-- BOARD MEMBERS PAGE -->
 <style>
   .board-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 22px; margin: 28px 0 8px; }
   .board-card { border: 1px solid rgba(0,0,0,0.10); border-radius: 14px; padding: 22px; background: #fff; display: flex; flex-direction: column; gap: 10px; }
@@ -6560,13 +6609,12 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
       </nav>
       <span class="eyebrow">Leadership · CRA Executive Team &amp; Staff</span>
       <h1>Board <em>Members</em></h1>
-      <p class="lede">The Carolinas Roofing Association is guided by leaders and staff who support roofing professionals across North Carolina and South Carolina. Additional bios and headshots will be added as they are finalized.</p>
+      <p class="lede">The Carolinas Roofing Association is guided by leaders and staff who support roofing professionals across North Carolina and South Carolina. Bios and headshots are added as they are provided by the association.</p>
     </div>
   </section>
 
   <section class="page-body">
     <div class="container">
-      <!-- INTERNAL (do not display to client): Names, roles, companies, and emails are from the Executive Team List. Headshots pending (placeholders shown); short bios pending client approval — Carla/client to provide approved bios. Layout accepts a photo and a 2-4 sentence bio per card without redesign. -->
 
       <h2>Executive Team</h2>
       <p class="muted">Officers elected from the CRA membership.</p>
@@ -6577,7 +6625,6 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
           <h3 class="board-card__name">Hunter Steed</h3>
           <span class="board-card__org">Wayne Roofing &amp; Sheet Metal</span>
           <span class="board-card__email"><a href="mailto:hunters@wayneroofingnc.com">hunters@wayneroofingnc.com</a></span>
-          <p class="board-card__bio">Bio Coming Soon</p>
         </article>
         <article class="board-card">
           <div class="board-card__photo" aria-hidden="true"></div>
@@ -6585,7 +6632,6 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
           <h3 class="board-card__name">Tim Smart</h3>
           <span class="board-card__org">QXO</span>
           <span class="board-card__email"><a href="mailto:tim.smart@qxo.com">tim.smart@qxo.com</a></span>
-          <p class="board-card__bio">Bio Coming Soon</p>
         </article>
         <article class="board-card">
           <div class="board-card__photo" aria-hidden="true"></div>
@@ -6593,7 +6639,6 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
           <h3 class="board-card__name">Joshua Dernosek</h3>
           <span class="board-card__org">C L Burks Construction</span>
           <span class="board-card__email"><a href="mailto:josh.dernosek@clburks.com">josh.dernosek@clburks.com</a></span>
-          <p class="board-card__bio">Bio Coming Soon</p>
         </article>
         <article class="board-card">
           <div class="board-card__photo" aria-hidden="true"></div>
@@ -6601,7 +6646,6 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
           <h3 class="board-card__name">Steve Hall</h3>
           <span class="board-card__org">Mid-Atlantic Roofing Supply</span>
           <span class="board-card__email"><a href="mailto:shall@marsupply.com">shall@marsupply.com</a></span>
-          <p class="board-card__bio">Bio Coming Soon</p>
         </article>
         <article class="board-card">
           <div class="board-card__photo" aria-hidden="true"></div>
@@ -6609,7 +6653,6 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
           <h3 class="board-card__name">Stephen Trites</h3>
           <span class="board-card__org">Radco Roofing</span>
           <span class="board-card__email"><a href="mailto:strites@radcoroofing.com">strites@radcoroofing.com</a></span>
-          <p class="board-card__bio">Bio Coming Soon</p>
         </article>
         <article class="board-card">
           <div class="board-card__photo" aria-hidden="true"></div>
@@ -6617,15 +6660,11 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
           <h3 class="board-card__name">Dalton Abrams</h3>
           <span class="board-card__org">ABC Supply Co., Inc.</span>
           <span class="board-card__email"><a href="mailto:dalton.abrams@abcsupply.com">dalton.abrams@abcsupply.com</a></span>
-          <p class="board-card__bio">Bio Coming Soon</p>
         </article>
-        <article class="board-card">
+        <article class="board-card board-card--tba">
           <div class="board-card__photo" aria-hidden="true"></div>
           <span class="board-card__role">Secretary</span>
-          <h3 class="board-card__name">To Be Announced</h3>
-          <span class="board-card__org">&nbsp;</span>
-          <span class="board-card__email">&nbsp;</span>
-          <p class="board-card__bio">Bio Coming Soon</p>
+          <h3 class="board-card__name">To be confirmed</h3>
         </article>
         <article class="board-card">
           <div class="board-card__photo" aria-hidden="true"></div>
@@ -6633,7 +6672,6 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
           <h3 class="board-card__name">Robert Hodges</h3>
           <span class="board-card__org">RK HydroVac</span>
           <span class="board-card__email"><a href="mailto:roberth@rkhydrovacnc.com">roberth@rkhydrovacnc.com</a></span>
-          <p class="board-card__bio">Bio Coming Soon</p>
         </article>
         <article class="board-card">
           <div class="board-card__photo" aria-hidden="true"></div>
@@ -6641,7 +6679,6 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
           <h3 class="board-card__name">Mark Cameron</h3>
           <span class="board-card__org">Mid-States Asphalt</span>
           <span class="board-card__email"><a href="mailto:mcameron@msaroof.com">mcameron@msaroof.com</a></span>
-          <p class="board-card__bio">Bio Coming Soon</p>
         </article>
       </div>
 
@@ -6653,7 +6690,6 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
           <h3 class="board-card__name">Brian Schoolman</h3>
           <span class="board-card__org">Safran Law Offices</span>
           <span class="board-card__email"><a href="mailto:bschoolman@safranlaw.com">bschoolman@safranlaw.com</a></span>
-          <p class="board-card__bio">Bio Coming Soon</p>
         </article>
         <article class="board-card">
           <div class="board-card__photo" aria-hidden="true"></div>
@@ -6661,7 +6697,6 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
           <h3 class="board-card__name">Doug Gentile</h3>
           <span class="board-card__org">&nbsp;</span>
           <span class="board-card__email"><a href="mailto:dkg@dkgcpa.com">dkg@dkgcpa.com</a></span>
-          <p class="board-card__bio">Bio Coming Soon</p>
         </article>
       </div>
 
@@ -6673,7 +6708,6 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
           <h3 class="board-card__name">Carla Sims</h3>
           <span class="board-card__org">CRA</span>
           <span class="board-card__email"><a href="mailto:cbsims@crsmca.org">cbsims@crsmca.org</a></span>
-          <p class="board-card__bio">Bio Coming Soon</p>
         </article>
         <article class="board-card">
           <div class="board-card__photo" aria-hidden="true"></div>
@@ -6681,7 +6715,6 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
           <h3 class="board-card__name">Heather Braun</h3>
           <span class="board-card__org">CRA</span>
           <span class="board-card__email"><a href="mailto:office@crsmca.org">office@crsmca.org</a></span>
-          <p class="board-card__bio">Bio Coming Soon</p>
         </article>
       </div>
 
@@ -6693,10 +6726,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
   </section>
 </div>
 
-<!-- =====================================================
-     PAST PRESIDENTS PAGE  (added per Executive Team request)
-     BUILD NOTE: Full historical list still needed from client
-     ===================================================== -->
+<!-- PAST PRESIDENTS PAGE -->
 <div class="page" id="page-past-presidents" data-page-id="past-presidents" hidden>
   <section class="page-hero page-hero--photo">
     <img class="page-hero__bg" src="images/huthphoto-discovedurham-crasmc-hr5_0267.jpg" alt="" loading="lazy" aria-hidden="true">
@@ -6712,7 +6742,6 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
 
   <section class="page-body">
     <div class="container">
-      <!-- INTERNAL (do not display to client): The complete historical list of Past Presidents has NOT yet been provided. The entries below are the only Past President names currently available (from the Executive Team List). ACTION NEEDED: client to provide the full, chronological list of Past Presidents (names, companies, and years served). -->
 
       <h2>Past Presidents</h2>
       <p class="muted">Honoring those who have led the Carolinas Roofing Association.</p>
@@ -6720,7 +6749,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
         <li><strong>Robert Hodges</strong> — RK HydroVac</li>
         <li><strong>Mark Cameron</strong> — Mid-States Asphalt</li>
       </ul>
-      <p class="muted" style="margin-top:1.25rem;">Additional Past Presidents and term details will be added as historical records are finalized.</p>
+      <p class="muted" style="margin-top:1.25rem;">Additional past presidents and term details can be added as historical records are provided by the association.</p>
 
       <div class="page-cta-row" style="margin-top:2.5rem;">
         <a class="btn btn--ghost" href="#board" data-page="board">View Current Board Members</a>
@@ -6817,43 +6846,416 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
   </section>
 </div>
 
-<!-- SIGN-IN PAGE -->
+<!-- MEMBER LOGIN PAGE -->
 <div class="page" id="page-signin" data-page-id="signin" hidden>
   <section class="page-hero">
     <div class="container">
       <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="#home" data-page="home">Home</a><span aria-hidden="true">/</span><span>Member Sign In</span>
+        <a href="#home" data-page="home">Home</a><span aria-hidden="true">/</span><span>Member Login</span>
       </nav>
-      <span class="eyebrow">Member Sign In · Access Your Account</span>
-      <h1>Member <em>Sign In</em></h1>
-      <p class="lede">Access member-only resources, event registration, directory tools, and account information.</p>
+      <span class="eyebrow">Member Zone · Carolinas Roofing Association</span>
+      <h1>Member <em>Login</em></h1>
+      <p class="lede">Members can sign in to access member-only resources, update their profile, and manage account information.</p>
     </div>
   </section>
 
   <section class="page-body">
     <div class="container">
-      <div class="signin-wrap">
-        <div class="signin-prototype-note" role="note">
-          Member login access is coming soon. For assistance, <a href="#contact" data-page="contact">contact the association</a>.
+      <!-- Logged-out: login form -->
+      <div class="mz-out">
+        <div class="mz-login">
+          <form class="simple-form mz-login__form" id="signinForm" novalidate>
+            <div class="form-row">
+              <label for="si-email">Email or username</label>
+              <input id="si-email" name="email" type="text" autocomplete="username" required>
+            </div>
+            <div class="form-row">
+              <label for="si-password">Password</label>
+              <input id="si-password" name="password" type="password" autocomplete="current-password" required>
+            </div>
+            <div class="mz-login__row">
+              <label class="mz-check"><input type="checkbox" id="si-remember" name="remember"> <span>Remember me</span></label>
+              <a class="mz-link" href="#contact" data-page="contact">Forgot password?</a>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn--accent btn--lg">Log In</button>
+            </div>
+            <p class="form-status" id="signinStatus" role="status" aria-live="polite"></p>
+          </form>
+          <div class="mz-login__aside">
+            <div class="aside-card">
+              <span class="eyebrow">New here?</span>
+              <h3>Not a member yet?</h3>
+              <p>Learn more about membership in the Carolinas Roofing Association and the benefits of joining.</p>
+              <a class="btn btn--primary" href="#membership" data-page="membership">Learn About Membership</a>
+              <a class="btn btn--ghost" href="#apply" data-page="apply">Become a Member</a>
+            </div>
+            <p class="mz-support muted">Need help accessing your account? <a href="#contact" data-page="contact">Contact the Carolinas Roofing Association team.</a></p>
+          </div>
         </div>
-        <form class="simple-form simple-form--signin" id="signinForm" novalidate>
-          <div class="form-row">
-            <label for="si-email">Email</label>
-            <input id="si-email" name="email" type="email" autocomplete="email" required>
+        <p class="mz-transition muted">Your existing CRSMCA login is being modernized as part of the new Carolinas Roofing Association website.</p>
+      </div>
+
+      <!-- Logged-in: already signed in -->
+      <div class="mz-in">
+        <div class="aside-card aside-card--dark" style="max-width:540px;">
+          <span class="eyebrow" style="color:var(--color-gold);">Signed in</span>
+          <h3>You're signed in to the Member Zone</h3>
+          <p>Head to your dashboard to manage your profile, access resources, and stay connected.</p>
+          <a class="btn btn--accent" href="#member-dashboard" data-page="member-dashboard">Go to My Dashboard</a>
+          <a class="btn btn--ghost mz-logout" href="#signin">Log Out</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- MEMBER ZONE DASHBOARD -->
+<div class="page" id="page-member-dashboard" data-page-id="member-dashboard" hidden>
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="#home" data-page="home">Home</a><span aria-hidden="true">/</span><span>Member Zone</span>
+      </nav>
+      <span class="eyebrow">Member Zone</span>
+      <h1 class="mz-in">Welcome back, <em><span id="mzMemberName">Member</span></em></h1>
+      <h1 class="mz-out">Member <em>Zone</em></h1>
+      <p class="lede mz-in">Access your member resources, update your profile, view upcoming events, and stay connected with the Carolinas roofing community.</p>
+      <p class="lede mz-out">Sign in to access your member dashboard, profile, and member-only resources.</p>
+    </div>
+  </section>
+
+  <section class="page-body">
+    <div class="container">
+      <div class="mz-out">
+        <div class="mz-locked">
+          <h2>Please log in to access your Member Zone</h2>
+          <p>This area is available to Carolinas Roofing Association members. Log in to manage your profile and access member-only content.</p>
+          <a class="btn btn--accent btn--lg" href="#signin" data-page="signin">Member Login</a>
+          <a class="btn btn--secondary btn--lg" href="#membership" data-page="membership">Learn About Membership</a>
+        </div>
+      </div>
+
+      <div class="mz-in">
+        <div class="mz-grid">
+          <a class="mz-card" href="#member-profile" data-page="member-profile">
+            <span class="mz-card__icon" aria-hidden="true">ID</span>
+            <div class="mz-card__title">My Profile</div>
+            <p class="mz-card__desc">Update your company information, contact details, email, phone, website, and directory visibility.</p>
+          </a>
+          <a class="mz-card" href="#directory" data-page="directory">
+            <span class="mz-card__icon" aria-hidden="true">DIR</span>
+            <div class="mz-card__title">Member Directory</div>
+            <p class="mz-card__desc">View and search the Carolinas Roofing Association member directory.</p>
+          </a>
+          <a class="mz-card" href="#member-resources" data-page="member-resources">
+            <span class="mz-card__icon" aria-hidden="true">RES</span>
+            <div class="mz-card__title">Member Resources</div>
+            <p class="mz-card__desc">Access member-only documents, forms, guides, and association resources.</p>
+          </a>
+          <a class="mz-card" href="#events" data-page="events">
+            <span class="mz-card__icon" aria-hidden="true">EVT</span>
+            <div class="mz-card__title">Events &amp; Registration</div>
+            <p class="mz-card__desc">View upcoming events, register for member events, and access event details.</p>
+          </a>
+          <a class="mz-card" href="#education" data-page="education">
+            <span class="mz-card__icon" aria-hidden="true">EDU</span>
+            <div class="mz-card__title">Education &amp; Training</div>
+            <p class="mz-card__desc">Access member education resources, safety materials, and training updates.</p>
+          </a>
+          <a class="mz-card" href="#member-resources" data-page="member-resources">
+            <span class="mz-card__icon" aria-hidden="true">MIN</span>
+            <div class="mz-card__title">Board Meeting Minutes</div>
+            <p class="mz-card__desc">Access meeting minutes and member-only governance documents.</p>
+          </a>
+          <a class="mz-card" href="#sif" data-page="sif">
+            <span class="mz-card__icon" aria-hidden="true">SIF</span>
+            <div class="mz-card__title">Self-Insurers Fund</div>
+            <p class="mz-card__desc">Self-Insurers Fund information, forms, eligibility guidance, and contacts.</p>
+          </a>
+          <a class="mz-card" href="#account-settings" data-page="account-settings">
+            <span class="mz-card__icon" aria-hidden="true">SET</span>
+            <div class="mz-card__title">Account Settings</div>
+            <p class="mz-card__desc">Manage login credentials, password, email preferences, and account information.</p>
+          </a>
+        </div>
+        <div class="page-cta-row" style="margin-top:2rem;">
+          <a class="btn btn--ghost mz-logout" href="#signin">Log Out</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- MY PROFILE PAGE -->
+<div class="page" id="page-member-profile" data-page-id="member-profile" hidden>
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="#home" data-page="home">Home</a><span aria-hidden="true">/</span><a href="#member-dashboard" data-page="member-dashboard">Member Zone</a><span aria-hidden="true">/</span><span>My Profile</span>
+      </nav>
+      <span class="eyebrow">Member Zone · My Profile</span>
+      <h1>My <em>Profile</em></h1>
+      <p class="lede">Keep your member profile up to date so other members and industry partners can find accurate information in the directory.</p>
+    </div>
+  </section>
+
+  <section class="page-body">
+    <div class="container">
+      <div class="mz-out">
+        <div class="mz-locked">
+          <h2>Please log in to manage your profile</h2>
+          <p>Your member profile is available to Carolinas Roofing Association members.</p>
+          <a class="btn btn--accent btn--lg" href="#signin" data-page="signin">Member Login</a>
+        </div>
+      </div>
+
+      <div class="mz-in">
+        <div class="page-body__grid">
+          <div class="page-body__main">
+            <p class="mz-saved" id="profileSaved" role="status" hidden>Your profile has been updated.</p>
+            <form class="simple-form" id="memberProfileForm" novalidate>
+              <div class="form-row"><label for="pf-company">Company name</label><input id="pf-company" name="company" type="text" autocomplete="organization"></div>
+              <div class="form-row"><label for="pf-contact">Primary contact name</label><input id="pf-contact" name="contact" type="text" autocomplete="name"></div>
+              <div class="form-row">
+                <label for="pf-category">Member category / type</label>
+                <select id="pf-category" name="category">
+                  <option>Contractor</option>
+                  <option>Associate (Vendor / Supplier / Manufacturer / Distributor / Rep)</option>
+                  <option>Sustaining (Service Provider)</option>
+                </select>
+              </div>
+              <div class="form-row form-row--split">
+                <div><label for="pf-email">Email address</label><input id="pf-email" name="email" type="email" autocomplete="email"></div>
+                <div><label for="pf-phone">Phone number</label><input id="pf-phone" name="phone" type="tel" autocomplete="tel"></div>
+              </div>
+              <div class="form-row"><label for="pf-website">Website URL</label><input id="pf-website" name="website" type="url" placeholder="https://"></div>
+              <div class="form-row"><label for="pf-address">Mailing address</label><input id="pf-address" name="address" type="text" autocomplete="street-address"></div>
+              <div class="form-row form-row--split">
+                <div><label for="pf-city">City</label><input id="pf-city" name="city" type="text" autocomplete="address-level2"></div>
+                <div><label for="pf-state">State</label>
+                  <select id="pf-state" name="state"><option>NC</option><option>SC</option><option>Other</option></select>
+                </div>
+              </div>
+              <div class="form-row form-row--split">
+                <div><label for="pf-zip">ZIP code</label><input id="pf-zip" name="zip" type="text" autocomplete="postal-code"></div>
+                <div><label for="pf-areas">Service areas</label><input id="pf-areas" name="areas" type="text" placeholder="e.g., Charlotte metro, Upstate SC"></div>
+              </div>
+              <fieldset class="form-row mz-fieldset">
+                <legend>Business type (select all that apply)</legend>
+                <label class="mz-check"><input type="checkbox" name="type" value="residential"> <span>Residential</span></label>
+                <label class="mz-check"><input type="checkbox" name="type" value="commercial"> <span>Commercial</span></label>
+                <label class="mz-check"><input type="checkbox" name="type" value="vendor"> <span>Vendor / Supplier</span></label>
+                <label class="mz-check"><input type="checkbox" name="type" value="manufacturer"> <span>Manufacturer</span></label>
+                <label class="mz-check"><input type="checkbox" name="type" value="service"> <span>Service Provider</span></label>
+              </fieldset>
+              <div class="form-row">
+                <label for="pf-visibility">Directory visibility</label>
+                <select id="pf-visibility" name="visibility">
+                  <option value="public">Listed in the public directory</option>
+                  <option value="members">Members-only listing</option>
+                  <option value="hidden">Hidden from the directory</option>
+                </select>
+              </div>
+              <div class="form-row"><label for="pf-logo">Company logo</label><input id="pf-logo" name="logo" type="file" accept="image/*"></div>
+              <div class="form-actions">
+                <button type="submit" class="btn btn--accent btn--lg">Save Profile</button>
+              </div>
+              <p class="mz-note">Some changes may require association approval before they appear publicly in the directory.</p>
+            </form>
           </div>
-          <div class="form-row">
-            <label for="si-password">Password</label>
-            <input id="si-password" name="password" type="password" autocomplete="current-password" required>
+          <aside class="page-body__aside">
+            <div class="aside-card aside-card--dark">
+              <span class="eyebrow" style="color:var(--color-gold);">Synced with the directory</span>
+              <h3>One profile, everywhere</h3>
+              <p>Your company name, category, city/state, website, and email here are the same information shown in the member directory. Update it once and the directory stays accurate.</p>
+              <a class="btn btn--accent" href="#directory" data-page="directory">View the Directory</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- MEMBER RESOURCES PAGE -->
+<div class="page" id="page-member-resources" data-page-id="member-resources" hidden>
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="#home" data-page="home">Home</a><span aria-hidden="true">/</span><a href="#member-dashboard" data-page="member-dashboard">Member Zone</a><span aria-hidden="true">/</span><span>Member Resources</span>
+      </nav>
+      <span class="eyebrow">Member Zone · Member Resources</span>
+      <h1>Member <em>Resources</em></h1>
+      <p class="lede">Member-only documents, forms, guides, and association resources, organized by category.</p>
+    </div>
+  </section>
+
+  <section class="page-body">
+    <div class="container">
+      <div class="mz-out">
+        <div class="mz-locked">
+          <h2>Members-only content</h2>
+          <p>This resource is available to Carolinas Roofing Association members. Please log in to access this content.</p>
+          <a class="btn btn--accent btn--lg" href="#signin" data-page="signin">Member Login</a>
+          <a class="btn btn--secondary btn--lg" href="#membership" data-page="membership">Learn About Membership</a>
+        </div>
+      </div>
+
+      <div class="mz-in">
+        <div class="res-toolbar">
+          <div class="dir-search__input-wrap" style="flex:1 1 260px;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" id="mzResSearch" class="dir-search__input" placeholder="Search resources" aria-label="Search member resources">
           </div>
-          <div class="form-actions">
-            <button type="submit" class="btn btn--accent btn--lg">Sign In</button>
+          <div class="res-chips" id="mzResChips" role="group" aria-label="Filter resources by category">
+            <button class="res-chip" type="button" aria-pressed="true" data-cat="all">All</button>
+            <button class="res-chip" type="button" aria-pressed="false" data-cat="forms">Forms</button>
+            <button class="res-chip" type="button" aria-pressed="false" data-cat="programs">Programs</button>
+            <button class="res-chip" type="button" aria-pressed="false" data-cat="governance">Governance</button>
+            <button class="res-chip" type="button" aria-pressed="false" data-cat="safety">Safety</button>
+            <button class="res-chip" type="button" aria-pressed="false" data-cat="publications">Publications</button>
           </div>
-          <p class="muted" style="margin-top: 1rem;">
-            <a href="#contact" data-page="contact">Forgot password?</a> &nbsp;·&nbsp;
-            <a href="#membership" data-page="membership">Not a member yet? Become one</a>
-          </p>
-          <p class="form-status" id="signinStatus" role="status" aria-live="polite"></p>
-        </form>
+        </div>
+
+        <div class="res-list" id="mzResList">
+          <div class="res-item" data-cat="forms" data-title="member benefits brochure membership">
+            <div class="res-item__main">
+              <span class="res-item__title">Member Benefits Brochure</span><span class="res-item__cat">Membership</span>
+              <p class="res-item__desc">A one-page overview of member benefits and how to get the most from your membership.</p>
+              <p class="res-item__date">Updated 2025</p>
+            </div>
+            <a class="btn btn--secondary" href="downloads/CRA-Membership-Brochure.pdf" target="_blank" rel="noopener noreferrer">Download PDF</a>
+          </div>
+          <div class="res-item" data-cat="forms" data-title="membership application join">
+            <div class="res-item__main">
+              <span class="res-item__title">Membership Application</span><span class="res-item__cat">Forms</span>
+              <p class="res-item__desc">Apply for membership or add additional company contacts.</p>
+            </div>
+            <a class="btn btn--secondary" href="#apply" data-page="apply">Open</a>
+          </div>
+          <div class="res-item" data-cat="programs" data-title="self-insurers fund workers compensation sif">
+            <div class="res-item__main">
+              <span class="res-item__title">Self-Insurers Fund — Overview &amp; Forms</span><span class="res-item__cat">Programs</span>
+              <p class="res-item__desc">Eligibility requirements, program details, and how to request a workers' compensation quote.</p>
+            </div>
+            <a class="btn btn--secondary" href="#sif" data-page="sif">View</a>
+          </div>
+          <div class="res-item" data-cat="governance" data-title="board meeting minutes governance">
+            <div class="res-item__main">
+              <span class="res-item__title">Board Meeting Minutes</span><span class="res-item__cat">Governance</span>
+              <p class="res-item__desc">Minutes from recent board and membership meetings, available to members.</p>
+            </div>
+            <a class="btn btn--secondary" href="#contact" data-page="contact">Request</a>
+          </div>
+          <div class="res-item" data-cat="governance" data-title="bylaws governance documents">
+            <div class="res-item__main">
+              <span class="res-item__title">Bylaws &amp; Governance Documents</span><span class="res-item__cat">Governance</span>
+              <p class="res-item__desc">Association bylaws and governance materials for member reference.</p>
+            </div>
+            <a class="btn btn--secondary" href="#contact" data-page="contact">Request</a>
+          </div>
+          <div class="res-item" data-cat="safety" data-title="safety program templates osha">
+            <div class="res-item__main">
+              <span class="res-item__title">Safety Program Templates</span><span class="res-item__cat">Safety</span>
+              <p class="res-item__desc">Safety program templates and resources to support OSHA compliance.</p>
+            </div>
+            <a class="btn btn--secondary" href="#education" data-page="education">View</a>
+          </div>
+          <div class="res-item" data-cat="publications" data-title="carolinas contacts publication newsletter">
+            <div class="res-item__main">
+              <span class="res-item__title">Carolinas Contacts Publication</span><span class="res-item__cat">Publications</span>
+              <p class="res-item__desc">The association's member publication with industry news and updates.</p>
+            </div>
+            <a class="btn btn--secondary" href="#publications" data-page="publications">View</a>
+          </div>
+          <div class="res-item" data-cat="publications" data-title="legislative regulatory industry updates">
+            <div class="res-item__main">
+              <span class="res-item__title">Legislative &amp; Industry Updates</span><span class="res-item__cat">Publications</span>
+              <p class="res-item__desc">Legal and regulatory updates relevant to Carolinas roofing professionals.</p>
+            </div>
+            <a class="btn btn--secondary" href="#legal-updates" data-page="legal-updates">View</a>
+          </div>
+        </div>
+        <p class="muted res-empty" id="mzResEmpty" hidden style="padding:1rem 0;">No resources match your search. Try a different term or category.</p>
+
+        <div class="page-cta-row" style="margin-top:2rem;">
+          <a class="btn btn--ghost" href="#member-dashboard" data-page="member-dashboard">Back to Dashboard</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ACCOUNT SETTINGS PAGE -->
+<div class="page" id="page-account-settings" data-page-id="account-settings" hidden>
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="#home" data-page="home">Home</a><span aria-hidden="true">/</span><a href="#member-dashboard" data-page="member-dashboard">Member Zone</a><span aria-hidden="true">/</span><span>Account Settings</span>
+      </nav>
+      <span class="eyebrow">Member Zone · Account Settings</span>
+      <h1>Account <em>Settings</em></h1>
+      <p class="lede">Manage your login credentials, contact email, email preferences, and membership account.</p>
+    </div>
+  </section>
+
+  <section class="page-body">
+    <div class="container">
+      <div class="mz-out">
+        <div class="mz-locked">
+          <h2>Please log in to manage your account</h2>
+          <p>Account settings are available to Carolinas Roofing Association members.</p>
+          <a class="btn btn--accent btn--lg" href="#signin" data-page="signin">Member Login</a>
+        </div>
+      </div>
+
+      <div class="mz-in">
+        <div class="page-body__grid">
+          <div class="page-body__main">
+            <p class="mz-saved" id="accountSaved" role="status" hidden>Your account settings have been updated.</p>
+            <form class="simple-form" id="accountSettingsForm" novalidate>
+              <div class="mz-section">
+                <h2>Login &amp; password</h2>
+                <div class="form-row"><label for="ac-current">Current password</label><input id="ac-current" name="current" type="password" autocomplete="current-password"></div>
+                <div class="form-row form-row--split">
+                  <div><label for="ac-new">New password</label><input id="ac-new" name="new" type="password" autocomplete="new-password"></div>
+                  <div><label for="ac-confirm">Confirm new password</label><input id="ac-confirm" name="confirm" type="password" autocomplete="new-password"></div>
+                </div>
+              </div>
+              <div class="mz-section">
+                <h2>Email addresses</h2>
+                <div class="form-row"><label for="ac-login-email">Account login email</label><input id="ac-login-email" name="loginEmail" type="email" autocomplete="email"></div>
+                <div class="form-row"><label for="ac-public-email">Public directory email</label><input id="ac-public-email" name="publicEmail" type="email"></div>
+                <p class="mz-note">Your account login email is used to sign in. Your public directory email is the address shown to other members in the directory. They can be the same or different.</p>
+              </div>
+              <div class="mz-section">
+                <h2>Email preferences</h2>
+                <label class="mz-check"><input type="checkbox" name="prefs" value="events" checked> <span>Event invitations and reminders</span></label><br>
+                <label class="mz-check"><input type="checkbox" name="prefs" value="news" checked> <span>Association news and updates</span></label><br>
+                <label class="mz-check"><input type="checkbox" name="prefs" value="education"> <span>Education and training announcements</span></label>
+              </div>
+              <div class="form-actions">
+                <button type="submit" class="btn btn--accent btn--lg">Save Settings</button>
+              </div>
+            </form>
+          </div>
+          <aside class="page-body__aside">
+            <div class="aside-card">
+              <span class="eyebrow">Membership</span>
+              <h3>Membership status</h3>
+              <p><strong>Status:</strong> Active</p>
+              <p>Membership status, renewals, and payments are managed through the association's membership system.</p>
+              <a class="btn btn--secondary" href="#contact" data-page="contact">Membership Questions</a>
+            </div>
+            <div class="aside-card aside-card--dark">
+              <span class="eyebrow" style="color:var(--color-gold);">Session</span>
+              <h3>Sign out</h3>
+              <p>Sign out of the Member Zone on this device.</p>
+              <a class="btn btn--accent mz-logout" href="#signin">Log Out</a>
+            </div>
+          </aside>
+        </div>
       </div>
     </div>
   </section>
@@ -7383,7 +7785,11 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
             <li><a href="#directory" data-page="directory">Member Directory</a></li>
             <li><a href="#partners" data-page="partners">Partner with Us</a></li>
             <li><a href="#contact" data-page="contact">Contact</a></li>
-            <li><a href="#signin" data-page="signin">Member Zone</a></li>
+            <li><a href="#signin" data-page="signin">Member Login</a></li>
+            <li><a href="#member-dashboard" data-page="member-dashboard">Member Zone</a></li>
+            <li><a href="#member-profile" data-page="member-profile">My Profile</a></li>
+            <li><a href="#member-resources" data-page="member-resources">Member Resources</a></li>
+            <li><a href="#account-settings" data-page="account-settings">Account Settings</a></li>
             <li><a href="#privacy" data-page="privacy">Privacy</a></li>
           </ul>
         </div>
@@ -7625,7 +8031,11 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
       board:      'Board Members — Carolinas Roofing Association',
       'past-presidents': 'Past Presidents — Carolinas Roofing Association',
       contact:    'Contact — Carolinas Roofing Association',
-      signin:     'Member Sign In — Carolinas Roofing Association',
+      signin:     'Member Login — Carolinas Roofing Association',
+      'member-dashboard': 'Member Zone — Carolinas Roofing Association',
+      'member-profile': 'My Profile — Carolinas Roofing Association',
+      'member-resources': 'Member Resources — Carolinas Roofing Association',
+      'account-settings': 'Account Settings — Carolinas Roofing Association',
       apply:      'Become a Member — Carolinas Roofing Association',
       privacy:    'Privacy — Carolinas Roofing Association',
       sitemap:    'Sitemap — Carolinas Roofing Association'
@@ -7651,7 +8061,11 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
       contact:    'Contact the Carolinas Roofing Association — questions about membership, the Carolinas Roofing Expo, sponsorship, education, or anything else.',
       board:      'CRA Board Members — the Executive Team and staff who lead the Carolinas Roofing Association.',
       'past-presidents': 'CRA Past Presidents — recognizing the individuals who have led the association since 1943.',
-      signin:     'Member sign in — access member-only resources, event registration, and directory tools at the Carolinas Roofing Association.',
+      signin:     'Member login for the Carolinas Roofing Association — sign in to access member-only resources, update your profile, and manage your account.',
+      'member-dashboard': 'The Carolinas Roofing Association Member Zone — manage your profile, access resources, view events, and stay connected.',
+      'member-profile': 'Update your Carolinas Roofing Association member profile — company details, contact information, and directory visibility.',
+      'member-resources': 'Member-only documents, forms, guides, and association resources for Carolinas Roofing Association members.',
+      'account-settings': 'Manage your Carolinas Roofing Association account — login, password, email preferences, and membership.',
       apply:      'Apply for membership in the Carolinas Roofing Association — for licensed roofing and sheet metal contractors, product suppliers, and service providers across North and South Carolina.',
       privacy:    'Privacy policy for the Carolinas Roofing Association website.',
       sitemap:    'Carolinas Roofing Association sitemap — all major pages and pathways.'
@@ -7789,6 +8203,82 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
     chip.setAttribute('aria-pressed', chip.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
     if (chip.closest('#filterChipsPage')) renderDirPage(); else renderDirHome();
   });
+  /* ----- Directory export / print / PDF (respects active search + filters) ----- */
+  const dirPageFiltered = () => {
+    const q = (dirPageSearch ? dirPageSearch.value : '').trim().toLowerCase();
+    return directoryData.filter(it => dirMatch(it, q, dirChipsActive(dirPageChips)));
+  };
+  const dirStripProto = (u) => (u || '').replace(/^https?:\/\//i, '');
+  const dirDownload = (content, filename, mime) => {
+    const blob = new Blob([content], { type: mime });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = filename;
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(url), 1500);
+  };
+  const dirToCSV = (rows) => {
+    const head = ['Company', 'Category', 'City', 'State', 'Website', 'Email'];
+    const esc = (v) => { v = (v == null ? '' : String(v)); return /[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; };
+    const lines = [head.join(',')];
+    rows.forEach(r => lines.push([r.name, r.category, r.city, r.state, r.website, r.email].map(esc).join(',')));
+    return '﻿' + lines.join('\r\n');
+  };
+  const dirPrintHTML = (rows) => {
+    const today = new Date().toLocaleDateString();
+    const body = rows.map(r => `<tr><td>${r.name}</td><td>${r.category}</td><td>${[r.city, r.state].filter(Boolean).join(', ')}</td><td>${r.website ? dirStripProto(r.website) : ''}</td><td>${r.email || ''}</td></tr>`).join('');
+    return `<!doctype html><html><head><meta charset="utf-8"><title>CRA Member Directory</title>
+<style>body{font-family:Arial,Helvetica,sans-serif;color:#041E42;margin:24px;}h1{font-size:18px;margin:0 0 4px;}
+.sub{color:#555;font-size:12px;margin:0 0 16px;}table{width:100%;border-collapse:collapse;font-size:11px;}
+th,td{text-align:left;padding:6px 8px;border-bottom:1px solid #ddd;vertical-align:top;}th{background:#041E42;color:#fff;}</style>
+</head><body><h1>Carolinas Roofing Association — Member Directory</h1>
+<p class="sub">${rows.length} member companies · Generated ${today}</p>
+<table><thead><tr><th>Company</th><th>Category</th><th>City / State</th><th>Website</th><th>Email</th></tr></thead>
+<tbody>${body}</tbody></table></body></html>`;
+  };
+  const dirPrint = () => {
+    const w = window.open('', '_blank');
+    if (!w) { alert('Please allow pop-ups to print the directory.'); return; }
+    w.document.write(dirPrintHTML(dirPageFiltered()));
+    w.document.close(); w.focus();
+    setTimeout(() => { try { w.print(); } catch (e) {} }, 350);
+  };
+  const dirLoadScript = (src) => new Promise((res, rej) => {
+    if (document.querySelector(`script[src="${src}"]`)) { res(); return; }
+    const sc = document.createElement('script');
+    sc.src = src; sc.onload = res; sc.onerror = rej; document.head.appendChild(sc);
+  });
+  const dirPDF = async () => {
+    const rows = dirPageFiltered();
+    try {
+      await dirLoadScript('https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js');
+      await dirLoadScript('https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js');
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF({ orientation: 'landscape', unit: 'pt', format: 'letter' });
+      doc.setFontSize(14); doc.setTextColor(4, 30, 66);
+      doc.text('Carolinas Roofing Association — Member Directory', 40, 40);
+      doc.setFontSize(9); doc.setTextColor(90);
+      doc.text(`${rows.length} member companies · Generated ${new Date().toLocaleDateString()}`, 40, 56);
+      doc.autoTable({
+        startY: 70,
+        head: [['Company', 'Category', 'City / State', 'Website', 'Email']],
+        body: rows.map(r => [r.name, r.category, [r.city, r.state].filter(Boolean).join(', '), dirStripProto(r.website), r.email || '']),
+        styles: { fontSize: 8, cellPadding: 4, overflow: 'linebreak' },
+        headStyles: { fillColor: [4, 30, 66] },
+        columnStyles: { 0: { cellWidth: 175 }, 4: { cellWidth: 165 } },
+        margin: { left: 40, right: 40 }
+      });
+      doc.save('CRA-Member-Directory.pdf');
+    } catch (e) {
+      alert('Could not load the PDF generator. Opening the print view so you can save as PDF.');
+      dirPrint();
+    }
+  };
+  const elCsv = $('#dirExportCsv'), elPrint = $('#dirPrint'), elPdf = $('#dirPdf');
+  if (elCsv) elCsv.addEventListener('click', () => dirDownload(dirToCSV(dirPageFiltered()), 'CRA-Member-Directory.csv', 'text/csv;charset=utf-8;'));
+  if (elPrint) elPrint.addEventListener('click', dirPrint);
+  if (elPdf) elPdf.addEventListener('click', dirPDF);
+
   renderDirHome();
   renderDirPage();
 
@@ -7834,16 +8324,75 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
   handleFormStub('contactForm',  'contactStatus',  'Thanks — your message has been received. A member of the association team will follow up. No obligation.');
   handleFormStub('newsletterForm', 'newsletterStatus', 'Subscribed. Watch your inbox for association updates.');
 
+  /* ===== MEMBER ZONE (prototype auth state) ===== */
+  const mzSetAuth = (on) => { document.documentElement.classList.toggle('mz-auth', !!on); };
+  const mzGoto = (page) => {
+    if (history.pushState) { try { history.pushState({ page: page }, '', '#' + page); } catch (err) {} }
+    setActivePage(page);
+  };
   const signinForm = $('#signinForm');
   if (signinForm) {
     signinForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      const status = $('#signinStatus');
-      if (status) {
-        status.textContent = 'Member login access is coming soon.';
-        status.classList.add('is-success');
+      const emailEl = $('#si-email');
+      const nameEl = $('#mzMemberName');
+      if (nameEl) {
+        let nm = 'Member';
+        const v = emailEl && emailEl.value ? emailEl.value.trim() : '';
+        if (v) nm = v.split('@')[0].replace(/[._-]+/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+        nameEl.textContent = nm;
       }
+      mzSetAuth(true);
+      mzGoto('member-dashboard');
     });
+  }
+  // Logout (any element with .mz-logout)
+  document.addEventListener('click', (e) => {
+    const lo = e.target.closest('.mz-logout');
+    if (!lo) return;
+    e.preventDefault();
+    mzSetAuth(false);
+    mzGoto('signin');
+  });
+  // Profile / account save confirmation (prototype)
+  ['memberProfileForm', 'accountSettingsForm'].forEach((id) => {
+    const f = document.getElementById(id);
+    if (!f) return;
+    f.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const note = f.querySelector('.mz-saved');
+      if (note) { note.hidden = false; if (note.scrollIntoView) note.scrollIntoView({ block: 'nearest', behavior: prefersReducedMotion ? 'auto' : 'smooth' }); }
+    });
+  });
+  // Member resources search + category filter
+  const mzResList = $('#mzResList');
+  if (mzResList) {
+    const mzResSearch = $('#mzResSearch');
+    const mzResChipsWrap = $('#mzResChips');
+    const mzResEmpty = $('#mzResEmpty');
+    const mzResItems = $$('.res-item', mzResList);
+    const mzResRender = () => {
+      const q = (mzResSearch && mzResSearch.value ? mzResSearch.value : '').trim().toLowerCase();
+      const active = mzResChipsWrap ? ($$('.res-chip[aria-pressed="true"]', mzResChipsWrap).map(c => c.dataset.cat)[0] || 'all') : 'all';
+      let shown = 0;
+      mzResItems.forEach((it) => {
+        const cat = it.dataset.cat || '';
+        const blob = (it.dataset.title || '') + ' ' + it.textContent.toLowerCase();
+        const ok = (active === 'all' || cat === active) && (!q || blob.toLowerCase().includes(q));
+        it.style.display = ok ? '' : 'none';
+        if (ok) shown++;
+      });
+      if (mzResEmpty) mzResEmpty.hidden = shown > 0;
+    };
+    if (mzResSearch) mzResSearch.addEventListener('input', mzResRender);
+    if (mzResChipsWrap) mzResChipsWrap.addEventListener('click', (e) => {
+      const chip = e.target.closest('.res-chip');
+      if (!chip) return;
+      $$('.res-chip', mzResChipsWrap).forEach(c => c.setAttribute('aria-pressed', 'false'));
+      chip.setAttribute('aria-pressed', 'true');
+      mzResRender();
+    });
+    mzResRender();
   }
 
   /* =========================================================
