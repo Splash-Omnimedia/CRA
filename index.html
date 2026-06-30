@@ -4487,7 +4487,15 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
       </a>
 
       <ul class="primary-nav" id="primaryNav" role="list" aria-label="Primary">
-        <li><a href="#membership" data-page="membership">Membership</a></li>
+        <li class="has-dropdown">
+          <a href="#membership" data-page="membership" aria-haspopup="true">Membership
+            <svg class="dropdown-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <ul class="nav-dropdown" role="list" aria-label="Membership">
+            <li><a href="#membership" data-page="membership">Membership Overview</a></li>
+            <li><a href="#sif" data-page="sif">Self-Insurers Fund</a></li>
+          </ul>
+        </li>
         <li><a href="#events" data-page="events">Events</a></li>
         <li><a href="#education" data-page="education">Education</a></li>
         <li><a href="#directory" data-page="directory">Directory</a></li>
@@ -4546,6 +4554,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
 <div class="mobile-nav" id="mobileNav" aria-hidden="true">
   <ul class="mobile-nav__list" role="list">
     <li><a href="#membership" data-page="membership">Membership</a></li>
+    <li><a href="#sif" data-page="sif" style="padding-left:26px;opacity:.85;">↳ Self-Insurers Fund</a></li>
     <li><a href="#events" data-page="events">Events</a></li>
     <li><a href="#education" data-page="education">Education</a></li>
     <li><a href="#directory" data-page="directory">Member Directory</a></li>
@@ -4997,7 +5006,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
             <p>One of the most distinctive financial benefits of contractor membership. Qualifying members pool risk, maintain strong safety practices, and gain access to a long-running, association-operated comp program reviewed annually.</p>
             <div class="sif-feature__bottom">
               <span class="sif-feature__pill">SIF · Long-running program</span>
-              <a class="tlink" href="#membership" data-page="membership">Learn about the SIF →</a>
+              <a class="tlink" href="#sif" data-page="sif">Learn about the SIF →</a>
             </div>
           </div>
 
@@ -5863,25 +5872,9 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
           <h3>Approval process</h3>
           <p>All applicants require CRA Board member review and majority approval.</p>
 
-          <h2 id="sif">CRSMC Self-Insurers Fund</h2>
-          <p>The CRSMC – Self-Insurers Fund is the oldest workers' compensation group fund in the Carolinas and could help eligible members save money.</p>
-          <p>Group membership approval is contingent on:</p>
-          <ul class="page-list">
-            <li>Approval of membership in the Carolinas Roofing Association, Inc.</li>
-            <li>Completion of applications, including competitor and credit references</li>
-            <li>A favorable Loss Control Survey</li>
-            <li>Anticipated payroll by class code in order to produce a proposal</li>
-            <li>Three years in business with prior workers' compensation coverage information</li>
-            <li>A minimum net worth of $25,000, required by the South Carolina Worker's Compensation Commission</li>
-            <li>A minimum annual premium of $15,000</li>
-            <li>Annual premiums payable monthly through self-audit, with 1/6 of the estimated annual premium placed in escrow deposit at inception</li>
-          </ul>
-          <div class="aside-card aside-card--dark" style="margin-top:18px;">
-            <span class="eyebrow" style="color: var(--color-gold);">Request a quote</span>
-            <h3>Workers' Compensation questions</h3>
-            <p><strong>Kerriann Spratt</strong><br>AssuredPartners<br>Phone: <a href="tel:+18008453163" style="color:var(--color-gold);">(800) 845-3163</a><br>Email: <a href="mailto:kerriann.spratt@assuredpartners.com" style="color:var(--color-gold);">kerriann.spratt@assuredpartners.com</a></p>
-            <a class="btn btn--accent" href="mailto:kerriann.spratt@assuredpartners.com" data-event="cta-wc-info">Request Workers' Compensation Information</a>
-          </div>
+          <h2 id="membership-sif">CRSMC Self-Insurers Fund</h2>
+          <p>The CRSMC – Self-Insurers Fund is the oldest workers' compensation group fund in the Carolinas and could help eligible members save money. Participation is reserved for qualifying members. Full eligibility requirements and a workers' compensation contact are on the dedicated Self-Insurers Fund page.</p>
+          <p><a class="btn btn--primary" href="#sif" data-page="sif" data-event="cta-sif-details">Explore the Self-Insurers Fund</a></p>
 
         </div>
 
@@ -5903,6 +5896,68 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
             <span class="eyebrow" style="color: var(--color-gold);">Since 1943</span>
             <h3>A regional legacy</h3>
             <p>For more than 80 years, the association has connected Carolinas roofing professionals — a foundation today's members continue to build on.</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- SELF-INSURERS FUND PAGE -->
+<div class="page" id="page-sif" data-page-id="sif" hidden>
+  <section class="page-hero page-hero--photo">
+    <img class="page-hero__bg" src="images/huthphoto-discovedurham-crasmc-hr5_0277.jpg" alt="" loading="lazy" aria-hidden="true">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="#home" data-page="home">Home</a><span aria-hidden="true">/</span><a href="#membership" data-page="membership">Membership</a><span aria-hidden="true">/</span><span>Self-Insurers Fund</span>
+      </nav>
+      <span class="eyebrow">Member Program · Workers' Compensation</span>
+      <h1>The CRSMC <em>Self-Insurers Fund</em></h1>
+      <p class="lede">The CRSMC – Self-Insurers Fund is the oldest workers' compensation group fund in the Carolinas — and it could be saving you money.</p>
+      <div class="page-hero__ctas">
+        <a class="btn btn--primary btn--lg" href="mailto:kerriann.spratt@assuredpartners.com" data-event="cta-sif-quote">Request a Quote</a>
+        <a class="btn btn--secondary btn--lg" href="#apply" data-page="apply" data-event="cta-start-membership">Become a Member</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-body">
+    <div class="container">
+      <div class="page-body__grid">
+        <div class="page-body__main">
+          <h2>A long-running workers' compensation program for Carolinas roofing contractors</h2>
+          <p>The CRSMC – Self-Insurers Fund is the oldest workers' compensation group fund in the Carolinas. As a member program, it gives qualifying roofing contractors access to group workers' compensation coverage and could help eligible companies save money.</p>
+
+          <h2 id="requirements">Group membership approval requirements</h2>
+          <p>Group membership approval is contingent on the following:</p>
+          <ul class="page-list">
+            <li>Approval of membership in the Carolinas Roofing Association, Inc.</li>
+            <li>Completion of the applications (competitor and credit references are important)</li>
+            <li>A favorable Loss Control Survey</li>
+            <li>Anticipated payroll by class code in order to produce a proposal</li>
+            <li>Three (3) years in business with prior workers' compensation coverage information</li>
+            <li>A minimum net worth of $25,000 (required by the South Carolina Workers' Compensation Commission)</li>
+            <li>A minimum annual premium of $15,000</li>
+            <li>Annual premiums are payable monthly through self-audit, with 1/6 of the estimated annual premium placed in an escrow deposit at inception</li>
+          </ul>
+
+          <h2>Request a quote</h2>
+          <p>To request a quote or for specific workers' compensation questions, please contact <strong>Kerriann Spratt</strong> at AssuredPartners at <a href="tel:+18008453163">(800) 845-3163</a> or <a href="mailto:kerriann.spratt@assuredpartners.com">kerriann.spratt@assuredpartners.com</a>.</p>
+        </div>
+
+        <aside class="page-body__aside">
+          <div class="aside-card aside-card--dark">
+            <span class="eyebrow" style="color: var(--color-gold);">Request a quote</span>
+            <h3>Workers' Compensation questions</h3>
+            <p><strong>Kerriann Spratt</strong><br>AssuredPartners<br>Phone: <a href="tel:+18008453163" style="color:var(--color-gold);">(800) 845-3163</a><br>Email: <a href="mailto:kerriann.spratt@assuredpartners.com" style="color:var(--color-gold);">kerriann.spratt@assuredpartners.com</a></p>
+            <a class="btn btn--accent" href="mailto:kerriann.spratt@assuredpartners.com" data-event="cta-wc-info">Request Workers' Compensation Information</a>
+          </div>
+          <div class="aside-card">
+            <span class="eyebrow">Eligibility</span>
+            <h3>Membership comes first</h3>
+            <p>Approval of CRA membership is the first step toward participating in the Self-Insurers Fund.</p>
+            <a class="btn btn--primary" href="#apply" data-page="apply" data-event="cta-start-membership">Start Your Application</a>
+            <a class="btn btn--ghost" href="#membership" data-page="membership">View Membership</a>
           </div>
         </aside>
       </div>
@@ -7020,6 +7075,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
           <ul class="page-list">
             <li><a href="#home" data-page="home">Home</a></li>
             <li><a href="#membership" data-page="membership">Membership</a></li>
+            <li><a href="#sif" data-page="sif">Self-Insurers Fund</a></li>
             <li><a href="#events" data-page="events">Upcoming Events</a></li>
             <li><a href="#education" data-page="education">Education &amp; Resources</a></li>
             <li><a href="#directory" data-page="directory">Member Directory</a></li>
@@ -7111,6 +7167,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
         <a href="#membership" data-page="membership">Why Membership Matters</a>
         <a href="#membership" data-page="membership">Membership Value</a>
         <a href="#membership" data-page="membership">Membership Requirements / Standards</a>
+        <a href="#sif" data-page="sif">Self-Insurers Fund</a>
       </div>
 
       <div class="footer-col">
@@ -7249,6 +7306,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
     const titles = {
       home:       'Carolinas Roofing Association — The Regional Home for Carolinas Roofing Professionals',
       membership: 'Membership — Carolinas Roofing Association',
+      sif:        'CRSMC Self-Insurers Fund — Carolinas Roofing Association',
       events:     'Upcoming Events — Carolinas Roofing Association',
       education:  'Education & Resources — Carolinas Roofing Association',
       directory:  'Member Directory — Carolinas Roofing Association',
@@ -7268,6 +7326,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
     const descriptions = {
       home:       'The Carolinas Roofing Association is the regional trade association for roofing contractors, vendors, manufacturers, and service providers across North and South Carolina. Membership, education, events, advocacy, and industry relationships — since 1943.',
       membership: 'Join the Carolinas Roofing Association — membership for residential and commercial roofing contractors, vendors, manufacturers, and service providers across North and South Carolina.',
+      sif:        'The CRSMC – Self-Insurers Fund is the oldest workers\' compensation group fund in the Carolinas. See eligibility requirements and request a quote through the Carolinas Roofing Association.',
       events:     'CRA events including the 8th Annual Golf Tournament (Oct 22, 2026, Concord, NC) and the Carolinas Roofing Expo & Education (March 16–18, 2027, Greenville, SC), plus district meetings and member gatherings throughout the year.',
       education:  'Education and resources for Carolinas roofing professionals — safety, business operations, sales, workforce, legal, and technical pillars delivered through Expo sessions, workshops, and regional meetings.',
       directory:  'Search the Carolinas Roofing Association member directory — contractors, vendors, manufacturers, and service providers across North and South Carolina.',
