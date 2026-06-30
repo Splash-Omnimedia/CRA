@@ -4567,7 +4567,15 @@ html.mz-auth .mz-out { display: none; }
             <li><a href="#past-presidents" data-page="past-presidents">Past Presidents</a></li>
           </ul>
         </li>
-        <li><a href="#contact" data-page="contact">Contact</a></li>
+        <li class="has-dropdown">
+          <a href="#contact" data-page="contact" aria-haspopup="true">Contact
+            <svg class="dropdown-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <ul class="nav-dropdown" role="list" aria-label="Contact">
+            <li><a href="#contact" data-page="contact">Contact Us</a></li>
+            <li><a href="#partners" data-page="partners">Partner with Us</a></li>
+          </ul>
+        </li>
       </ul>
 
       <div class="header-ctas">
@@ -4620,11 +4628,12 @@ html.mz-auth .mz-out { display: none; }
     <li><a href="#about" data-page="about">About CRA</a></li>
     <li><a href="#board" data-page="board" style="padding-left:26px;opacity:.85;">↳ Board Members</a></li>
     <li><a href="#past-presidents" data-page="past-presidents" style="padding-left:26px;opacity:.85;">↳ Past Presidents</a></li>
+    <li><a href="#contact" data-page="contact">Contact</a></li>
+    <li><a href="#partners" data-page="partners" style="padding-left:26px;opacity:.85;">↳ Partner with Us</a></li>
   </ul>
   <div class="mobile-nav__util">
     <a href="#directory" data-page="directory">Member Directory</a>
     <a href="#signin" data-page="signin">Member Zone</a>
-    <a href="#contact" data-page="contact">Contact</a>
   </div>
   <div class="mobile-nav__cta">
     <a class="btn btn--primary btn--lg" href="#membership" data-page="membership" data-event="cta-become-member">Become a Member</a>
@@ -5087,7 +5096,7 @@ html.mz-auth .mz-out { display: none; }
       </div>
       <div class="testimonials__grid">
         <article class="testimonial-card reveal">
-          <p class="testimonial-card__quote">Access the CRSMC Self-Insurers Fund workers' compensation program, participate in a health insurance program for employees and family members, and gain access to legal counsel and legal assistance when you need it.</p>
+          <p class="testimonial-card__quote">Access the CRA Self-Insurers Fund workers' compensation program, participate in a health insurance program for employees and family members, and gain access to legal counsel and legal assistance when you need it.</p>
           <div class="testimonial-card__attribution">
             <span class="testimonial-card__category">Insurance, Benefits &amp; Legal</span>
           </div>
@@ -5888,7 +5897,7 @@ html.mz-auth .mz-out { display: none; }
           <h2 id="benefits">Member benefits</h2>
           <p>Membership delivers practical, year-round value for Carolinas roofing professionals:</p>
           <ul class="page-list">
-            <li>Access to the CRSMC Self-Insurers Fund workers' compensation program</li>
+            <li>Access to the CRA Self-Insurers Fund workers' compensation program</li>
             <li>Participation in a health insurance program for employees and family members</li>
             <li>Use of the CRA facility for conference room and training space needs</li>
             <li>Education credits to support business needs and meet OSHA requirements</li>
@@ -5927,8 +5936,8 @@ html.mz-auth .mz-out { display: none; }
           <h3>Approval process</h3>
           <p>All applicants require CRA Board member review and majority approval.</p>
 
-          <h2 id="membership-sif">CRSMC Self-Insurers Fund</h2>
-          <p>The CRSMC – Self-Insurers Fund is the oldest workers' compensation group fund in the Carolinas and could help eligible members save money. Participation is reserved for qualifying members. Full eligibility requirements and a workers' compensation contact are on the dedicated Self-Insurers Fund page.</p>
+          <h2 id="membership-sif">CRA Self-Insurers Fund</h2>
+          <p>The CRA Self-Insurers Fund is the oldest workers' compensation group fund in the Carolinas and could help eligible members save money. Participation is reserved for qualifying members. Full eligibility requirements and a workers' compensation contact are on the dedicated Self-Insurers Fund page.</p>
           <p><a class="btn btn--primary" href="#sif" data-page="sif" data-event="cta-sif-details">Explore the Self-Insurers Fund</a></p>
 
         </div>
@@ -5954,6 +5963,39 @@ html.mz-auth .mz-out { display: none; }
           </div>
         </aside>
       </div>
+    </div>
+  </section>
+
+  <section class="faqx" aria-labelledby="faqm-heading">
+    <div class="container">
+      <div class="faqx__head">
+        <span class="eyebrow">Frequently asked</span>
+        <h2 id="faqm-heading">Frequently Asked Questions</h2>
+        <p>Here are a few common questions related to membership.</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqm-1"><span class="faq-item__btn-text"><span>Who can join Carolinas Roofing Association?</span></span><span class="faq-item__icon" aria-hidden="true">+</span></button>
+          <div class="faq-item__body" id="faqm-1" role="region"><div class="faq-item__body-inner">Carolinas Roofing Association welcomes roofing contractors, manufacturers, suppliers, distributors, service providers, consultants, and other companies that support the roofing industry across North Carolina and South Carolina.</div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqm-2"><span class="faq-item__btn-text"><span>Do you serve both residential and commercial roofing professionals?</span></span><span class="faq-item__icon" aria-hidden="true">+</span></button>
+          <div class="faq-item__body" id="faqm-2" role="region"><div class="faq-item__body-inner">Yes. Carolinas Roofing Association supports both residential and commercial roofing professionals, as well as the vendors, manufacturers, suppliers, and service providers who serve the roofing industry.</div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqm-3"><span class="faq-item__btn-text"><span>What are the benefits of becoming a member?</span></span><span class="faq-item__icon" aria-hidden="true">+</span></button>
+          <div class="faq-item__body" id="faqm-3" role="region"><div class="faq-item__body-inner">Membership provides opportunities for industry connection, business visibility, education, events, networking, access to association resources, and participation in a regional roofing community built to support contractors and industry partners across the Carolinas.</div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqm-4"><span class="faq-item__btn-text"><span>How do I apply for membership?</span></span><span class="faq-item__icon" aria-hidden="true">+</span></button>
+          <div class="faq-item__body" id="faqm-4" role="region"><div class="faq-item__body-inner">Prospective members can begin the application process through the “Become a Member” or “Apply for Membership” page on the website. Once submitted, the association team will review the information and follow up with next steps.</div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqm-5"><span class="faq-item__btn-text"><span>Can vendors, suppliers, and manufacturers become members?</span></span><span class="faq-item__icon" aria-hidden="true">+</span></button>
+          <div class="faq-item__body" id="faqm-5" role="region"><div class="faq-item__body-inner">Yes. The association includes opportunities for vendors, suppliers, manufacturers, service providers, and other industry partners to participate as members and connect with roofing contractors throughout the Carolinas.</div></div>
+        </div>
+      </div>
+      <div class="faqx__more"><a class="btn btn--secondary" href="#faqs" data-page="faqs">View All FAQs</a></div>
     </div>
   </section>
 </div>
@@ -5984,7 +6026,7 @@ html.mz-auth .mz-out { display: none; }
           <ul class="page-list">
             <li><a href="#helpful-links" data-page="helpful-links"><strong>Helpful Links</strong></a> — industry, licensing, and regulatory links relevant to Carolinas roofing professionals.</li>
             <li><a href="#faqs" data-page="faqs"><strong>FAQs</strong></a> — answers to common questions about membership, programs, and events.</li>
-            <li><a href="#sif" data-page="sif"><strong>Self-Insurers Fund</strong></a> — the CRSMC workers' compensation group fund for qualifying members.</li>
+            <li><a href="#sif" data-page="sif"><strong>Self-Insurers Fund</strong></a> — the CRA workers' compensation group fund for qualifying members.</li>
             <li><a href="#publications" data-page="publications"><strong>Publications</strong></a> — association publications, including the <em>Carolinas Contacts</em> publication.</li>
           </ul>
         </div>
@@ -5997,6 +6039,35 @@ html.mz-auth .mz-out { display: none; }
           </div>
         </aside>
       </div>
+    </div>
+  </section>
+
+  <section class="faqx" aria-labelledby="faqr-heading">
+    <div class="container">
+      <div class="faqx__head">
+        <span class="eyebrow">Frequently asked</span>
+        <h2 id="faqr-heading">Frequently Asked Questions</h2>
+        <p>Here are a few common questions related to resources.</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqr-1"><span class="faq-item__btn-text"><span>What types of resources are available on the website?</span></span><span class="faq-item__icon" aria-hidden="true">+</span></button>
+          <div class="faq-item__body" id="faqr-1" role="region"><div class="faq-item__body-inner">The website may include helpful links, publications, association updates, event information, safety resources, member documents, and other roofing industry resources.</div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqr-2"><span class="faq-item__btn-text"><span>Where can I find publications?</span></span><span class="faq-item__icon" aria-hidden="true">+</span></button>
+          <div class="faq-item__body" id="faqr-2" role="region"><div class="faq-item__body-inner">Publications can be found on the Publications page under Resources. This section is designed to organize association publications and related materials in one easy-to-access location.</div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqr-3"><span class="faq-item__btn-text"><span>Where can I find helpful industry links?</span></span><span class="faq-item__icon" aria-hidden="true">+</span></button>
+          <div class="faq-item__body" id="faqr-3" role="region"><div class="faq-item__body-inner">Helpful industry links can be found on the Helpful Links page under Resources. These links connect members and visitors with relevant roofing, construction, safety, government, and industry organizations.</div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqr-4"><span class="faq-item__btn-text"><span>Are all resources available to the public?</span></span><span class="faq-item__icon" aria-hidden="true">+</span></button>
+          <div class="faq-item__body" id="faqr-4" role="region"><div class="faq-item__body-inner">Some resources may be public, while others may be limited to active members through the Member Zone.</div></div>
+        </div>
+      </div>
+      <div class="faqx__more"><a class="btn btn--secondary" href="#faqs" data-page="faqs">View All FAQs</a></div>
     </div>
   </section>
 </div>
@@ -6084,6 +6155,15 @@ html.mz-auth .mz-out { display: none; }
   .pub-featured { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 16px; }
   .pub-card__title { font-size: 0.95rem; }
 }
+
+/* Contextual (per-page) FAQ section */
+.faqx { background: var(--color-paper); border-top: 1px solid var(--color-line); padding: clamp(52px, 7vw, 84px) 0; }
+.faqx__head { text-align: center; max-width: 680px; margin: 0 auto 30px; }
+.faqx__head .eyebrow { color: var(--color-carolina-deep); }
+.faqx__head h2 { color: var(--color-navy); margin: 6px 0 8px; }
+.faqx__head p { color: var(--color-ink-2); margin: 0; line-height: 1.6; }
+.faqx .faq-list { max-width: 780px; margin: 0 auto; }
+.faqx__more { text-align: center; margin-top: 26px; }
 </style>
 
 <!-- HELPFUL LINKS PAGE -->
@@ -6263,6 +6343,32 @@ html.mz-auth .mz-out { display: none; }
   </section>
 </div>
 
+<!-- FAQs page styles -->
+<style>
+.faqp-controls { max-width: 820px; margin: 0 auto clamp(28px, 4vw, 40px); }
+.faqp-search { position: relative; margin-bottom: 18px; }
+.faqp-search svg { position: absolute; left: 18px; top: 50%; transform: translateY(-50%); color: var(--color-ink-4); pointer-events: none; }
+.faqp-search input {
+  width: 100%; box-sizing: border-box;
+  padding: 15px 18px 15px 50px;
+  border: 1.5px solid var(--color-line);
+  border-radius: 999px;
+  font-family: var(--font-body); font-size: 1rem; color: var(--color-ink);
+  background: #fff; transition: border-color .18s, box-shadow .18s;
+}
+.faqp-search input::placeholder { color: var(--color-ink-4); }
+.faqp-search input:focus { outline: none; border-color: var(--color-carolina); box-shadow: 0 0 0 3px rgba(75,156,211,0.16); }
+
+.faqp-groups { max-width: 880px; margin: 0 auto; }
+.faqp-group { margin-top: clamp(40px, 5vw, 56px); }
+.faqp-group:first-child { margin-top: 0; }
+.faqp-group.is-hidden { display: none; }
+.faqp-group__head { margin-bottom: 18px; padding-bottom: 12px; border-bottom: 2px solid var(--color-line); }
+.faqp-group__head h2 { font-size: clamp(1.25rem, 2.2vw, 1.55rem); color: var(--color-navy); margin: 0 0 6px; }
+.faqp-group__head p { font-size: 0.92rem; color: var(--color-ink-2); line-height: 1.6; margin: 0; max-width: 680px; }
+.faqp-empty { max-width: 880px; margin: 0 auto; }
+</style>
+
 <!-- FAQS PAGE -->
 <div class="page" id="page-faqs" data-page-id="faqs" hidden>
   <section class="page-hero page-hero--photo">
@@ -6272,31 +6378,406 @@ html.mz-auth .mz-out { display: none; }
         <a href="#home" data-page="home">Home</a><span aria-hidden="true">/</span><a href="#resources" data-page="resources">Resources</a><span aria-hidden="true">/</span><span>FAQs</span>
       </nav>
       <span class="eyebrow">Resources · Frequently Asked Questions</span>
-      <h1><em>FAQs</em></h1>
-      <p class="lede">Answers to common questions about Carolinas Roofing Association membership, programs, and events.</p>
+      <h1>Frequently Asked <em>Questions</em></h1>
+      <p class="lede">Find answers to common questions about membership, events, education, the member directory, resources, and the Carolinas Roofing Association member experience.</p>
       <div class="page-hero__ctas">
-        <a class="btn btn--primary btn--lg" href="#contact" data-page="contact">Ask a Question</a>
+        <a class="btn btn--primary btn--lg" href="#contact" data-page="contact">Contact the CRA Team</a>
         <a class="btn btn--secondary btn--lg" href="#resources" data-page="resources">All Resources</a>
       </div>
     </div>
   </section>
-  <section class="page-body">
+
+  <section class="page-body" id="faqPage">
     <div class="container">
-      <div class="page-body__grid">
-        <div class="page-body__main">
-          <h2>Frequently asked questions</h2>
-          <p>This section is designed to answer the questions members and prospective members ask most — about membership categories, the Self-Insurers Fund, events, and more — as the association continues building out its new website.</p>
-          <p>Have a question that isn't covered yet? <a href="#contact" data-page="contact">Contact the association</a> and we'll help.</p>
+
+      <!-- SEARCH + FILTERS -->
+      <div class="faqp-controls">
+        <div class="faqp-search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" id="faqSearch" data-faqp-search placeholder="Search FAQs by keyword…" aria-label="Search frequently asked questions" autocomplete="off">
         </div>
-        <aside class="page-body__aside">
-          <div class="aside-card">
-            <span class="eyebrow">Resources</span>
-            <h3>Explore more</h3>
-            <p>Browse all member resources.</p>
-            <a class="btn btn--secondary" href="#resources" data-page="resources">All Resources</a>
-          </div>
-        </aside>
+        <div class="faq-filter" role="group" aria-label="Filter FAQs by category" data-faqp-filter>
+          <button type="button" class="faq-filter__btn" data-faqp-cat="all" aria-pressed="true">All</button>
+          <button type="button" class="faq-filter__btn" data-faqp-cat="membership" aria-pressed="false">Membership</button>
+          <button type="button" class="faq-filter__btn" data-faqp-cat="memberzone" aria-pressed="false">Member Zone</button>
+          <button type="button" class="faq-filter__btn" data-faqp-cat="directory" aria-pressed="false">Directory</button>
+          <button type="button" class="faq-filter__btn" data-faqp-cat="events" aria-pressed="false">Events</button>
+          <button type="button" class="faq-filter__btn" data-faqp-cat="education" aria-pressed="false">Education</button>
+          <button type="button" class="faq-filter__btn" data-faqp-cat="resources" aria-pressed="false">Resources</button>
+          <button type="button" class="faq-filter__btn" data-faqp-cat="sif" aria-pressed="false">Self-Insurers Fund</button>
+          <button type="button" class="faq-filter__btn" data-faqp-cat="partners" aria-pressed="false">Partners</button>
+          <button type="button" class="faq-filter__btn" data-faqp-cat="support" aria-pressed="false">Support</button>
+        </div>
       </div>
+
+      <div class="faqp-groups" data-faqp-groups>
+
+        <!-- MEMBERSHIP -->
+        <div class="faqp-group" data-faqp-group="membership">
+          <div class="faqp-group__head">
+            <h2>Membership</h2>
+            <p>Who can join, what membership includes, and how to apply.</p>
+          </div>
+          <div class="faq-list">
+            <div class="faq-item" data-faq-category="membership">
+              <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqp-1">
+                <span class="faq-item__btn-text"><span class="faq-item__category">Membership</span><span>Who can join Carolinas Roofing Association?</span></span>
+                <span class="faq-item__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-item__body" id="faqp-1" role="region"><div class="faq-item__body-inner">Carolinas Roofing Association welcomes roofing contractors, manufacturers, suppliers, distributors, service providers, consultants, and other companies that support the roofing industry across North Carolina and South Carolina.</div></div>
+            </div>
+            <div class="faq-item" data-faq-category="membership">
+              <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqp-2">
+                <span class="faq-item__btn-text"><span class="faq-item__category">Membership</span><span>Do you serve both residential and commercial roofing professionals?</span></span>
+                <span class="faq-item__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-item__body" id="faqp-2" role="region"><div class="faq-item__body-inner">Yes. Carolinas Roofing Association supports both residential and commercial roofing professionals, as well as the vendors, manufacturers, suppliers, and service providers who serve the roofing industry.</div></div>
+            </div>
+            <div class="faq-item" data-faq-category="membership">
+              <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqp-3">
+                <span class="faq-item__btn-text"><span class="faq-item__category">Membership</span><span>What are the benefits of becoming a member?</span></span>
+                <span class="faq-item__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-item__body" id="faqp-3" role="region"><div class="faq-item__body-inner">Membership provides opportunities for industry connection, business visibility, education, events, networking, access to association resources, and participation in a regional roofing community built to support contractors and industry partners across the Carolinas.</div></div>
+            </div>
+            <div class="faq-item" data-faq-category="membership">
+              <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqp-4">
+                <span class="faq-item__btn-text"><span class="faq-item__category">Membership</span><span>How do I apply for membership?</span></span>
+                <span class="faq-item__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-item__body" id="faqp-4" role="region"><div class="faq-item__body-inner">Prospective members can begin the application process through the “Become a Member” or “Apply for Membership” page on the website. Once submitted, the association team will review the information and follow up with next steps.</div></div>
+            </div>
+            <div class="faq-item" data-faq-category="membership">
+              <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqp-5">
+                <span class="faq-item__btn-text"><span class="faq-item__category">Membership</span><span>How much are annual dues?</span></span>
+                <span class="faq-item__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-item__body" id="faqp-5" role="region"><div class="faq-item__body-inner">Annual dues are listed on the membership application page. Please review the application details carefully, as dues, terms, and membership categories may vary based on the association’s current structure.</div></div>
+            </div>
+            <div class="faq-item" data-faq-category="membership">
+              <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqp-6">
+                <span class="faq-item__btn-text"><span class="faq-item__category">Membership</span><span>Can vendors, suppliers, and manufacturers become members?</span></span>
+                <span class="faq-item__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-item__body" id="faqp-6" role="region"><div class="faq-item__body-inner">Yes. The association includes opportunities for vendors, suppliers, manufacturers, service providers, and other industry partners to participate as members and connect with roofing contractors throughout the Carolinas.</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MEMBER ZONE -->
+        <div class="faqp-group" data-faqp-group="memberzone">
+          <div class="faqp-group__head">
+            <h2>Member Zone</h2>
+            <p>Accessing and managing your secure member-only account.</p>
+          </div>
+          <div class="faq-list">
+            <div class="faq-item" data-faq-category="memberzone">
+              <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqp-7">
+                <span class="faq-item__btn-text"><span class="faq-item__category">Member Zone</span><span>What is the Member Zone?</span></span>
+                <span class="faq-item__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-item__body" id="faqp-7" role="region"><div class="faq-item__body-inner">The Member Zone is the secure member-only area of the website. It is designed to give members access to account information, member resources, directory tools, association updates, event information, and other member-only content.</div></div>
+            </div>
+            <div class="faq-item" data-faq-category="memberzone">
+              <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqp-8">
+                <span class="faq-item__btn-text"><span class="faq-item__category">Member Zone</span><span>How do I log in to the Member Zone?</span></span>
+                <span class="faq-item__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-item__body" id="faqp-8" role="region"><div class="faq-item__body-inner">Members can log in using the “Sign In” or “Member Zone” link on the website. If you need help accessing your account, please contact the Carolinas Roofing Association team for assistance.</div></div>
+            </div>
+            <div class="faq-item" data-faq-category="memberzone">
+              <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqp-9">
+                <span class="faq-item__btn-text"><span class="faq-item__category">Member Zone</span><span>What can I access inside the Member Zone?</span></span>
+                <span class="faq-item__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-item__body" id="faqp-9" role="region"><div class="faq-item__body-inner">Members may be able to access profile management tools, member-only resources, event information, account settings, association documents, and other content made available by the association.</div></div>
+            </div>
+            <div class="faq-item" data-faq-category="memberzone">
+              <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqp-10">
+                <span class="faq-item__btn-text"><span class="faq-item__category">Member Zone</span><span>Can I update my company information through the Member Zone?</span></span>
+                <span class="faq-item__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-item__body" id="faqp-10" role="region"><div class="faq-item__body-inner">Yes. Members will be able to manage key profile information, such as company name, contact information, website, address, and directory-related details. Keeping this information current helps ensure the member directory remains accurate.</div></div>
+            </div>
+            <div class="faq-item" data-faq-category="memberzone">
+              <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqp-11">
+                <span class="faq-item__btn-text"><span class="faq-item__category">Member Zone</span><span>If I update my email address, will it update in the member directory?</span></span>
+                <span class="faq-item__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-item__body" id="faqp-11" role="region"><div class="faq-item__body-inner">The Member Zone is intended to connect member profile information with the directory so that approved updates, such as email address, phone number, website, and company details, remain consistent across the site.</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MEMBER DIRECTORY -->
+        <div class="faqp-group" data-faqp-group="directory">
+          <div class="faqp-group__head">
+            <h2>Member Directory</h2>
+            <p>How the searchable member listing works and how to keep yours accurate.</p>
+          </div>
+          <div class="faq-list">
+            <div class="faq-item" data-faq-category="directory">
+              <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqp-12">
+                <span class="faq-item__btn-text"><span class="faq-item__category">Directory</span><span>What is the member directory?</span></span>
+                <span class="faq-item__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-item__body" id="faqp-12" role="region"><div class="faq-item__body-inner">The member directory is a searchable listing of Carolinas Roofing Association members. It helps members, industry partners, and visitors find roofing contractors, suppliers, vendors, manufacturers, and service providers connected to the association.</div></div>
+            </div>
+            <div class="faq-item" data-faq-category="directory">
+              <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqp-13">
+                <span class="faq-item__btn-text"><span class="faq-item__category">Directory</span><span>What information appears in the directory?</span></span>
+                <span class="faq-item__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-item__body" id="faqp-13" role="region"><div class="faq-item__body-inner">Directory listings may include company name, member category, city, state, website, email address, and other approved contact or business information.</div></div>
+            </div>
+            <div class="faq-item" data-faq-category="directory">
+              <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqp-14">
+                <span class="faq-item__btn-text"><span class="faq-item__category">Directory</span><span>Can members update their directory information?</span></span>
+                <span class="faq-item__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-item__body" id="faqp-14" role="region"><div class="faq-item__body-inner">Yes. Members should keep their profile information updated so the directory reflects accurate company and contact details.</div></div>
+            </div>
+            <div class="faq-item" data-faq-category="directory">
+              <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqp-15">
+                <span class="faq-item__btn-text"><span class="faq-item__category">Directory</span><span>Is the directory public or member-only?</span></span>
+                <span class="faq-item__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-item__body" id="faqp-15" role="region"><div class="faq-item__body-inner">Directory access may vary based on the association’s final access settings. Some directory information may be available publicly, while additional details or tools may be reserved for members.</div></div>
+            </div>
+            <div class="faq-item" data-faq-category="directory">
+              <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqp-16">
+                <span class="faq-item__btn-text"><span class="faq-item__category">Directory</span><span>How do I request a correction to my directory listing?</span></span>
+                <span class="faq-item__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-item__body" id="faqp-16" role="region"><div class="faq-item__body-inner">If your listing needs to be updated, log in to the Member Zone to review your profile information or contact the Carolinas Roofing Association team for assistance.</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- EVENTS -->
+        <div class="faqp-group" data-faqp-group="events">
+          <div class="faqp-group__head">
+            <h2>Events</h2>
+            <p>Trade shows, networking, registration, and sponsorship at CRA events.</p>
+          </div>
+          <div class="faq-list">
+            <div class="faq-item" data-faq-category="events">
+              <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqp-17">
+                <span class="faq-item__btn-text"><span class="faq-item__category">Events</span><span>What types of events does Carolinas Roofing Association host?</span></span>
+                <span class="faq-item__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-item__body" id="faqp-17" role="region"><div class="faq-item__body-inner">Carolinas Roofing Association hosts and supports events that bring together roofing contractors, industry partners, suppliers, manufacturers, and professionals across the Carolinas. Events may include trade shows, golf tournaments, networking events, education sessions, and regional meetings.</div></div>
+            </div>
+            <div class="faq-item" data-faq-category="events">
+              <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqp-18">
+                <span class="faq-item__btn-text"><span class="faq-item__category">Events</span><span>Where can I find upcoming events?</span></span>
+                <span class="faq-item__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-item__body" id="faqp-18" role="region"><div class="faq-item__body-inner">Upcoming events are listed on the Events page. Event details may include dates, location, registration information, sponsorship opportunities, and additional event resources.</div></div>
+            </div>
+            <div class="faq-item" data-faq-category="events">
+              <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqp-19">
+                <span class="faq-item__btn-text"><span class="faq-item__category">Events</span><span>How do I register for an event?</span></span>
+                <span class="faq-item__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-item__body" id="faqp-19" role="region"><div class="faq-item__body-inner">Event registration links will be provided on the event page when registration is available. Some events may use an external registration platform.</div></div>
+            </div>
+            <div class="faq-item" data-faq-category="events">
+              <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqp-20">
+                <span class="faq-item__btn-text"><span class="faq-item__category">Events</span><span>Can non-members attend events?</span></span>
+                <span class="faq-item__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-item__body" id="faqp-20" role="region"><div class="faq-item__body-inner">Some events may be open to non-members, while others may be member-only or offer member-preferred pricing. Please review the details for each event or contact the association team with questions.</div></div>
+            </div>
+            <div class="faq-item" data-faq-category="events">
+              <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqp-21">
+                <span class="faq-item__btn-text"><span class="faq-item__category">Events</span><span>Are sponsorship or exhibitor opportunities available?</span></span>
+                <span class="faq-item__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-item__body" id="faqp-21" role="region"><div class="faq-item__body-inner">Yes. Sponsorship and exhibitor opportunities may be available for select events. Visit the Partners or Events sections of the website for more information, or contact the association team to discuss available opportunities.</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- EDUCATION & ADVANCEMENT -->
+        <div class="faqp-group" data-faqp-group="education">
+          <div class="faqp-group__head">
+            <h2>Education &amp; Advancement</h2>
+            <p>Training, safety resources, and professional development opportunities.</p>
+          </div>
+          <div class="faq-list">
+            <div class="faq-item" data-faq-category="education">
+              <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqp-22">
+                <span class="faq-item__btn-text"><span class="faq-item__category">Education</span><span>Does Carolinas Roofing Association offer education or training?</span></span>
+                <span class="faq-item__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-item__body" id="faqp-22" role="region"><div class="faq-item__body-inner">Carolinas Roofing Association supports education and professional advancement for the roofing industry. Educational opportunities may include industry updates, safety resources, training sessions, webinars, event-based education, and future programming as available.</div></div>
+            </div>
+            <div class="faq-item" data-faq-category="education">
+              <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqp-23">
+                <span class="faq-item__btn-text"><span class="faq-item__category">Education</span><span>Where can I find education resources?</span></span>
+                <span class="faq-item__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-item__body" id="faqp-23" role="region"><div class="faq-item__body-inner">Education-related information can be found on the Education &amp; Advancement page and, when applicable, inside the Member Zone for member-only resources.</div></div>
+            </div>
+            <div class="faq-item" data-faq-category="education">
+              <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqp-24">
+                <span class="faq-item__btn-text"><span class="faq-item__category">Education</span><span>Are education resources available to non-members?</span></span>
+                <span class="faq-item__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-item__body" id="faqp-24" role="region"><div class="faq-item__body-inner">Some education resources may be available publicly, while others may be reserved for members. Access will depend on the type of resource and the association’s member access settings.</div></div>
+            </div>
+            <div class="faq-item" data-faq-category="education">
+              <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqp-25">
+                <span class="faq-item__btn-text"><span class="faq-item__category">Education</span><span>Does the association offer certification programs?</span></span>
+                <span class="faq-item__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-item__body" id="faqp-25" role="region"><div class="faq-item__body-inner">Any current or future certification-related opportunities will be communicated through the website, member updates, and association announcements as they become available.</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RESOURCES -->
+        <div class="faqp-group" data-faqp-group="resources">
+          <div class="faqp-group__head">
+            <h2>Resources</h2>
+            <p>Publications, helpful links, and other materials available on the site.</p>
+          </div>
+          <div class="faq-list">
+            <div class="faq-item" data-faq-category="resources">
+              <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqp-26">
+                <span class="faq-item__btn-text"><span class="faq-item__category">Resources</span><span>What types of resources are available on the website?</span></span>
+                <span class="faq-item__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-item__body" id="faqp-26" role="region"><div class="faq-item__body-inner">The website may include helpful links, publications, association updates, event information, safety resources, member documents, and other roofing industry resources.</div></div>
+            </div>
+            <div class="faq-item" data-faq-category="resources">
+              <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqp-27">
+                <span class="faq-item__btn-text"><span class="faq-item__category">Resources</span><span>Where can I find publications?</span></span>
+                <span class="faq-item__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-item__body" id="faqp-27" role="region"><div class="faq-item__body-inner">Publications can be found on the Publications page under Resources. This section is designed to organize association publications and related materials in one easy-to-access location.</div></div>
+            </div>
+            <div class="faq-item" data-faq-category="resources">
+              <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqp-28">
+                <span class="faq-item__btn-text"><span class="faq-item__category">Resources</span><span>Where can I find helpful industry links?</span></span>
+                <span class="faq-item__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-item__body" id="faqp-28" role="region"><div class="faq-item__body-inner">Helpful industry links can be found on the Helpful Links page under Resources. These links connect members and visitors with relevant roofing, construction, safety, government, and industry organizations.</div></div>
+            </div>
+            <div class="faq-item" data-faq-category="resources">
+              <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqp-29">
+                <span class="faq-item__btn-text"><span class="faq-item__category">Resources</span><span>Are all resources available to the public?</span></span>
+                <span class="faq-item__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-item__body" id="faqp-29" role="region"><div class="faq-item__body-inner">Some resources may be public, while others may be limited to active members through the Member Zone.</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SELF-INSURERS FUND -->
+        <div class="faqp-group" data-faqp-group="sif">
+          <div class="faqp-group__head">
+            <h2>Self-Insurers Fund</h2>
+            <p>The workers’ compensation program for qualifying members.</p>
+          </div>
+          <div class="faq-list">
+            <div class="faq-item" data-faq-category="sif">
+              <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqp-30">
+                <span class="faq-item__btn-text"><span class="faq-item__category">Self-Insurers Fund</span><span>What is the Self-Insurers Fund?</span></span>
+                <span class="faq-item__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-item__body" id="faqp-30" role="region"><div class="faq-item__body-inner">The CRA Self-Insurers Fund is a workers’ compensation program associated with the roofing industry in the Carolinas. Information about the fund, eligibility, and participation should be reviewed through the Self-Insurers Fund section of the website or by contacting the association team.</div></div>
+            </div>
+            <div class="faq-item" data-faq-category="sif">
+              <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqp-31">
+                <span class="faq-item__btn-text"><span class="faq-item__category">Self-Insurers Fund</span><span>Who can participate in the Self-Insurers Fund?</span></span>
+                <span class="faq-item__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-item__body" id="faqp-31" role="region"><div class="faq-item__body-inner">Eligibility may depend on membership status, business type, underwriting requirements, and other program guidelines. Please contact the association team for details specific to your company.</div></div>
+            </div>
+            <div class="faq-item" data-faq-category="sif">
+              <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqp-32">
+                <span class="faq-item__btn-text"><span class="faq-item__category">Self-Insurers Fund</span><span>Where can I learn more about the Self-Insurers Fund?</span></span>
+                <span class="faq-item__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-item__body" id="faqp-32" role="region"><div class="faq-item__body-inner">Visit the Self-Insurers Fund page or contact the Carolinas Roofing Association team for additional information.</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PARTNERS & SPONSORSHIP -->
+        <div class="faqp-group" data-faqp-group="partners">
+          <div class="faqp-group__head">
+            <h2>Partners &amp; Sponsorship</h2>
+            <p>Sponsorship opportunities and partner visibility with the association.</p>
+          </div>
+          <div class="faq-list">
+            <div class="faq-item" data-faq-category="partners">
+              <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqp-33">
+                <span class="faq-item__btn-text"><span class="faq-item__category">Partners</span><span>How can my company become a sponsor or partner?</span></span>
+                <span class="faq-item__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-item__body" id="faqp-33" role="region"><div class="faq-item__body-inner">Companies interested in sponsorship or partnership opportunities can contact Carolinas Roofing Association through the Partners page or Contact page.</div></div>
+            </div>
+            <div class="faq-item" data-faq-category="partners">
+              <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqp-34">
+                <span class="faq-item__btn-text"><span class="faq-item__category">Partners</span><span>What types of sponsorship opportunities are available?</span></span>
+                <span class="faq-item__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-item__body" id="faqp-34" role="region"><div class="faq-item__body-inner">Sponsorship opportunities may include event sponsorships, exhibitor opportunities, website visibility, association partnerships, and other promotional opportunities.</div></div>
+            </div>
+            <div class="faq-item" data-faq-category="partners">
+              <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqp-35">
+                <span class="faq-item__btn-text"><span class="faq-item__category">Partners</span><span>Are partners featured on the website?</span></span>
+                <span class="faq-item__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-item__body" id="faqp-35" role="region"><div class="faq-item__body-inner">Yes. Approved partners and sponsors may be featured on the website based on sponsorship level, association approval, and available placement opportunities.</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CONTACT & SUPPORT -->
+        <div class="faqp-group" data-faqp-group="support">
+          <div class="faqp-group__head">
+            <h2>Contact &amp; Support</h2>
+            <p>How to reach the association team and request help or updates.</p>
+          </div>
+          <div class="faq-list">
+            <div class="faq-item" data-faq-category="support">
+              <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqp-36">
+                <span class="faq-item__btn-text"><span class="faq-item__category">Support</span><span>How do I contact Carolinas Roofing Association?</span></span>
+                <span class="faq-item__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-item__body" id="faqp-36" role="region"><div class="faq-item__body-inner">You can contact the association through the Contact page on the website. The association team can help with membership questions, event information, directory updates, sponsorship opportunities, and general inquiries.</div></div>
+            </div>
+            <div class="faq-item" data-faq-category="support">
+              <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqp-37">
+                <span class="faq-item__btn-text"><span class="faq-item__category">Support</span><span>Who should I contact if I need help logging in?</span></span>
+                <span class="faq-item__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-item__body" id="faqp-37" role="region"><div class="faq-item__body-inner">If you need help accessing your Member Zone account, use the contact information provided on the website or reach out to the association team for support.</div></div>
+            </div>
+            <div class="faq-item" data-faq-category="support">
+              <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqp-38">
+                <span class="faq-item__btn-text"><span class="faq-item__category">Support</span><span>How do I submit website corrections or updates?</span></span>
+                <span class="faq-item__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-item__body" id="faqp-38" role="region"><div class="faq-item__body-inner">Please send any corrections, updates, or requested changes to the Carolinas Roofing Association team so they can review and update the appropriate website content.</div></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="faq-empty faqp-empty" data-faqp-empty hidden>No FAQs match your search. Try a different keyword or <a href="#contact" data-page="contact">contact us for help</a>.</p>
+
+      <aside class="aside-card aside-card--dark" style="margin:clamp(48px,6vw,72px) auto 0;max-width:880px;">
+        <span class="eyebrow" style="color: var(--color-gold);">Still have questions?</span>
+        <h3>We’re here to help</h3>
+        <p>Contact the Carolinas Roofing Association team for help with membership, events, directory updates, sponsorship opportunities, or general inquiries.</p>
+        <a class="btn btn--accent" href="#contact" data-page="contact">Contact Us</a>
+      </aside>
     </div>
   </section>
 </div>
@@ -6625,7 +7106,7 @@ html.mz-auth .mz-out { display: none; }
       </nav>
       <span class="eyebrow">Member Program · Workers' Compensation</span>
       <h1>The CRA <em>Self-Insurers Fund</em></h1>
-      <p class="lede">The CRSMC – Self-Insurers Fund is the oldest workers' compensation group fund in the Carolinas — and it could be saving you money.</p>
+      <p class="lede">The CRA Self-Insurers Fund is the oldest workers' compensation group fund in the Carolinas — and it could be saving you money.</p>
       <div class="page-hero__ctas">
         <a class="btn btn--primary btn--lg" href="mailto:kerriann.spratt@assuredpartners.com?subject=Self-Insurers%20Fund%20%E2%80%93%20Workers'%20Compensation%20Inquiry" data-event="cta-sif-quote">Request a Quote</a>
         <a class="btn btn--secondary btn--lg" href="#apply" data-page="apply" data-event="cta-start-membership">Become a Member</a>
@@ -6638,7 +7119,7 @@ html.mz-auth .mz-out { display: none; }
       <div class="page-body__grid">
         <div class="page-body__main">
           <h2>A long-running workers' compensation program for Carolinas roofing contractors</h2>
-          <p>The CRSMC – Self-Insurers Fund is the oldest workers' compensation group fund in the Carolinas. As a member program, it gives qualifying roofing contractors access to group workers' compensation coverage and could help eligible companies save money.</p>
+          <p>The CRA Self-Insurers Fund is the oldest workers' compensation group fund in the Carolinas. As a member program, it gives qualifying roofing contractors access to group workers' compensation coverage and could help eligible companies save money.</p>
 
           <h2 id="requirements">Group membership approval requirements</h2>
           <p>Group membership approval is contingent on the following:</p>
@@ -6673,6 +7154,31 @@ html.mz-auth .mz-out { display: none; }
           </div>
         </aside>
       </div>
+    </div>
+  </section>
+
+  <section class="faqx" aria-labelledby="faqsi-heading">
+    <div class="container">
+      <div class="faqx__head">
+        <span class="eyebrow">Frequently asked</span>
+        <h2 id="faqsi-heading">Frequently Asked Questions</h2>
+        <p>Here are a few common questions related to the Self-Insurers Fund.</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqsi-1"><span class="faq-item__btn-text"><span>What is the Self-Insurers Fund?</span></span><span class="faq-item__icon" aria-hidden="true">+</span></button>
+          <div class="faq-item__body" id="faqsi-1" role="region"><div class="faq-item__body-inner">The CRA Self-Insurers Fund is a workers’ compensation program associated with the roofing industry in the Carolinas. Information about the fund, eligibility, and participation should be reviewed through the Self-Insurers Fund section of the website or by contacting the association team.</div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqsi-2"><span class="faq-item__btn-text"><span>Who can participate in the Self-Insurers Fund?</span></span><span class="faq-item__icon" aria-hidden="true">+</span></button>
+          <div class="faq-item__body" id="faqsi-2" role="region"><div class="faq-item__body-inner">Eligibility may depend on membership status, business type, underwriting requirements, and other program guidelines. Please contact the association team for details specific to your company.</div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqsi-3"><span class="faq-item__btn-text"><span>Where can I learn more about the Self-Insurers Fund?</span></span><span class="faq-item__icon" aria-hidden="true">+</span></button>
+          <div class="faq-item__body" id="faqsi-3" role="region"><div class="faq-item__body-inner">Visit the Self-Insurers Fund page or contact the Carolinas Roofing Association team for additional information.</div></div>
+        </div>
+      </div>
+      <div class="faqx__more"><a class="btn btn--secondary" href="#faqs" data-page="faqs">View All FAQs</a></div>
     </div>
   </section>
 </div>
@@ -6754,6 +7260,39 @@ html.mz-auth .mz-out { display: none; }
       </div>
     </div>
   </section>
+
+  <section class="faqx" aria-labelledby="faqv-heading">
+    <div class="container">
+      <div class="faqx__head">
+        <span class="eyebrow">Frequently asked</span>
+        <h2 id="faqv-heading">Frequently Asked Questions</h2>
+        <p>Here are a few common questions related to events.</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqv-1"><span class="faq-item__btn-text"><span>What types of events does Carolinas Roofing Association host?</span></span><span class="faq-item__icon" aria-hidden="true">+</span></button>
+          <div class="faq-item__body" id="faqv-1" role="region"><div class="faq-item__body-inner">Carolinas Roofing Association hosts and supports events that bring together roofing contractors, industry partners, suppliers, manufacturers, and professionals across the Carolinas. Events may include trade shows, golf tournaments, networking events, education sessions, and regional meetings.</div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqv-2"><span class="faq-item__btn-text"><span>Where can I find upcoming events?</span></span><span class="faq-item__icon" aria-hidden="true">+</span></button>
+          <div class="faq-item__body" id="faqv-2" role="region"><div class="faq-item__body-inner">Upcoming events are listed on the Events page. Event details may include dates, location, registration information, sponsorship opportunities, and additional event resources.</div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqv-3"><span class="faq-item__btn-text"><span>How do I register for an event?</span></span><span class="faq-item__icon" aria-hidden="true">+</span></button>
+          <div class="faq-item__body" id="faqv-3" role="region"><div class="faq-item__body-inner">Event registration links will be provided on the event page when registration is available. Some events may use an external registration platform.</div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqv-4"><span class="faq-item__btn-text"><span>Can non-members attend events?</span></span><span class="faq-item__icon" aria-hidden="true">+</span></button>
+          <div class="faq-item__body" id="faqv-4" role="region"><div class="faq-item__body-inner">Some events may be open to non-members, while others may be member-only or offer member-preferred pricing. Please review the details for each event or contact the association team with questions.</div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqv-5"><span class="faq-item__btn-text"><span>Are sponsorship or exhibitor opportunities available?</span></span><span class="faq-item__icon" aria-hidden="true">+</span></button>
+          <div class="faq-item__body" id="faqv-5" role="region"><div class="faq-item__body-inner">Yes. Sponsorship and exhibitor opportunities may be available for select events. Visit the Partners or Events sections of the website for more information, or contact the association team to discuss available opportunities.</div></div>
+        </div>
+      </div>
+      <div class="faqx__more"><a class="btn btn--secondary" href="#faqs" data-page="faqs">View All FAQs</a></div>
+    </div>
+  </section>
 </div>
 
 <!-- EDUCATION PAGE -->
@@ -6807,6 +7346,35 @@ html.mz-auth .mz-out { display: none; }
           </div>
         </aside>
       </div>
+    </div>
+  </section>
+
+  <section class="faqx" aria-labelledby="faqe-heading">
+    <div class="container">
+      <div class="faqx__head">
+        <span class="eyebrow">Frequently asked</span>
+        <h2 id="faqe-heading">Frequently Asked Questions</h2>
+        <p>Here are a few common questions related to education and advancement.</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqe-1"><span class="faq-item__btn-text"><span>Does Carolinas Roofing Association offer education or training?</span></span><span class="faq-item__icon" aria-hidden="true">+</span></button>
+          <div class="faq-item__body" id="faqe-1" role="region"><div class="faq-item__body-inner">Carolinas Roofing Association supports education and professional advancement for the roofing industry. Educational opportunities may include industry updates, safety resources, training sessions, webinars, event-based education, and future programming as available.</div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqe-2"><span class="faq-item__btn-text"><span>Where can I find education resources?</span></span><span class="faq-item__icon" aria-hidden="true">+</span></button>
+          <div class="faq-item__body" id="faqe-2" role="region"><div class="faq-item__body-inner">Education-related information can be found on the Education &amp; Advancement page and, when applicable, inside the Member Zone for member-only resources.</div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqe-3"><span class="faq-item__btn-text"><span>Are education resources available to non-members?</span></span><span class="faq-item__icon" aria-hidden="true">+</span></button>
+          <div class="faq-item__body" id="faqe-3" role="region"><div class="faq-item__body-inner">Some education resources may be available publicly, while others may be reserved for members. Access will depend on the type of resource and the association’s member access settings.</div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqe-4"><span class="faq-item__btn-text"><span>Does the association offer certification programs?</span></span><span class="faq-item__icon" aria-hidden="true">+</span></button>
+          <div class="faq-item__body" id="faqe-4" role="region"><div class="faq-item__body-inner">Any current or future certification-related opportunities will be communicated through the website, member updates, and association announcements as they become available.</div></div>
+        </div>
+      </div>
+      <div class="faqx__more"><a class="btn btn--secondary" href="#faqs" data-page="faqs">View All FAQs</a></div>
     </div>
   </section>
 </div>
@@ -6864,6 +7432,39 @@ html.mz-auth .mz-out { display: none; }
         <a class="btn btn--primary" href="#apply" data-page="apply" data-event="cta-become-member">Become a Member to Be Listed</a>
         <a class="btn btn--ghost" href="#contact" data-page="contact">Ask About the Directory</a>
       </div>
+    </div>
+  </section>
+
+  <section class="faqx" aria-labelledby="faqd-heading">
+    <div class="container">
+      <div class="faqx__head">
+        <span class="eyebrow">Frequently asked</span>
+        <h2 id="faqd-heading">Frequently Asked Questions</h2>
+        <p>Here are a few common questions related to the member directory.</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqd-1"><span class="faq-item__btn-text"><span>What is the member directory?</span></span><span class="faq-item__icon" aria-hidden="true">+</span></button>
+          <div class="faq-item__body" id="faqd-1" role="region"><div class="faq-item__body-inner">The member directory is a searchable listing of Carolinas Roofing Association members. It helps members, industry partners, and visitors find roofing contractors, suppliers, vendors, manufacturers, and service providers connected to the association.</div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqd-2"><span class="faq-item__btn-text"><span>What information appears in the directory?</span></span><span class="faq-item__icon" aria-hidden="true">+</span></button>
+          <div class="faq-item__body" id="faqd-2" role="region"><div class="faq-item__body-inner">Directory listings may include company name, member category, city, state, website, email address, and other approved contact or business information.</div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqd-3"><span class="faq-item__btn-text"><span>Can members update their directory information?</span></span><span class="faq-item__icon" aria-hidden="true">+</span></button>
+          <div class="faq-item__body" id="faqd-3" role="region"><div class="faq-item__body-inner">Yes. Members should keep their profile information updated so the directory reflects accurate company and contact details.</div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqd-4"><span class="faq-item__btn-text"><span>Is the directory public or member-only?</span></span><span class="faq-item__icon" aria-hidden="true">+</span></button>
+          <div class="faq-item__body" id="faqd-4" role="region"><div class="faq-item__body-inner">Directory access may vary based on the association’s final access settings. Some directory information may be available publicly, while additional details or tools may be reserved for members.</div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqd-5"><span class="faq-item__btn-text"><span>How do I request a correction to my directory listing?</span></span><span class="faq-item__icon" aria-hidden="true">+</span></button>
+          <div class="faq-item__body" id="faqd-5" role="region"><div class="faq-item__body-inner">If your listing needs to be updated, log in to the Member Zone to review your profile information or contact the Carolinas Roofing Association team for assistance.</div></div>
+        </div>
+      </div>
+      <div class="faqx__more"><a class="btn btn--secondary" href="#faqs" data-page="faqs">View All FAQs</a></div>
     </div>
   </section>
 </div>
@@ -6931,6 +7532,35 @@ html.mz-auth .mz-out { display: none; }
           </div>
         </aside>
       </div>
+    </div>
+  </section>
+
+  <section class="faqx" aria-labelledby="faqpn-heading">
+    <div class="container">
+      <div class="faqx__head">
+        <span class="eyebrow">Frequently asked</span>
+        <h2 id="faqpn-heading">Frequently Asked Questions</h2>
+        <p>Here are a few common questions related to partnership and sponsorship.</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqpn-1"><span class="faq-item__btn-text"><span>How can my company become a sponsor or partner?</span></span><span class="faq-item__icon" aria-hidden="true">+</span></button>
+          <div class="faq-item__body" id="faqpn-1" role="region"><div class="faq-item__body-inner">Companies interested in sponsorship or partnership opportunities can contact Carolinas Roofing Association through the Partners page or Contact page.</div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqpn-2"><span class="faq-item__btn-text"><span>What types of sponsorship opportunities are available?</span></span><span class="faq-item__icon" aria-hidden="true">+</span></button>
+          <div class="faq-item__body" id="faqpn-2" role="region"><div class="faq-item__body-inner">Sponsorship opportunities may include event sponsorships, exhibitor opportunities, website visibility, association partnerships, and other promotional opportunities.</div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqpn-3"><span class="faq-item__btn-text"><span>Are partners featured on the website?</span></span><span class="faq-item__icon" aria-hidden="true">+</span></button>
+          <div class="faq-item__body" id="faqpn-3" role="region"><div class="faq-item__body-inner">Yes. Approved partners and sponsors may be featured on the website based on sponsorship level, association approval, and available placement opportunities.</div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqpn-4"><span class="faq-item__btn-text"><span>Are sponsorship or exhibitor opportunities available for events?</span></span><span class="faq-item__icon" aria-hidden="true">+</span></button>
+          <div class="faq-item__body" id="faqpn-4" role="region"><div class="faq-item__body-inner">Yes. Select events may include sponsorship, exhibitor, or partner visibility opportunities. Event-specific opportunities should be reviewed on the Events page or by contacting the association team.</div></div>
+        </div>
+      </div>
+      <div class="faqx__more"><a class="btn btn--secondary" href="#faqs" data-page="faqs">View All FAQs</a></div>
     </div>
   </section>
 </div>
@@ -7255,6 +7885,35 @@ html.mz-auth .mz-out { display: none; }
       </div>
     </div>
   </section>
+
+  <section class="faqx" aria-labelledby="faqct-heading">
+    <div class="container">
+      <div class="faqx__head">
+        <span class="eyebrow">Frequently asked</span>
+        <h2 id="faqct-heading">Frequently Asked Questions</h2>
+        <p>Here are a few common questions related to contact and support.</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqct-1"><span class="faq-item__btn-text"><span>How do I contact Carolinas Roofing Association?</span></span><span class="faq-item__icon" aria-hidden="true">+</span></button>
+          <div class="faq-item__body" id="faqct-1" role="region"><div class="faq-item__body-inner">You can contact the association through the Contact page on the website. The association team can help with membership questions, event information, directory updates, sponsorship opportunities, and general inquiries.</div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqct-2"><span class="faq-item__btn-text"><span>Who should I contact if I need help logging in?</span></span><span class="faq-item__icon" aria-hidden="true">+</span></button>
+          <div class="faq-item__body" id="faqct-2" role="region"><div class="faq-item__body-inner">If you need help accessing your Member Zone account, use the contact information provided on the website or reach out to the association team for support.</div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqct-3"><span class="faq-item__btn-text"><span>How do I submit website corrections or updates?</span></span><span class="faq-item__icon" aria-hidden="true">+</span></button>
+          <div class="faq-item__body" id="faqct-3" role="region"><div class="faq-item__body-inner">Please send any corrections, updates, or requested changes to the Carolinas Roofing Association team so they can review and update the appropriate website content.</div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqct-4"><span class="faq-item__btn-text"><span>Who should I contact about sponsorship opportunities?</span></span><span class="faq-item__icon" aria-hidden="true">+</span></button>
+          <div class="faq-item__body" id="faqct-4" role="region"><div class="faq-item__body-inner">Use the Contact page to reach the association team about sponsor, partner, exhibitor, or advertising opportunities.</div></div>
+        </div>
+      </div>
+      <div class="faqx__more"><a class="btn btn--secondary" href="#faqs" data-page="faqs">View All FAQs</a></div>
+    </div>
+  </section>
 </div>
 
 <!-- MEMBER LOGIN PAGE -->
@@ -7317,6 +7976,39 @@ html.mz-auth .mz-out { display: none; }
           <a class="btn btn--ghost mz-logout" href="#signin">Log Out</a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="faqx" aria-labelledby="faqz-heading">
+    <div class="container">
+      <div class="faqx__head">
+        <span class="eyebrow">Frequently asked</span>
+        <h2 id="faqz-heading">Frequently Asked Questions</h2>
+        <p>Here are a few common questions related to the Member Zone.</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqz-1"><span class="faq-item__btn-text"><span>What is the Member Zone?</span></span><span class="faq-item__icon" aria-hidden="true">+</span></button>
+          <div class="faq-item__body" id="faqz-1" role="region"><div class="faq-item__body-inner">The Member Zone is the secure member-only area of the website. It is designed to give members access to account information, member resources, directory tools, association updates, event information, and other member-only content.</div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqz-2"><span class="faq-item__btn-text"><span>How do I log in to the Member Zone?</span></span><span class="faq-item__icon" aria-hidden="true">+</span></button>
+          <div class="faq-item__body" id="faqz-2" role="region"><div class="faq-item__body-inner">Members can log in using the “Sign In” or “Member Zone” link on the website. If you need help accessing your account, please contact the Carolinas Roofing Association team for assistance.</div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqz-3"><span class="faq-item__btn-text"><span>What can I access inside the Member Zone?</span></span><span class="faq-item__icon" aria-hidden="true">+</span></button>
+          <div class="faq-item__body" id="faqz-3" role="region"><div class="faq-item__body-inner">Members may be able to access profile management tools, member-only resources, event information, account settings, association documents, and other content made available by the association.</div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqz-4"><span class="faq-item__btn-text"><span>Can I update my company information through the Member Zone?</span></span><span class="faq-item__icon" aria-hidden="true">+</span></button>
+          <div class="faq-item__body" id="faqz-4" role="region"><div class="faq-item__body-inner">Yes. Members will be able to manage key profile information, such as company name, contact information, website, address, and directory-related details. Keeping this information current helps ensure the member directory remains accurate.</div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-item__btn" aria-expanded="false" aria-controls="faqz-5"><span class="faq-item__btn-text"><span>If I update my email address, will it update in the member directory?</span></span><span class="faq-item__icon" aria-hidden="true">+</span></button>
+          <div class="faq-item__body" id="faqz-5" role="region"><div class="faq-item__body-inner">The Member Zone is intended to connect member profile information with the directory so that approved updates, such as email address, phone number, website, and company details, remain consistent across the site.</div></div>
+        </div>
+      </div>
+      <div class="faqx__more"><a class="btn btn--secondary" href="#faqs" data-page="faqs">View All FAQs</a></div>
     </div>
   </section>
 </div>
@@ -8446,7 +9138,7 @@ html.mz-auth .mz-out { display: none; }
     const descriptions = {
       home:       'The Carolinas Roofing Association is the regional trade association for roofing contractors, vendors, manufacturers, and service providers across North and South Carolina. Membership, education, events, advocacy, and industry relationships — since 1943.',
       membership: 'Join the Carolinas Roofing Association — membership for residential and commercial roofing contractors, vendors, manufacturers, and service providers across North and South Carolina.',
-      sif:        'The CRSMC – Self-Insurers Fund is the oldest workers\' compensation group fund in the Carolinas. See eligibility requirements and request a quote through the Carolinas Roofing Association.',
+      sif:        'The CRA Self-Insurers Fund is the oldest workers\' compensation group fund in the Carolinas. See eligibility requirements and request a quote through the Carolinas Roofing Association.',
       resources:  'Member resources from the Carolinas Roofing Association — helpful links, FAQs, legal updates, the Self-Insurers Fund, publications, and articles.',
       'helpful-links': 'Helpful links and external resources for Carolinas roofing professionals — licensing boards, regulatory agencies, and industry organizations.',
       faqs:       'Frequently asked questions about Carolinas Roofing Association membership, programs, and events.',
@@ -9259,6 +9951,62 @@ th,td{text-align:left;padding:6px 8px;border-bottom:1px solid #ddd;vertical-alig
     var initials = (parts[0][0] || '') + (parts.length > 1 ? parts[parts.length-1][0] : '');
     photo.textContent = initials.toUpperCase();
   });
+})();
+</script>
+
+<script>
+/* FAQs page: real-time search + category filter + grouping + empty state */
+(function(){
+  var page = document.getElementById('faqPage');
+  if(!page) return;
+  var searchInput = page.querySelector('[data-faqp-search]');
+  var filterRoot  = page.querySelector('[data-faqp-filter]');
+  var groups      = Array.prototype.slice.call(page.querySelectorAll('[data-faqp-group]'));
+  var items       = Array.prototype.slice.call(page.querySelectorAll('.faq-item'));
+  var emptyMsg    = page.querySelector('[data-faqp-empty]');
+  var buttons     = filterRoot ? Array.prototype.slice.call(filterRoot.querySelectorAll('.faq-filter__btn')) : [];
+  var activeCat   = 'all';
+
+  // Pre-compute searchable text for each item
+  items.forEach(function(item){
+    item._faqText = (item.textContent || '').toLowerCase().replace(/\s+/g, ' ').trim();
+    item._faqCat  = item.getAttribute('data-faq-category') || '';
+  });
+
+  function apply(){
+    var q = (searchInput && searchInput.value ? searchInput.value : '').toLowerCase().replace(/\s+/g, ' ').trim();
+    var anyVisible = false;
+
+    items.forEach(function(item){
+      var catMatch = (activeCat === 'all') || (item._faqCat === activeCat);
+      var textMatch = !q || item._faqText.indexOf(q) !== -1;
+      var show = catMatch && textMatch;
+      item.classList.toggle('is-hidden', !show);
+      if(show) anyVisible = true;
+    });
+
+    // Hide category groups with no visible items
+    groups.forEach(function(group){
+      var visible = group.querySelectorAll('.faq-item:not(.is-hidden)').length;
+      group.classList.toggle('is-hidden', visible === 0);
+    });
+
+    if(emptyMsg) emptyMsg.hidden = anyVisible;
+  }
+
+  if(searchInput){
+    searchInput.addEventListener('input', apply);
+  }
+
+  buttons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      activeCat = btn.getAttribute('data-faqp-cat') || 'all';
+      buttons.forEach(function(b){ b.setAttribute('aria-pressed', String(b === btn)); });
+      apply();
+    });
+  });
+
+  apply();
 })();
 </script>
 
