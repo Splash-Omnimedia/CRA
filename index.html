@@ -3636,8 +3636,8 @@ html.mz-auth .mz-out { display: none; }
 .partner-logo--elite { height: 96px; font-size: 1rem; }
 .partner-logo--elite img { filter: none; opacity: 1; height: 60px; width: auto; max-width: 100%; object-fit: contain; }
 .sponsor-card { align-items: center; text-align: center; }
-.sponsor-logo { display: flex; align-items: center; justify-content: center; min-height: 90px; padding: 8px 0; }
-.sponsor-logo img { height: 66px; width: auto; max-width: 220px; object-fit: contain; }
+.sponsor-logo { display: flex; align-items: center; justify-content: center; min-height: 110px; padding: 8px 0; }
+.sponsor-logo img { width: 190px; height: 95px; max-width: 100%; object-fit: contain; }
 .partner-logo--redclay { height: 96px; font-size: 1rem; }
 .partner-logo img {
   max-width: 100%;
@@ -7535,6 +7535,62 @@ html.mz-auth .mz-out { display: none; }
     </div>
   </section>
 
+  <section class="page-body" id="partner-with-us" style="border-top:1px solid var(--color-line);">
+    <div class="container">
+      <div style="text-align:center;max-width:680px;margin:0 auto 32px;">
+        <span class="eyebrow">Get involved</span>
+        <h2 style="color:var(--color-navy);margin:6px 0 8px;">Partner with Us</h2>
+        <p style="color:var(--color-ink-2);margin:0;line-height:1.6;">Tell us about your company and the partnership, sponsorship, or exhibiting opportunities you're interested in. A member of the Carolinas Roofing Association team will follow up to discuss options that fit your goals.</p>
+      </div>
+      <form class="simple-form" id="partnerForm" novalidate style="max-width:720px;margin:0 auto;">
+        <div class="form-row form-row--split">
+          <div>
+            <label for="pw-company">Company Name <span aria-hidden="true">*</span></label>
+            <input id="pw-company" name="company" type="text" autocomplete="organization" required>
+          </div>
+          <div>
+            <label for="pw-name">Contact Name <span aria-hidden="true">*</span></label>
+            <input id="pw-name" name="name" type="text" autocomplete="name" required>
+          </div>
+        </div>
+        <div class="form-row form-row--split">
+          <div>
+            <label for="pw-email">Email <span aria-hidden="true">*</span></label>
+            <input id="pw-email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div>
+            <label for="pw-phone">Phone</label>
+            <input id="pw-phone" name="phone" type="tel" autocomplete="tel">
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="pw-website">Company Website</label>
+          <input id="pw-website" name="website" type="url" placeholder="https://" autocomplete="url">
+        </div>
+        <div class="form-row">
+          <label for="pw-interest">Opportunity of interest</label>
+          <select id="pw-interest" name="interest">
+            <option value="">Select an option</option>
+            <option value="event-sponsorship">Event Sponsorship</option>
+            <option value="exhibitor">Exhibitor / Trade Show</option>
+            <option value="annual-sponsorship">Annual / Strategic Sponsorship</option>
+            <option value="advertising">Advertising (Carolinas Contacts)</option>
+            <option value="associate-membership">Associate Membership</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="pw-message">Tell us about your goals <span aria-hidden="true">*</span></label>
+          <textarea id="pw-message" name="message" rows="5" required></textarea>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn--accent btn--lg">Submit Partnership Inquiry</button>
+          <p class="form-status" id="partnerStatus" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+    </div>
+  </section>
+
   <section class="faqx" aria-labelledby="faqpn-heading">
     <div class="container">
       <div class="faqx__head">
@@ -9422,6 +9478,7 @@ th,td{text-align:left;padding:6px 8px;border-bottom:1px solid #ddd;vertical-alig
   };
 
   handleFormStub('contactForm',  'contactStatus',  'Thanks — your message has been received. A member of the association team will follow up. No obligation.');
+  handleFormStub('partnerForm',  'partnerStatus',  'Thanks — your partnership inquiry has been received. A member of the association team will follow up to discuss opportunities.');
   handleFormStub('newsletterForm', 'newsletterStatus', 'Subscribed. Watch your inbox for association updates.');
 
   /* ===== MEMBER ZONE (prototype auth state) ===== */
