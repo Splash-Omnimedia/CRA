@@ -2150,6 +2150,8 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
 }
 .dir-card__tag--gold { background: rgba(80,126,142,0.10); color: var(--color-gold-deep); border-color: rgba(80,126,142,0.30); }
 .dir-card__tag--blue { background: rgba(75,156,211,0.10); color: var(--color-carolina-deep); border-color: rgba(75,156,211,0.30); }
+.dir-card__cat { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.09em; font-weight: 700; color: var(--color-carolina-deep); margin-top: 6px; }
+.dir-card__sep { margin: 0 8px; color: var(--color-line-2); }
 
 .placeholder-banner {
   display: flex;
@@ -3109,6 +3111,12 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
 @media (max-width: 540px) {
   .download-card .btn { width: 100%; }
 }
+
+.utility-bar { background: var(--color-navy-ink); border-bottom: 1px solid rgba(255,255,255,0.08); }
+.utility-nav { display: flex; justify-content: flex-end; gap: 24px; padding: 7px 0; }
+.utility-nav a { color: var(--color-on-dark-2); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.02em; text-decoration: none; }
+.utility-nav a:hover, .utility-nav a:focus-visible { color: var(--color-gold); }
+@media (max-width: 860px) { .utility-bar { display: none; } }
 
 .page-cta-row {
   display: flex;
@@ -4477,6 +4485,16 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
 <!-- =======================================================
      HEADER
      ======================================================= -->
+<!-- Utility nav (above main header) -->
+<div class="utility-bar">
+  <div class="container">
+    <nav class="utility-nav" aria-label="Utility">
+      <a href="#directory" data-page="directory">Member Directory</a>
+      <a href="#signin" data-page="signin">Member Zone</a>
+    </nav>
+  </div>
+</div>
+
 <header class="site-header" id="siteHeader" role="banner">
   <div class="container">
     <div class="nav-wrap">
@@ -4487,19 +4505,22 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
       </a>
 
       <ul class="primary-nav" id="primaryNav" role="list" aria-label="Primary">
+        <li><a href="#membership" data-page="membership">Membership</a></li>
+        <li><a href="#education" data-page="education">Education &amp; Advancement</a></li>
+        <li><a href="#events" data-page="events">Events</a></li>
         <li class="has-dropdown">
-          <a href="#membership" data-page="membership" aria-haspopup="true">Membership
+          <a href="#resources" data-page="resources" aria-haspopup="true">Resources
             <svg class="dropdown-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
-          <ul class="nav-dropdown" role="list" aria-label="Membership">
-            <li><a href="#membership" data-page="membership">Membership Overview</a></li>
+          <ul class="nav-dropdown" role="list" aria-label="Resources">
+            <li><a href="#helpful-links" data-page="helpful-links">Helpful Links</a></li>
+            <li><a href="#faqs" data-page="faqs">FAQs</a></li>
+            <li><a href="#legal-updates" data-page="legal-updates">Legal Update Column</a></li>
             <li><a href="#sif" data-page="sif">Self-Insurers Fund</a></li>
+            <li><a href="#publications" data-page="publications">Publications</a></li>
+            <li><a href="#articles" data-page="articles">Articles</a></li>
           </ul>
         </li>
-        <li><a href="#events" data-page="events">Events</a></li>
-        <li><a href="#education" data-page="education">Education</a></li>
-        <li><a href="#directory" data-page="directory">Directory</a></li>
-        <li><a href="#partners" data-page="partners">Partners</a></li>
         <li class="has-dropdown">
           <a href="#about" data-page="about" aria-haspopup="true">About
             <svg class="dropdown-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
@@ -4514,7 +4535,6 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
       </ul>
 
       <div class="header-ctas">
-        <a class="btn btn--secondary" href="#signin" data-page="signin">Sign In</a>
         <a class="btn btn--primary" href="#membership" data-page="membership" data-event="cta-become-member">Become a Member</a>
         <button class="menu-toggle" type="button" id="menuToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
@@ -4554,19 +4574,23 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
 <div class="mobile-nav" id="mobileNav" aria-hidden="true">
   <ul class="mobile-nav__list" role="list">
     <li><a href="#membership" data-page="membership">Membership</a></li>
-    <li><a href="#sif" data-page="sif" style="padding-left:26px;opacity:.85;">↳ Self-Insurers Fund</a></li>
+    <li><a href="#education" data-page="education">Education &amp; Advancement</a></li>
     <li><a href="#events" data-page="events">Events</a></li>
-    <li><a href="#education" data-page="education">Education</a></li>
-    <li><a href="#directory" data-page="directory">Member Directory</a></li>
-    <li><a href="#partners" data-page="partners">Partners &amp; Sponsors</a></li>
+    <li><a href="#resources" data-page="resources">Resources</a></li>
+    <li><a href="#helpful-links" data-page="helpful-links" style="padding-left:26px;opacity:.85;">↳ Helpful Links</a></li>
+    <li><a href="#faqs" data-page="faqs" style="padding-left:26px;opacity:.85;">↳ FAQs</a></li>
+    <li><a href="#legal-updates" data-page="legal-updates" style="padding-left:26px;opacity:.85;">↳ Legal Update Column</a></li>
+    <li><a href="#sif" data-page="sif" style="padding-left:26px;opacity:.85;">↳ Self-Insurers Fund</a></li>
+    <li><a href="#publications" data-page="publications" style="padding-left:26px;opacity:.85;">↳ Publications</a></li>
+    <li><a href="#articles" data-page="articles" style="padding-left:26px;opacity:.85;">↳ Articles</a></li>
     <li><a href="#about" data-page="about">About CRA</a></li>
     <li><a href="#board" data-page="board" style="padding-left:26px;opacity:.85;">↳ Board Members</a></li>
     <li><a href="#past-presidents" data-page="past-presidents" style="padding-left:26px;opacity:.85;">↳ Past Presidents</a></li>
-    <li><a href="#contact" data-page="contact">Contact</a></li>
   </ul>
   <div class="mobile-nav__util">
-    <a href="#signin" data-page="signin">Sign In</a>
-    <a href="mailto:office@crsmca.org">office@crsmca.org</a>
+    <a href="#directory" data-page="directory">Member Directory</a>
+    <a href="#signin" data-page="signin">Member Zone</a>
+    <a href="#contact" data-page="contact">Contact</a>
   </div>
   <div class="mobile-nav__cta">
     <a class="btn btn--primary btn--lg" href="#membership" data-page="membership" data-event="cta-become-member">Become a Member</a>
@@ -5361,13 +5385,10 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
           <div class="filter-chips" id="filterChips" role="group" aria-label="Filter members">
             <span class="filter-chips__lbl">Filter:</span>
             <button class="filter-chip" type="button" aria-pressed="false" data-filter="contractor">Contractor</button>
-            <button class="filter-chip" type="button" aria-pressed="false" data-filter="vendor">Vendor / Supplier</button>
-            <button class="filter-chip" type="button" aria-pressed="false" data-filter="mfr">Manufacturer</button>
-            <button class="filter-chip" type="button" aria-pressed="false" data-filter="service">Service Provider</button>
+            <button class="filter-chip" type="button" aria-pressed="false" data-filter="associate">Associate</button>
+            <button class="filter-chip" type="button" aria-pressed="false" data-filter="sustaining">Sustaining</button>
             <button class="filter-chip" type="button" aria-pressed="false" data-filter="nc">North Carolina</button>
             <button class="filter-chip" type="button" aria-pressed="false" data-filter="sc">South Carolina</button>
-            <button class="filter-chip" type="button" aria-pressed="false" data-filter="residential">Residential</button>
-            <button class="filter-chip" type="button" aria-pressed="false" data-filter="commercial">Commercial</button>
           </div>
         </form>
       </div>
@@ -5708,7 +5729,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
             <span class="faq-item__icon" aria-hidden="true">+</span>
           </button>
           <div class="faq-item__body" id="faq-13" role="region">
-            <div class="faq-item__body-inner"><!-- INTERNAL: confirm dues amounts by category before launch -->Annual dues vary by membership category — contractor, vendor, manufacturer, or service provider. Contact the association for current dues for your category. Most members consider dues a small cost relative to the value of access to regional relationships, education, the Carolinas Roofing Expo, and member-only programs.</div>
+            <div class="faq-item__body-inner">Annual dues vary by membership category — contractor, vendor, manufacturer, or service provider. Contact the association for current dues for your category. Most members consider dues a small cost relative to the value of access to regional relationships, education, the Carolinas Roofing Expo, and member-only programs.</div>
           </div>
         </div>
 
@@ -5903,19 +5924,254 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
   </section>
 </div>
 
+<!-- RESOURCES HUB PAGE -->
+<div class="page" id="page-resources" data-page-id="resources" hidden>
+  <section class="page-hero page-hero--photo">
+    <img class="page-hero__bg" src="images/huthphoto-discovedurham-crasmc-hr5_0317.jpg" alt="" loading="lazy" aria-hidden="true">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="#home" data-page="home">Home</a><span aria-hidden="true">/</span><span>Resources</span>
+      </nav>
+      <span class="eyebrow">Resources · Tools &amp; Reference for Members</span>
+      <h1><em>Resources</em> for Carolinas Roofing Professionals</h1>
+      <p class="lede">Programs, reference materials, and member resources from the Carolinas Roofing Association — all in one place.</p>
+      <div class="page-hero__ctas">
+        <a class="btn btn--primary btn--lg" href="#contact" data-page="contact">Contact the Association</a>
+        <a class="btn btn--secondary btn--lg" href="#membership" data-page="membership">View Membership</a>
+      </div>
+    </div>
+  </section>
+  <section class="page-body">
+    <div class="container">
+      <div class="page-body__grid">
+        <div class="page-body__main">
+          <h2>Member resources</h2>
+          <p>Browse the resources available through the Carolinas Roofing Association. Members can explore each area below; additional materials are added over time.</p>
+          <ul class="page-list">
+            <li><a href="#helpful-links" data-page="helpful-links"><strong>Helpful Links</strong></a> — industry, licensing, and regulatory links relevant to Carolinas roofing professionals.</li>
+            <li><a href="#faqs" data-page="faqs"><strong>FAQs</strong></a> — answers to common questions about membership, programs, and events.</li>
+            <li><a href="#legal-updates" data-page="legal-updates"><strong>Legal Update Column</strong></a> — legal and regulatory updates for North and South Carolina roofing.</li>
+            <li><a href="#sif" data-page="sif"><strong>Self-Insurers Fund</strong></a> — the CRSMC workers' compensation group fund for qualifying members.</li>
+            <li><a href="#publications" data-page="publications"><strong>Publications</strong></a> — association publications, including the <em>Carolinas Contacts</em> publication.</li>
+            <li><a href="#articles" data-page="articles"><strong>Articles</strong></a> — industry articles and member features.</li>
+          </ul>
+        </div>
+        <aside class="page-body__aside">
+          <div class="aside-card aside-card--dark">
+            <span class="eyebrow" style="color: var(--color-gold);">Members</span>
+            <h3>Looking for something?</h3>
+            <p>If you can't find a resource you need, the association office is happy to help.</p>
+            <a class="btn btn--accent" href="#contact" data-page="contact">Contact Us</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- HELPFUL LINKS PAGE -->
+<div class="page" id="page-helpful-links" data-page-id="helpful-links" hidden>
+  <section class="page-hero page-hero--photo">
+    <img class="page-hero__bg" src="images/huthphoto-discovedurham-crasmc-hr5_0328.jpg" alt="" loading="lazy" aria-hidden="true">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="#home" data-page="home">Home</a><span aria-hidden="true">/</span><a href="#resources" data-page="resources">Resources</a><span aria-hidden="true">/</span><span>Helpful Links</span>
+      </nav>
+      <span class="eyebrow">Resources · Helpful Links</span>
+      <h1><em>Helpful Links</em></h1>
+      <p class="lede">Curated links to industry, licensing, and regulatory resources for Carolinas roofing professionals.</p>
+      <div class="page-hero__ctas">
+        <a class="btn btn--primary btn--lg" href="#contact" data-page="contact">Suggest a Link</a>
+        <a class="btn btn--secondary btn--lg" href="#resources" data-page="resources">All Resources</a>
+      </div>
+    </div>
+  </section>
+  <section class="page-body">
+    <div class="container">
+      <div class="page-body__grid">
+        <div class="page-body__main">
+          <h2>Industry and regulatory links</h2>
+          <p>This page will collect helpful external links for members — including state licensing boards, regulatory agencies, and industry organizations across North and South Carolina. Content is being added.</p>
+          <p>If there's a resource you'd like to see listed here, <a href="#contact" data-page="contact">let the association know</a>.</p>
+        </div>
+        <aside class="page-body__aside">
+          <div class="aside-card">
+            <span class="eyebrow">Resources</span>
+            <h3>Explore more</h3>
+            <p>Browse all member resources.</p>
+            <a class="btn btn--secondary" href="#resources" data-page="resources">All Resources</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- FAQS PAGE -->
+<div class="page" id="page-faqs" data-page-id="faqs" hidden>
+  <section class="page-hero page-hero--photo">
+    <img class="page-hero__bg" src="images/huthphoto-discovedurham-crasmc-hr5_0268.jpg" alt="" loading="lazy" aria-hidden="true">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="#home" data-page="home">Home</a><span aria-hidden="true">/</span><a href="#resources" data-page="resources">Resources</a><span aria-hidden="true">/</span><span>FAQs</span>
+      </nav>
+      <span class="eyebrow">Resources · Frequently Asked Questions</span>
+      <h1><em>FAQs</em></h1>
+      <p class="lede">Answers to common questions about Carolinas Roofing Association membership, programs, and events.</p>
+      <div class="page-hero__ctas">
+        <a class="btn btn--primary btn--lg" href="#contact" data-page="contact">Ask a Question</a>
+        <a class="btn btn--secondary btn--lg" href="#resources" data-page="resources">All Resources</a>
+      </div>
+    </div>
+  </section>
+  <section class="page-body">
+    <div class="container">
+      <div class="page-body__grid">
+        <div class="page-body__main">
+          <h2>Frequently asked questions</h2>
+          <p>This page will host answers to the questions members and prospective members ask most — about membership categories, the Self-Insurers Fund, events, and more. Content is being added.</p>
+          <p>Have a question that isn't covered yet? <a href="#contact" data-page="contact">Contact the association</a> and we'll help.</p>
+        </div>
+        <aside class="page-body__aside">
+          <div class="aside-card">
+            <span class="eyebrow">Resources</span>
+            <h3>Explore more</h3>
+            <p>Browse all member resources.</p>
+            <a class="btn btn--secondary" href="#resources" data-page="resources">All Resources</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- LEGAL UPDATE COLUMN PAGE -->
+<div class="page" id="page-legal-updates" data-page-id="legal-updates" hidden>
+  <section class="page-hero page-hero--photo">
+    <img class="page-hero__bg" src="images/huthphoto-discovedurham-crasmc-hr5_0375.jpg" alt="" loading="lazy" aria-hidden="true">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="#home" data-page="home">Home</a><span aria-hidden="true">/</span><a href="#resources" data-page="resources">Resources</a><span aria-hidden="true">/</span><span>Legal Update Column</span>
+      </nav>
+      <span class="eyebrow">Resources · Legal Update Column</span>
+      <h1><em>Legal Update Column</em></h1>
+      <p class="lede">Legal and regulatory updates relevant to roofing contractors across North and South Carolina.</p>
+      <div class="page-hero__ctas">
+        <a class="btn btn--primary btn--lg" href="#contact" data-page="contact">Contact the Association</a>
+        <a class="btn btn--secondary btn--lg" href="#resources" data-page="resources">All Resources</a>
+      </div>
+    </div>
+  </section>
+  <section class="page-body">
+    <div class="container">
+      <div class="page-body__grid">
+        <div class="page-body__main">
+          <h2>Legal &amp; regulatory updates</h2>
+          <p>This column will share legal and regulatory developments that affect Carolinas roofing businesses — licensing, contracts, compliance, and workforce matters. Content is being added.</p>
+          <p>For questions in the meantime, <a href="#contact" data-page="contact">reach out to the association</a>.</p>
+        </div>
+        <aside class="page-body__aside">
+          <div class="aside-card">
+            <span class="eyebrow">Resources</span>
+            <h3>Explore more</h3>
+            <p>Browse all member resources.</p>
+            <a class="btn btn--secondary" href="#resources" data-page="resources">All Resources</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- PUBLICATIONS PAGE -->
+<div class="page" id="page-publications" data-page-id="publications" hidden>
+  <section class="page-hero page-hero--photo">
+    <img class="page-hero__bg" src="images/huthphoto-discovedurham-crasmc-hr5_0260.jpg" alt="" loading="lazy" aria-hidden="true">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="#home" data-page="home">Home</a><span aria-hidden="true">/</span><a href="#resources" data-page="resources">Resources</a><span aria-hidden="true">/</span><span>Publications</span>
+      </nav>
+      <span class="eyebrow">Resources · Publications</span>
+      <h1><em>Publications</em></h1>
+      <p class="lede">Association publications, including the <em>Carolinas Contacts</em> publication.</p>
+      <div class="page-hero__ctas">
+        <a class="btn btn--primary btn--lg" href="#contact" data-page="contact">Contact the Association</a>
+        <a class="btn btn--secondary btn--lg" href="#resources" data-page="resources">All Resources</a>
+      </div>
+    </div>
+  </section>
+  <section class="page-body">
+    <div class="container">
+      <div class="page-body__grid">
+        <div class="page-body__main">
+          <h2>Association publications</h2>
+          <p>This page will feature the association's publications, including the <em>Carolinas Contacts</em> publication and other member materials. Content is being added.</p>
+          <p>To request a current publication, <a href="#contact" data-page="contact">contact the association</a>.</p>
+        </div>
+        <aside class="page-body__aside">
+          <div class="aside-card">
+            <span class="eyebrow">Resources</span>
+            <h3>Explore more</h3>
+            <p>Browse all member resources.</p>
+            <a class="btn btn--secondary" href="#resources" data-page="resources">All Resources</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ARTICLES PAGE -->
+<div class="page" id="page-articles" data-page-id="articles" hidden>
+  <section class="page-hero page-hero--photo">
+    <img class="page-hero__bg" src="images/huthphoto-discovedurham-crasmc-hr5_0267.jpg" alt="" loading="lazy" aria-hidden="true">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="#home" data-page="home">Home</a><span aria-hidden="true">/</span><a href="#resources" data-page="resources">Resources</a><span aria-hidden="true">/</span><span>Articles</span>
+      </nav>
+      <span class="eyebrow">Resources · Articles</span>
+      <h1><em>Articles</em></h1>
+      <p class="lede">Industry articles and member features from the Carolinas Roofing Association.</p>
+      <div class="page-hero__ctas">
+        <a class="btn btn--primary btn--lg" href="#contact" data-page="contact">Contact the Association</a>
+        <a class="btn btn--secondary btn--lg" href="#resources" data-page="resources">All Resources</a>
+      </div>
+    </div>
+  </section>
+  <section class="page-body">
+    <div class="container">
+      <div class="page-body__grid">
+        <div class="page-body__main">
+          <h2>Industry articles &amp; features</h2>
+          <p>This page will collect industry articles, member features, and association news relevant to Carolinas roofing professionals. Content is being added.</p>
+          <p>Have a story to share? <a href="#contact" data-page="contact">Let the association know</a>.</p>
+        </div>
+        <aside class="page-body__aside">
+          <div class="aside-card">
+            <span class="eyebrow">Resources</span>
+            <h3>Explore more</h3>
+            <p>Browse all member resources.</p>
+            <a class="btn btn--secondary" href="#resources" data-page="resources">All Resources</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</div>
+
 <!-- SELF-INSURERS FUND PAGE -->
 <div class="page" id="page-sif" data-page-id="sif" hidden>
   <section class="page-hero page-hero--photo">
     <img class="page-hero__bg" src="images/huthphoto-discovedurham-crasmc-hr5_0277.jpg" alt="" loading="lazy" aria-hidden="true">
     <div class="container">
       <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="#home" data-page="home">Home</a><span aria-hidden="true">/</span><a href="#membership" data-page="membership">Membership</a><span aria-hidden="true">/</span><span>Self-Insurers Fund</span>
+        <a href="#home" data-page="home">Home</a><span aria-hidden="true">/</span><a href="#resources" data-page="resources">Resources</a><span aria-hidden="true">/</span><span>Self-Insurers Fund</span>
       </nav>
       <span class="eyebrow">Member Program · Workers' Compensation</span>
       <h1>The CRSMC <em>Self-Insurers Fund</em></h1>
       <p class="lede">The CRSMC – Self-Insurers Fund is the oldest workers' compensation group fund in the Carolinas — and it could be saving you money.</p>
       <div class="page-hero__ctas">
-        <a class="btn btn--primary btn--lg" href="mailto:kerriann.spratt@assuredpartners.com" data-event="cta-sif-quote">Request a Quote</a>
+        <a class="btn btn--primary btn--lg" href="mailto:kerriann.spratt@assuredpartners.com?subject=Self-Insurers%20Fund%20%E2%80%93%20Workers'%20Compensation%20Inquiry" data-event="cta-sif-quote">Request a Quote</a>
         <a class="btn btn--secondary btn--lg" href="#apply" data-page="apply" data-event="cta-start-membership">Become a Member</a>
       </div>
     </div>
@@ -5942,15 +6198,15 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
           </ul>
 
           <h2>Request a quote</h2>
-          <p>To request a quote or for specific workers' compensation questions, please contact <strong>Kerriann Spratt</strong> at AssuredPartners at <a href="tel:+18008453163">(800) 845-3163</a> or <a href="mailto:kerriann.spratt@assuredpartners.com">kerriann.spratt@assuredpartners.com</a>.</p>
+          <p>To request a quote or for specific workers' compensation questions, please contact <strong>Kerriann Spratt</strong> at AssuredPartners at <a href="tel:+18008453163">(800) 845-3163</a> or <a href="mailto:kerriann.spratt@assuredpartners.com?subject=Self-Insurers%20Fund%20%E2%80%93%20Workers'%20Compensation%20Inquiry">Email Kerriann Spratt</a>.</p>
         </div>
 
         <aside class="page-body__aside">
           <div class="aside-card aside-card--dark">
             <span class="eyebrow" style="color: var(--color-gold);">Request a quote</span>
             <h3>Workers' Compensation questions</h3>
-            <p><strong>Kerriann Spratt</strong><br>AssuredPartners<br>Phone: <a href="tel:+18008453163" style="color:var(--color-gold);">(800) 845-3163</a><br>Email: <a href="mailto:kerriann.spratt@assuredpartners.com" style="color:var(--color-gold);">kerriann.spratt@assuredpartners.com</a></p>
-            <a class="btn btn--accent" href="mailto:kerriann.spratt@assuredpartners.com" data-event="cta-wc-info">Request Workers' Compensation Information</a>
+            <p><strong>Kerriann Spratt</strong><br>AssuredPartners<br>Phone: <a href="tel:+18008453163" style="color:var(--color-gold);">(800) 845-3163</a><br><a href="mailto:kerriann.spratt@assuredpartners.com?subject=Self-Insurers%20Fund%20%E2%80%93%20Workers'%20Compensation%20Inquiry" style="color:var(--color-gold);">Email Kerriann Spratt</a></p>
+            <a class="btn btn--accent" href="mailto:kerriann.spratt@assuredpartners.com?subject=Self-Insurers%20Fund%20%E2%80%93%20Workers'%20Compensation%20Inquiry" data-event="cta-wc-info">Request Workers' Compensation Information</a>
           </div>
           <div class="aside-card">
             <span class="eyebrow">Eligibility</span>
@@ -6119,8 +6375,26 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
 
   <section class="page-body">
     <div class="container">
-      <p class="muted" style="margin-bottom: 1.25rem;">The CRA Member Directory is searchable by company, city, service, and membership category.</p>
-      <!-- INTERNAL (do not display to client): Approved PUBLIC directory fields = Company Name · Member Type/Category · City/State · Website · Email. Do not display private/internal fields unless explicitly approved later. Live directory will be populated from membership records (admin-managed). Cards below are placeholder layout only until live data is connected. -->
+      <p class="muted" style="margin-bottom: 1.25rem;">Search the CRA Member Directory by company, city, or membership category. Public listings show company name, membership category, city/state, website, and email.</p>
+      <div class="dir-search" style="margin-bottom: 1.25rem;">
+        <form class="dir-search__form" role="search" aria-label="Search the member directory" onsubmit="event.preventDefault();">
+          <div class="dir-search__row">
+            <div class="dir-search__input-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <input type="text" id="dirSearchPage" class="dir-search__input" placeholder="Search by company, city, or category" aria-label="Search the member directory">
+            </div>
+          </div>
+          <div class="filter-chips" id="filterChipsPage" role="group" aria-label="Filter members">
+            <span class="filter-chips__lbl">Filter:</span>
+            <button class="filter-chip" type="button" aria-pressed="false" data-filter="contractor">Contractor</button>
+            <button class="filter-chip" type="button" aria-pressed="false" data-filter="associate">Associate</button>
+            <button class="filter-chip" type="button" aria-pressed="false" data-filter="sustaining">Sustaining</button>
+            <button class="filter-chip" type="button" aria-pressed="false" data-filter="nc">North Carolina</button>
+            <button class="filter-chip" type="button" aria-pressed="false" data-filter="sc">South Carolina</button>
+          </div>
+        </form>
+      </div>
+      <p class="muted" id="dirCountPage" style="margin-bottom: 1rem; font-size: 0.9rem;"></p>
       <div class="dir-grid" id="directoryGridPage" aria-live="polite"></div>
       <div class="page-cta-row" style="margin-top: 2.5rem;">
         <a class="btn btn--primary" href="#apply" data-page="apply" data-event="cta-become-member">Become a Member to Be Listed</a>
@@ -6560,7 +6834,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
     <div class="container">
       <div class="signin-wrap">
         <div class="signin-prototype-note" role="note">
-          Member login access will be connected during final implementation. This page is included for review of the planned member access experience. For assistance, <a href="#contact" data-page="contact">contact the association</a>.
+          Member login access is coming soon. For assistance, <a href="#contact" data-page="contact">contact the association</a>.
         </div>
         <form class="simple-form simple-form--signin" id="signinForm" novalidate>
           <div class="form-row">
@@ -6601,21 +6875,41 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
     <div class="container">
       <div class="page-body__grid">
         <div class="page-body__main">
-          <h2>Information we collect</h2>
-          <p>The Carolinas Roofing Association collects information you provide directly — such as when you complete a membership application, register for an event, contact the association, or sign in to a member account. This may include name, company, email, phone, mailing address, and information related to your role in the roofing industry.</p>
-          <h2>How information is used</h2>
-          <p>Information is used to manage membership, communicate about events and association activities, process registrations and applications, deliver member resources, and operate the directory. The association does not sell personal information.</p>
-          <h2>Cookies &amp; analytics</h2>
-          <p>This website may use cookies and analytics tools to understand how visitors use the site so we can improve content and navigation. You can control cookies through your browser settings.</p>
-          <h2>Questions</h2>
-          <p>For questions about this policy or how your information is handled, please contact the association.</p>
+          <p>Privacy Policy of <strong>Carolinas Roofing Association, Inc. (CRA)</strong>.</p>
+          <p>Carolinas Roofing Association, Inc. (CRA) operates this website, which provides the Service. This page is used to inform website visitors regarding our policies with the collection, use, and disclosure of Personal Information for anyone who decides to use our Service.</p>
+          <p>You don't want your personal information to fall into the wrong hands. Neither does CRA. When you visit the CRA website, we may collect and store information about your visit on an anonymous, aggregate basis. This information may include the time and length of your visit, the pages you look at on our site, and the site you visited just before coming to ours. We may also record the name of your Internet service provider. We use this information only to measure site activity and to develop ideas for improving our site.</p>
+
+          <h2>Information collection and use</h2>
+          <p>There are also several opportunities on our website for you to provide us with information about you and your interests, such as your name, mailing address, and email address. If you choose to share any personal information with us, we may store it and use it for marketing research and other marketing purposes, and may include sharing it* with other companies in the CRA family and our business partners. We will never sell your information to any other company.</p>
+
+          <h2>Log data &amp; cookies</h2>
+          <p>Some of our website may make use of "cookie" technology to measure site activity and to customize information to your personal tastes. A cookie is an element of data that a website can send to your browser, which may then store the cookie on your hard drive. So, when you come back to visit us again, we can tailor information to suit your individual preferences. The goal is to save you time and provide you with a more meaningful visit.</p>
+          <p>You take online privacy seriously, and so does CRA. It's our way of sustaining your trust in CRA and our services.</p>
+          <p>Carolinas Roofing Association, Inc. (CRA) reserves the right to alter our privacy principles as business needs require. Any alterations to these principles will be posted on our website in a timely manner.</p>
+          <p style="font-size:0.9rem;color:var(--color-ink-3);">* Unless you have told CRA not to share certain information according to our privacy notice titled "Important Information About Your Privacy."</p>
+
+          <h2>Security</h2>
+          <p>We value your trust in providing us your Personal Information, thus we are striving to use commercially acceptable means of protecting it. But remember that no method of transmission over the internet, or method of electronic storage, is 100% secure and reliable, and we cannot guarantee its absolute security.</p>
+
+          <h2>Links to other sites</h2>
+          <p>Our Service may contain links to other sites. If you click on a third-party link, you will be directed to that site. Note that these external sites are not operated by us. Therefore, we strongly advise you to review the Privacy Policy of these websites. We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third-party sites or services.</p>
+
+          <h2>Children's privacy</h2>
+          <p>Our Services do not address anyone under the age of 13. We do not knowingly collect personally identifiable information from children under 13. In the case we discover that a child under 13 has provided us with personal information, we immediately delete this from our servers. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact us so that we will be able to take the necessary actions.</p>
+
+          <h2>Changes to this Privacy Policy</h2>
+          <p>We may update our Privacy Policy from time to time. Thus, we advise you to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page. These changes are effective immediately after they are posted on this page.</p>
+
+          <h2>Contact us</h2>
+          <p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us.</p>
           <p><a class="btn btn--accent" href="#contact" data-page="contact">Contact the Association</a></p>
         </div>
         <aside class="page-body__aside">
           <div class="aside-card">
-            <span class="eyebrow">Note</span>
-            <h3>Under review</h3>
-            <p>This privacy policy is provided for review and will be finalized before launch.</p>
+            <span class="eyebrow">Privacy</span>
+            <h3>Questions about your information?</h3>
+            <p>Reach out to the association and we'll be glad to help.</p>
+            <a class="btn btn--secondary" href="#contact" data-page="contact">Contact Us</a>
           </div>
         </aside>
       </div>
@@ -6640,7 +6934,6 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
   <section class="page-body apply-section">
     <div class="container">
 
-      <p class="apply-review-note" style="background:rgba(75,156,211,0.08);border:1px solid rgba(75,156,211,0.28);border-left:4px solid var(--color-carolina,#4B9CD3);border-radius:8px;padding:12px 16px;margin:0 0 22px;font-size:0.9rem;color:var(--color-ink-2,#2B374C);">Application details, including dues and terms, are included for client review and will be finalized before launch.</p>
 
       <!-- Wizard progress -->
       <ol class="apply-steps" aria-label="Application steps">
@@ -7075,16 +7368,22 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
           <ul class="page-list">
             <li><a href="#home" data-page="home">Home</a></li>
             <li><a href="#membership" data-page="membership">Membership</a></li>
-            <li><a href="#sif" data-page="sif">Self-Insurers Fund</a></li>
+            <li><a href="#education" data-page="education">Education &amp; Advancement</a></li>
             <li><a href="#events" data-page="events">Upcoming Events</a></li>
-            <li><a href="#education" data-page="education">Education &amp; Resources</a></li>
-            <li><a href="#directory" data-page="directory">Member Directory</a></li>
-            <li><a href="#partners" data-page="partners">Sponsors &amp; Partners</a></li>
+            <li><a href="#resources" data-page="resources">Resources</a></li>
+            <li><a href="#helpful-links" data-page="helpful-links">Helpful Links</a></li>
+            <li><a href="#faqs" data-page="faqs">FAQs</a></li>
+            <li><a href="#legal-updates" data-page="legal-updates">Legal Update Column</a></li>
+            <li><a href="#sif" data-page="sif">Self-Insurers Fund</a></li>
+            <li><a href="#publications" data-page="publications">Publications</a></li>
+            <li><a href="#articles" data-page="articles">Articles</a></li>
             <li><a href="#about" data-page="about">About CRA</a></li>
             <li><a href="#board" data-page="board">Board Members</a></li>
             <li><a href="#past-presidents" data-page="past-presidents">Past Presidents</a></li>
+            <li><a href="#directory" data-page="directory">Member Directory</a></li>
+            <li><a href="#partners" data-page="partners">Partner with Us</a></li>
             <li><a href="#contact" data-page="contact">Contact</a></li>
-            <li><a href="#signin" data-page="signin">Member Sign In</a></li>
+            <li><a href="#signin" data-page="signin">Member Zone</a></li>
             <li><a href="#privacy" data-page="privacy">Privacy</a></li>
           </ul>
         </div>
@@ -7187,12 +7486,12 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
 
       <div class="footer-col">
         <h5>Resources</h5>
-        <a href="#education" data-page="education">Helpful Links</a>
-        <a href="#education" data-page="education">FAQs</a>
-        <a href="#education" data-page="education">Legal Update Column</a>
-        <a href="#membership" data-page="membership">Self-Insurers Fund</a>
-        <a href="#education" data-page="education">Publications</a>
-        <a href="#education" data-page="education">Articles</a>
+        <a href="#helpful-links" data-page="helpful-links">Helpful Links</a>
+        <a href="#faqs" data-page="faqs">FAQs</a>
+        <a href="#legal-updates" data-page="legal-updates">Legal Update Column</a>
+        <a href="#sif" data-page="sif">Self-Insurers Fund</a>
+        <a href="#publications" data-page="publications">Publications</a>
+        <a href="#articles" data-page="articles">Articles</a>
       </div>
 
       <div class="footer-col">
@@ -7200,7 +7499,12 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
         <a href="#about" data-page="about">About CRA</a>
         <a href="#board" data-page="board">Board Members</a>
         <a href="#past-presidents" data-page="past-presidents">Past Presidents</a>
-        <a href="#partners" data-page="partners">Sponsors &amp; Partners</a>
+      </div>
+
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <a href="#contact" data-page="contact">Contact Us</a>
+        <a href="#partners" data-page="partners">Partner with Us</a>
       </div>
     </div>
 
@@ -7307,10 +7611,16 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
       home:       'Carolinas Roofing Association — The Regional Home for Carolinas Roofing Professionals',
       membership: 'Membership — Carolinas Roofing Association',
       sif:        'CRSMC Self-Insurers Fund — Carolinas Roofing Association',
+      resources:  'Resources — Carolinas Roofing Association',
+      'helpful-links': 'Helpful Links — Carolinas Roofing Association',
+      faqs:       'FAQs — Carolinas Roofing Association',
+      'legal-updates': 'Legal Update Column — Carolinas Roofing Association',
+      publications: 'Publications — Carolinas Roofing Association',
+      articles:   'Articles — Carolinas Roofing Association',
       events:     'Upcoming Events — Carolinas Roofing Association',
-      education:  'Education & Resources — Carolinas Roofing Association',
+      education:  'Education & Advancement — Carolinas Roofing Association',
       directory:  'Member Directory — Carolinas Roofing Association',
-      partners:   'Partners & Sponsors — Carolinas Roofing Association',
+      partners:   'Partner with Us — Carolinas Roofing Association',
       about:      'About — Carolinas Roofing Association',
       board:      'Board Members — Carolinas Roofing Association',
       'past-presidents': 'Past Presidents — Carolinas Roofing Association',
@@ -7327,6 +7637,12 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
       home:       'The Carolinas Roofing Association is the regional trade association for roofing contractors, vendors, manufacturers, and service providers across North and South Carolina. Membership, education, events, advocacy, and industry relationships — since 1943.',
       membership: 'Join the Carolinas Roofing Association — membership for residential and commercial roofing contractors, vendors, manufacturers, and service providers across North and South Carolina.',
       sif:        'The CRSMC – Self-Insurers Fund is the oldest workers\' compensation group fund in the Carolinas. See eligibility requirements and request a quote through the Carolinas Roofing Association.',
+      resources:  'Member resources from the Carolinas Roofing Association — helpful links, FAQs, legal updates, the Self-Insurers Fund, publications, and articles.',
+      'helpful-links': 'Helpful links and external resources for Carolinas roofing professionals — licensing boards, regulatory agencies, and industry organizations.',
+      faqs:       'Frequently asked questions about Carolinas Roofing Association membership, programs, and events.',
+      'legal-updates': 'Legal and regulatory updates relevant to roofing contractors across North and South Carolina.',
+      publications: 'Publications from the Carolinas Roofing Association, including the Carolinas Contacts publication.',
+      articles:   'Industry articles and member features from the Carolinas Roofing Association.',
       events:     'CRA events including the 8th Annual Golf Tournament (Oct 22, 2026, Concord, NC) and the Carolinas Roofing Expo & Education (March 16–18, 2027, Greenville, SC), plus district meetings and member gatherings throughout the year.',
       education:  'Education and resources for Carolinas roofing professionals — safety, business operations, sales, workforce, legal, and technical pillars delivered through Expo sessions, workshops, and regional meetings.',
       directory:  'Search the Carolinas Roofing Association member directory — contractors, vendors, manufacturers, and service providers across North and South Carolina.',
@@ -7399,82 +7715,82 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
     });
   });
 
-  /* ===== FILTER CHIPS (directory) ===== */
-  $$('.filter-chip').forEach(chip => {
-    chip.addEventListener('click', () => {
-      const pressed = chip.getAttribute('aria-pressed') === 'true';
-      chip.setAttribute('aria-pressed', String(!pressed));
-      renderDirectory();
-    });
-  });
+  /* ===== DIRECTORY (live data from membership export; public fields only) ===== */
+  const directoryData = [{"name":"A.C.T. Metal Deck Supply","city":"Greensboro","state":"NC","category":"Associate","website":"http://www.metaldecksupply.com","email":"Cgreen@metaldecksupply.com"},{"name":"AAA Environmental","city":"Spartanburg","state":"SC","category":"Sustaining","website":"http://www.aaaenvironmental.com","email":"Pasmith@aaaenvironmental.com"},{"name":"AAR of North Carolina, Inc.","city":"Kernersville","state":"NC","category":"Contractor","website":"http://www.aarnc.com","email":"rhonda@aarnc.com"},{"name":"ABC Supply Company, Inc.","city":"Morrisville","state":"NC","category":"Associate","website":"http://www.abcsupply.com","email":"Andy.abrams@abcsupply.com"},{"name":"ABC Supply Company, Inc.","city":"Myrtle Beach","state":"SC","category":"Associate","website":"http://www.abcsupply.com","email":"mike.ayers@abcsupply.com"},{"name":"ABC Supply Company, Inc.","city":"Greensboro","state":"NC","category":"Associate","website":"http://www.abcsupply.com","email":"Mgr024@abcsupply.com"},{"name":"ABC Supply Company, Inc.","city":"Fayetteville","state":"NC","category":"Associate","website":"http://www.abcsupply.com","email":"orders154@abcsupply.com"},{"name":"ABC Supply Company, Inc.","city":"Easley","state":"SC","category":"Associate","website":"http://www.abcsupply.com","email":"richard.kearse@abcsupply.com"},{"name":"ABC Supply Company, Inc.","city":"Raleigh","state":"NC","category":"Associate","website":"http://www.abcsupply.com","email":"ken.dunn@abcsupply.com"},{"name":"ABC Supply Company, Inc.","city":"Greenville","state":"NC","category":"Associate","website":"http://www.abcsupply.com","email":"Mgr129@abcsupply.com"},{"name":"ABC Supply Company, Inc.","city":"Florence","state":"SC","category":"Associate","website":"http://www.abcsupply.com","email":"jake.beeman@abcsupply.com"},{"name":"ABC Supply Company, Inc.","city":"N. Charleston","state":"SC","category":"Associate","website":"http://www.abcsupply.com","email":"Mgr054@abcsupply.com"},{"name":"ABC Supply Company, Inc.","city":"Durham","state":"NC","category":"Associate","website":"http://www.abcsupply.com","email":""},{"name":"ABC Supply Company, Inc.","city":"Charlotte","state":"NC","category":"Associate","website":"http://www.abcsupply.com","email":""},{"name":"ABC Supply Company, Inc.","city":"Swannanoa","state":"NC","category":"Associate","website":"http://www.abcsupply.com","email":""},{"name":"ABC Supply Company, Inc.","city":"Columbia","state":"SC","category":"Associate","website":"http://www.abcsupply.com","email":"Mgr044@abcsupply.com"},{"name":"ABC Supply Company, Inc.","city":"Wellford","state":"SC","category":"Associate","website":"http://www.abcsupply.com","email":"Douglas.hammit@abcsupply.com"},{"name":"ABC Supply Company, Inc.","city":"Wilmington","state":"NC","category":"Associate","website":"http://www.abcsupply.com","email":"orders154@abcsupply.com"},{"name":"ABC Supply Company, Inc.","city":"Winston-Salem","state":"NC","category":"Associate","website":"http://www.abcsupply.com","email":"Barry.talbert@abcsupply.com"},{"name":"ABC Supply Company, Inc.","city":"Conover","state":"NC","category":"Associate","website":"http://www.abcsupply.com","email":"Dennis.rubin@abcsupply.com"},{"name":"ABC Supply Company, Inc.","city":"Charleston","state":"SC","category":"Associate","website":"http://www.abcsupply.com","email":"jared.iscrupe@abcsupply.com"},{"name":"ABC Supply Company, Inc.","city":"Greenville","state":"SC","category":"Associate","website":"http://www.abcsupply.com","email":"Jack.nilsson@abcsupply.com"},{"name":"ABC Supply Company, Inc.","city":"Pineville","state":"NC","category":"Associate","website":"http://www.abcsupply.com","email":"Danny.duncan@abcsupply.com"},{"name":"Achelpohl Roofing and Sheet Metal, Inc.","city":"Little Mountain","state":"SC","category":"Contractor","website":"www.achelpohlroofing.com","email":"Amanda@achelpohlroofing.com"},{"name":"Adams & Reese, LLP","city":"Charlotte","state":"NC","category":"Sustaining","website":"www.arlaw.com","email":"ashlee.poplin@arlaw.com"},{"name":"Adler Roof-Vac","city":"Sawanee","state":"GA","category":"Associate","website":"www.adleris.com","email":"Jim@adlervac.com"},{"name":"Affordable Roofing Company, Inc.","city":"Eden","state":"NC","category":"Contractor","website":"www.arcoroofinginc.com","email":"Arcoroofing82@gmail.com"},{"name":"AguaSeal Acquisition, LLC","city":"Johns Island","state":"SC","category":"Associate","website":"www.aguaseal.com","email":"perry@aguaseal.net"},{"name":"Aldo Coatings","city":"Salisbury","state":"NC","category":"Associate","website":"www.aldocoatings.com","email":"mbradley@aldocoatings.com"},{"name":"Aletheia Digital","city":"Columbus","state":"GA","category":"Sustaining","website":"www.aletheiadigital.com","email":"drew@aletheiadigital.com"},{"name":"Allcon Roofing of Greenville, Inc.","city":"Taylors","state":"SC","category":"Contractor","website":"www.allconroofing.com","email":"canderson@allconroofing.com"},{"name":"Alpha-Omega Construction Group, Inc.","city":"Indian Trail","state":"NC","category":"Contractor","website":"www.alpha-omegainc.com","email":"ray.eller@alpha-omegainc.com"},{"name":"American WeatherStar","city":"Pelzer","state":"SC","category":"Associate","website":"www.americanweatherstar.com","email":"gcall@weatherstar.net"},{"name":"APOC","city":"Tampa","state":"FL","category":"Associate","website":"www.apoc.com","email":""},{"name":"Aqua Seal Mfg. & Roofing, Inc.","city":"W. Columbia","state":"SC","category":"Contractor","website":"www.aquasealroofing.com","email":"Dominic@aquasealsc.com"},{"name":"Associated Scaffolding Co., Inc.","city":"Durham","state":"NC","category":"Associate","website":"www.associated-scaffolding.com","email":"Brian.hawkins@associated-scaffolding.com"},{"name":"Associated Scaffolding Co., Inc.","city":"Charlotte","state":"NC","category":"Associate","website":"www.associated-scaffolding.com","email":"jimh@associated-scaffolding.com"},{"name":"Associated Scaffolding Co., Inc.","city":"Greensboro","state":"NC","category":"Associate","website":"www.associated-scaffolding.com","email":"bryce.durham@associated-scaffolding.com"},{"name":"Associated Scaffolding Co., Inc.","city":"Raleigh","state":"NC","category":"Associate","website":"www.associated-scaffolding.com","email":"kevin.edgerton@associated-scaffolding.com"},{"name":"Associated Scaffolding Co., Inc.","city":"Columbia","state":"SC","category":"Associate","website":"www.associated-scaffolding.com","email":"matt.crawford@associated-scaffolding.com"},{"name":"AssuredPartners","city":"Columbia","state":"SC","category":"Sustaining","website":"http://www.assuredpartners.com","email":"kerriann.spratt@assuredpartners.com"},{"name":"Atkins Roofing & Maintenance, LLC","city":"Sumter","state":"SC","category":"Contractor","website":"","email":"Jatkins1@sc.rr.com"},{"name":"Atlantic Construction Sales, Inc.","city":"Surfside Beach","state":"SC","category":"Associate","website":"http://www.atlanticconstructionsales.com","email":"Sferguson@acsrep.com"},{"name":"Atlas Roofing Corporation","city":"Atlanta","state":"GA","category":"Associate","website":"www.atlasroofing.com","email":"Sdaniels@atlasroofing.com"},{"name":"Atwell Exterior Services, LLC","city":"Greenville","state":"NC","category":"Contractor","website":"www.atwellextservices.com","email":"trevor@atwellextservices.com"},{"name":"B&M Construction of Rocky Mount, Inc.","city":"Rocy Mount","state":"NC","category":"Contractor","website":"www.bmroofingcontractors.com","email":"sgreer@bmroofingcontractors.com"},{"name":"Baker Roofing Company","city":"Raleigh","state":"NC","category":"Contractor","website":"http://www.bakerroofing.com","email":"Mlee@bakerroofing.com"},{"name":"Baker Roofing Company","city":"Wilmington","state":"NC","category":"Contractor","website":"www.bakerroofing.com","email":"sblair@bakerroofing.com"},{"name":"Ballard Roofing Inc.","city":"Maiden","state":"NC","category":"Contractor","website":"www.ballardroofinginc.com","email":"Ballardroofing@hotmail.com"},{"name":"Barger-Ashe Roofing Company","city":"Lenoir","state":"NC","category":"Contractor","website":"www.bargerashe.net","email":"tomsmith@bargerashe.com"},{"name":"Barkley-Jensen Roofing & Restoration","city":"Cary","state":"NC","category":"Contractor","website":"www.barkleyjensenroofing.com","email":"customerservices@barkelyjensenroofing.com"},{"name":"Beacon Building Products","city":"Goldsboro","state":"NC","category":"Associate","website":"www.becn.com","email":"tommy.sasser@becn.com"},{"name":"Beacon Building Products","city":"Raleigh","state":"NC","category":"Associate","website":"www.becn.com","email":"silas.mchenry@becn.com"},{"name":"Beacon Building Products","city":"Greensboro","state":"NC","category":"Associate","website":"www.becn.com","email":"candice.beck@becn.com"},{"name":"Beacon Building Products","city":"Asheville","state":"NC","category":"Associate","website":"www.becn.com","email":"john.howell@becn.com"},{"name":"Beacon Building Products","city":"Charlotte","state":"NC","category":"Associate","website":"www.becn.com","email":"mark.munday@becn.com"},{"name":"Beacon Building Products","city":"Statesville","state":"NC","category":"Associate","website":"www.becn.com","email":"andy.schronce@becn.com"},{"name":"Beacon Building Products","city":"Wilmington","state":"NC","category":"Associate","website":"www.becn.com","email":"brian.peters@becn.com"},{"name":"Beacon Building Products","city":"Greenville","state":"SC","category":"Associate","website":"www.becn.com","email":"corey.matthews@becn.com"},{"name":"Beacon Building Products","city":"Columbia","state":"SC","category":"Associate","website":"www.becn.com","email":"john.owings@becn.com"},{"name":"Beacon Building Products","city":"Charleston","state":"SC","category":"Associate","website":"www.becn.com","email":"chris.mincey@becn.com"},{"name":"Benton Roofing, Inc.","city":"East Flat Rock","state":"NC","category":"Contractor","website":"www.bentonroofing.com","email":"amandab@bentonroofing.com"},{"name":"Berridge Manufacturing Company","city":"San Antonio","state":"TX","category":"Associate","website":"www.berridge.com","email":"marketingservices@berridge.com"},{"name":"BIK Boom Trucks","city":"Daytona Beach","state":"FL","category":"Associate","website":"www.bikboomtrucks.com","email":"jay@bikboomtrucks.com"},{"name":"BIRS, Inc.","city":"Greensboro","state":"NC","category":"Contractor","website":"http://www.birsroofing.com","email":"r.broeker@yahoo.com"},{"name":"BITEC, Inc.","city":"Morrilton","state":"AR","category":"Associate","website":"http://www.bi-tec.com","email":"wparker@bi-tec.com"},{"name":"BITUMAR (Georgia), Inc.","city":"Douglasville","state":"GA","category":"Associate","website":"www.bitumar.com","email":"russell.parker@bitumar.com"},{"name":"Bond Roofing Company","city":"Raleigh","state":"NC","category":"Contractor","website":"www.bondroofs.com","email":"Jeff@bondroofs.com"},{"name":"Bone Dry Roofing Company","city":"N. Charleston","state":"SC","category":"Contractor","website":"www.bonedryroofing.net","email":"Bdegraff@bonedryroofing.net"},{"name":"Bowman Roofing & Sheet Metal Co.","city":"Hickory","state":"NC","category":"Contractor","website":"","email":"Bowman@bowmanroofing.com"},{"name":"Britt and Britt Roofing, Inc.","city":"Lumberton","state":"NC","category":"Contractor","website":"www.brittandbrittroofing.com","email":"brittandbrittroofing@yahoo.com"},{"name":"Building Professionals Quality Institute","city":"Walpole","state":"MA","category":"Sustaining","website":"http://www.buildingprofessionals.com","email":""},{"name":"C.E. Bourne & Company, Inc.","city":"Greenwood","state":"SC","category":"Contractor","website":"http://www.cebourne.com","email":"ted@cebourne.com"},{"name":"Campbell Professional Roofing","city":"N. Charleston","state":"SC","category":"Contractor","website":"www.cprroofs.com","email":"Eric@cprroofs.com"},{"name":"Cannon Roofing, LLC","city":"Spartanburg","state":"SC","category":"Contractor","website":"http://www.cannonroofing.com","email":"Ccannon@cannonroofing.com"},{"name":"Carolina Mountain Roofing & Construction, Inc.","city":"Candler","state":"NC","category":"Contractor","website":"","email":"Chuck@cmrci.biz"},{"name":"Carver & Sons Roofing, Inc.","city":"Dallas","state":"NC","category":"Contractor","website":"http://www.carverroofing.com","email":"chris@carverroofing.com"},{"name":"Carver's Roofing & Waterproofing, Inc.","city":"Boone","state":"NC","category":"Contractor","website":"","email":"Carverroofing_inc@yahoo.com"},{"name":"Cedar Shake & Shingles Bureau","city":"Greenwood","state":"DE","category":"Sustaining","website":"www.cedarbureau.org","email":"danny.mayorga@cedarbureau.org"},{"name":"CFE, Inc.","city":"Apex","state":"NC","category":"Contractor","website":"http://www.cfe-roofing.com","email":"Jrusso@cfe-roofing.com"},{"name":"Check International","city":"Little River","state":"SC","category":"Associate","website":"","email":"kenkrawcheck@gmail.com"},{"name":"Chemtech Roof & Insulation Systems, Inc.","city":"Winston Salem","state":"NC","category":"Contractor","website":"http://www.chemtechroof.com","email":"jrs2@bellsouth.net"},{"name":"CityScape Roofing, Inc.","city":"Claremont","state":"NC","category":"Contractor","website":"www.cityscaperoofing.com","email":"bwood@cityscaperoofing.com"},{"name":"CL Burks Construction","city":"Charlotte","state":"NC","category":"Contractor","website":"www.clburks.com","email":"josh.dernosek@clburks.com"},{"name":"Coated Metals Group","city":"Charlotte","state":"NC","category":"Associate","website":"www.cmgmetals.com","email":"bbaker@cmgmetals.com"},{"name":"Commercial Roofing Products, Inc.","city":"Winston-Salem","state":"NC","category":"Associate","website":"www.commercialroofingproducts.com","email":"frank@commercialroofingproducts.com"},{"name":"Commercial Roofing Products, Inc.","city":"Charlotte","state":"NC","category":"Associate","website":"www.commericalroofingproducts.com","email":"Rusty@commercialroofingproducts.com"},{"name":"Conover Construction and Roofing, Inc.","city":"Hickory","state":"NC","category":"Contractor","website":"www.conoverroofing.com","email":"jon@conoverroofing.com"},{"name":"Construction Metal Products, Inc.","city":"Statesville","state":"NC","category":"Associate","website":"http://www.cmpmetalsystems.com","email":"mmorton@cmpmetalsystems.com"},{"name":"CP Rankin, Inc.","city":"Chalfont","state":"PA","category":"Associate","website":"www.cprankin.com","email":"infocpr@cprankin.com"},{"name":"Curtis Construction Company, Inc.","city":"Kinston","state":"NC","category":"Contractor","website":"http://www.curtiscc.com","email":"jason@curtiscc.com"},{"name":"D-MAC SAME DAY STEEL DECK","city":"Alpharetta","state":"GA","category":"Associate","website":"http://www.samedaysteeldeck.com","email":"rbrandt@d-macindustries.com"},{"name":"D. I. Roof Seamers","city":"Corinth","state":"MS","category":"Associate","website":"www.diroofseamers.com","email":"sales@dimetalworks.com"},{"name":"Dal-Tile Corporation","city":"Dallas","state":"TX","category":"Associate","website":"roofing.daltile.comwww.daltile.com/roofing","email":"brian.canavan@daltile.com"},{"name":"Dataforma","city":"York","state":"PA","category":"Associate","website":"http://www.dataforma.com","email":"Jwolfe@dataforma.com"},{"name":"Davco Roofing & Sheet Metal","city":"Huntersville","state":"NC","category":"Contractor","website":"www.davcoroofing.com","email":"Djdavis@davcoroofing.com"},{"name":"Direct Metals, Inc.","city":"Fort Myers","state":"FL","category":"Associate","website":"www.directmetalsinc.com","email":"Andrew@directmetalsinc.com"},{"name":"Dunn & Abee, Inc.","city":"Charlotte","state":"NC","category":"Associate","website":"http://www.dunnabee.com","email":"Gwyn@dunnabee.com"},{"name":"Duro-Last Roofing, Inc.","city":"Wartrace","state":"TN","category":"Associate","website":"http://www.duro-last.com","email":"mjenkins@duro-last.com"},{"name":"E.L. Hawks, Inc.","city":"Whiteville","state":"NC","category":"Contractor","website":"","email":"Elhawksinc@earthlink.net"},{"name":"E.S. Products","city":"Atlantic Beach","state":"FL","category":"Associate","website":"www.esproducts.com","email":""},{"name":"EagleView","city":"Bellevue","state":"WA","category":"Associate","website":"www.eagleview.com","email":"montanta.brewer@eagleview.com"},{"name":"Eastern Building Supply, a Richards Company","city":"Goldsboro","state":"NC","category":"Associate","website":"www.eastalum.com","email":"thollowell@eastalum.com"},{"name":"Eastern Building Supply, a Richards Company","city":"Fayetteville","state":"NC","category":"Associate","website":"www.eastalum.com","email":"Ssmith@eastalum.com"},{"name":"Eastern Building Supply, a Richards Company","city":"Wilmington","state":"NC","category":"Associate","website":"www.eastalum.com","email":"Twright@eastalum.com"},{"name":"Eastern Building Supply, a Richards Company","city":"Winterville","state":"NC","category":"Associate","website":"www.eastalum.com","email":"Trawls@eastalum.com"},{"name":"Eastern Building Supply, a Richards Company","city":"Jacksonville","state":"NC","category":"Associate","website":"www.eastalum.com","email":"tjones@eastalum.com"},{"name":"Eastern Building Supply, a Richards Company","city":"Myrtle Beach","state":"SC","category":"Associate","website":"www.eastalum.com","email":"jmcafee@eastalum.com"},{"name":"Eastern Building Supply, a Richards Company","city":"Ladson","state":"SC","category":"Associate","website":"www.eastalum.com","email":"Dbrown@eastalum.com"},{"name":"Eastern Building Supply, a Richards Company","city":"Raleigh","state":"NC","category":"Associate","website":"www.eastalum.com","email":"Amorison@richards-supply.com"},{"name":"Eastern Building Supply, a Richards Company","city":"Greer","state":"SC","category":"Associate","website":"www.eastalum.com","email":"Gwaters@eastalum.com"},{"name":"Eastern Building Supply, a Richards Company","city":"Charlotte","state":"NC","category":"Associate","website":"www.eastalum.com","email":"Tnichols@eastalum.com"},{"name":"EcoStar, LLC","city":"Slippery Rock","state":"PA","category":"Associate","website":"http://www.ecostarllc.com","email":"kmccarthy@ecostarllc.com"},{"name":"Epilay, Inc.","city":"Carson","state":"CA","category":"Associate","website":"www.epilay.com","email":"Kdoshi@epilay.com"},{"name":"Eskola Roofing (formerly B.E.S.T., Inc.)","city":"Raleigh","state":"NC","category":"Contractor","website":"www.eskolaroofing.com","email":"Gpardue@eskolaroofing.com"},{"name":"Eskola Roofing, Inc.","city":"N. Charleston","state":"SC","category":"Contractor","website":"www.eskolaroofing.com","email":"djenkins@eskolaroofing.com"},{"name":"Estimating Edge","city":"Boynton Beach","state":"FL","category":"Associate","website":"www.estimatingedge.com","email":"marketing@estimatingedge.com"},{"name":"EXCEPTIONAL Metals","city":"Saginaw","state":"MI","category":"Associate","website":"www.exceptionalmetals.com","email":"jdekovic@exceptionalmetals.com"},{"name":"FlashCo","city":"Piedmont","state":"SC","category":"Associate","website":"www.flashco.com","email":"mike.broski@flashco.com"},{"name":"FT Synthetics","city":"Langley","state":"BC","category":"Associate","website":"www.ftsyn.com","email":"nick.cwikla@ftsyn.com"},{"name":"GAF Materials Corporation","city":"Tampa","state":"FL","category":"Associate","website":"http://www.gaf.com","email":"lee.ramsey@gaf.com"},{"name":"Gallop Roofing & Remodeling, Inc.","city":"Wanchese","state":"NC","category":"Contractor","website":"http://www.galloproofing.com","email":"Rexs@galloproofing.com"},{"name":"Gardner Roofing, Inc.","city":"Hartsville","state":"SC","category":"Contractor","website":"","email":"Michael@gardnerroofinginc.com"},{"name":"Garratey Manufacturing, Inc.","city":"Wilkes Barre","state":"PA","category":"Associate","website":"www.garretymfg.com","email":"kkoziol@garretymfg.com"},{"name":"Glasgow Roofing Company, Inc.","city":"N. Charleston","state":"SC","category":"Contractor","website":"","email":"Sglasgow@glasgowroofing.com"},{"name":"Graham Roofing, Inc.","city":"Salisbury","state":"NC","category":"Contractor","website":"http://www.grahamroofingnc.com","email":"wesgraham@grahamroofingnc.com"},{"name":"Grieme Roofing Company, Inc.","city":"Aberdeen","state":"NC","category":"Contractor","website":"www.griemeroofing.com","email":"jgrieme@griemeroofing.com"},{"name":"GSM Services","city":"Gastonia","state":"NC","category":"Contractor","website":"http://www.gsmsince1927.com","email":"joel@gsmsince1927.com"},{"name":"Gulf Coast Supply & Manufacturing","city":"Newberry","state":"FL","category":"Associate","website":"www.GulfCoastSupply.com","email":"natalie.addison@gulfcoastsupply.com"},{"name":"Gulfeagle Supply","city":"Tallahassee","state":"FL","category":"Associate","website":"www;gulfeaglesupply.com","email":"jknippel@gulfeaglesupply.com"},{"name":"Guy Roofing","city":"Spartanburg","state":"SC","category":"Contractor","website":"http://www.guyroofing.com","email":"hguy@guyroofing.com"},{"name":"H&S Roofing Company, Inc.","city":"Charlotte","state":"NC","category":"Contractor","website":"http://www.hsroofing.com","email":"lee@hsroofing.com"},{"name":"H.B. Fuller Construction Adhesives","city":"Chagrin Falls","state":"OH","category":"Associate","website":"www.hbfuller.com","email":"Don.sutliff@hbfuller.com"},{"name":"H.B. Fuller Construction Adhesives","city":"Greer","state":"SC","category":"Associate","website":"www.hbfuller.com","email":"Nathan.rollins@hbfuller.com"},{"name":"Hamlin Roofing Company, Inc.","city":"Garner","state":"NC","category":"Contractor","website":"http://www.hamlincos.com","email":"Smith@hamlincos.com"},{"name":"Heely-Brown Company, Inc.","city":"Piedmont","state":"SC","category":"Associate","website":"www.heelybrown.com","email":"kyle.riggle@heelybrown.com"},{"name":"Hickory Sheet Metal Company, Inc.","city":"Hickory","state":"NC","category":"Contractor","website":"http://www.hickorysheetmetal.net","email":"Hsmc@hickorysheetmetal.net"},{"name":"Highland Roofing Company","city":"Wilmington","state":"NC","category":"Contractor","website":"www.highlandroofingcompany.com","email":"jschmidt@highlandroofingcompany.com"},{"name":"Hound Roofing, Inc.","city":"Wilmington","state":"NC","category":"Contractor","website":"www.houndroofing.com","email":"grempel@houndroofing.com"},{"name":"Hunter Panels","city":"","state":"","category":"Associate","website":"www.hpanels.com","email":"justin.andrews@hpanels.com"},{"name":"IB Roof Systems","city":"Irving","state":"TX","category":"Associate","website":"http://www.ibroof.com","email":"rob.cox@ibroof.com"},{"name":"ICP Adhesives & Sealants","city":"Forsyth","state":"GA","category":"Associate","website":"www.icpadhesives.com","email":"csharp@icpgroup.com"},{"name":"IKO Commercial","city":"Wilmington","state":"DE","category":"Associate","website":"www.iko.com/innovi/","email":"troy.kennedy@iko.com"},{"name":"Industrial Contract Service Corp.","city":"Leland","state":"NC","category":"Contractor","website":"","email":"drsteele@indcontserv.com"},{"name":"Integrated Products Group","city":"Apex","state":"NC","category":"Associate","website":"www.integratedproductsgrp.com","email":"Ryan@integratedproductsgrp.com"},{"name":"Interstate Roofing Company, Inc.","city":"Charlotte","state":"NC","category":"Contractor","website":"http://interstateroofingco.com","email":"Dj@interstateroofingco.com"},{"name":"J P Ross & Co., Inc.","city":"Charlotte","state":"NC","category":"Associate","website":"www.jprossskylights.com","email":""},{"name":"J. A. Piper Roofing Company, Inc.","city":"Greenville","state":"SC","category":"Contractor","website":"","email":"Rpiper@piperroofing.com"},{"name":"JDM Roofing Co., Inc.","city":"Fayetteville","state":"NC","category":"Contractor","website":"http://www.jdmroofing.com","email":"Jdmroofing@nc.rr.com"},{"name":"JDS Consulting, PLLC","city":"Raleigh","state":"NC","category":"Sustaining","website":"www.jdsconsulting.net","email":"jfrydlo@jdsconsulting.net"},{"name":"Jet Metals","city":"Rock Hill","state":"SC","category":"Associate","website":"http://www.jetmetals.com","email":"Info@jetmetals.com"},{"name":"JMS Roofing & Sheet Metal, Inc.","city":"Barium Springs","state":"NC","category":"Contractor","website":"www.jmsroofinginc.com","email":"roofingbyjms@yahoo.com"},{"name":"Johns Manville","city":"Lexington","state":"SC","category":"Associate","website":"http://www.jm.com","email":"tara.burgei@jm.com"},{"name":"Johns Manville","city":"Apex","state":"NC","category":"Associate","website":"www.jm.com","email":"mike.conway@jm.com"},{"name":"Johns Manville","city":"Greenville","state":"SC","category":"Associate","website":"www.jm.com","email":"steven.wygand@jm.com"},{"name":"Johnson's Roofing Service, Inc.","city":"Fort Mill","state":"SC","category":"Contractor","website":"http://www.johnsonsroofinginc.com","email":"jrsinc@johnsonsroofinginc.com"},{"name":"K.W. Arthur & Son, Inc.","city":"Salisbury","state":"NC","category":"Contractor","website":"","email":"Kwarthur@carolina.rr.com"},{"name":"Karnak Corporation","city":"Clark","state":"NJ","category":"Associate","website":"http://www.karnakcorp.com","email":"jprussel@karnakcorp.com"},{"name":"Kennedy Skylights","city":"Sanford","state":"FL","category":"Associate","website":"www.kennedyskylights.com","email":"bob@kennedyskylights.com"},{"name":"Lifetime Quality Roofing North Carolina","city":"Upper Arlington","state":"OH","category":"Contractor","website":"www.lifetimequality.com","email":"mdegner@lifetimequality.com"},{"name":"Lifting Equipment Solutions","city":"Garner","state":"NC","category":"Associate","website":"www.liftingequipmentsolutions.com","email":"Tony@liftinges.com"},{"name":"Live Oak Metal Works and Supply","city":"Florence","state":"SC","category":"Associate","website":"www.liveoakmetals.com","email":"william.scruggs@liveoakmetals.com"},{"name":"Living Roofs, Inc.","city":"Asheville","state":"NC","category":"Contractor","website":"www.livingroofsinc.com","email":"info@livingroofsinc.com"},{"name":"Lloyd Roofing Company, Inc.","city":"Greenwood","state":"SC","category":"Contractor","website":"www.lloydroofing.com","email":"Eddie@lloydroofing.com"},{"name":"Louis Williams & Co","city":"Charlotte","state":"NC","category":"Associate","website":"www.louiswilliamscompany.com","email":"scott@lwcreps.com"},{"name":"Lucent Energy Management, Inc.","city":"Ridgeland","state":"SC","category":"Contractor","website":"www.lucent-energy.com","email":"paulb@lucent-energy.com"},{"name":"M-B-A Construction Corporation of NC","city":"Lincolnton","state":"NC","category":"Contractor","website":"www.mbaroofing.com","email":"alex@mbaroofing.com"},{"name":"Marco Industries","city":"Canton","state":"GA","category":"Associate","website":"www.marcoindustries.com","email":"dlorenz@marcoindustries.com"},{"name":"Maverick Metal Fabrication","city":"Myrtle Beach","state":"SC","category":"Associate","website":"www.maverickmetalfab.com","email":"carl.martin@maverickmetalfab.com"},{"name":"McElroy Metal, Inc.","city":"Charlotte","state":"NC","category":"Associate","website":"http://www.mcelroymetal.com","email":"tburford@mcelroymetal.com"},{"name":"McRae Roofing, Inc.","city":"Asheboro","state":"NC","category":"Contractor","website":"www.mcraeroofing.com","email":"Tim.allen@mcraeroofing.com"},{"name":"Metal Fastening Systems, Inc.","city":"Stanley","state":"NC","category":"Associate","website":"www.metalfasteningsystems.com","email":"Bsasuta@metalfasteningsystems.com"},{"name":"Metal Roofing Systems, Inc.","city":"Stanley","state":"NC","category":"Associate","website":"www.metalroofingsystems.com","email":"Gavin@metalroofingsystems.com"},{"name":"Mid-Atlantic Roofing Supply","city":"Raleigh","state":"NC","category":"Associate","website":"www.marsupply.com","email":"bcoughlin@marsupply.com"},{"name":"Mid-Atlantic Roofing Supply","city":"Fayetteville","state":"NC","category":"Associate","website":"www.marsupply.com","email":"bghall@marsupply.com"},{"name":"Mid-States Asphalt","city":"Tuscaloosa","state":"AL","category":"Associate","website":"http://www.mid-statesasphalt.com","email":"mcameron@msaroof.com"},{"name":"Modern Metal Roofing","city":"Franklin","state":"IN","category":"Associate","website":"www.modernmetalroofing.com","email":"jason@modernmetalroofing.com"},{"name":"Monarch Roofing Company","city":"Myrtle Beach","state":"SC","category":"Contractor","website":"www.monarchroofing.biz","email":"trip@monarchroofing.biz"},{"name":"Mule-Hide Products Co., Inc.","city":"Beloit","state":"WI","category":"Associate","website":"http://www.mulehide.com","email":"hank.bonney@mulehide.com"},{"name":"Murr-Laney, Inc.","city":"Pineville","state":"NC","category":"Contractor","website":"http://www.murrlaney.com","email":"mrlaneyrfg@aol.com"},{"name":"NB Handy Company","city":"Lynchburg","state":"VA","category":"Associate","website":"http://www.nbhandy.com","email":"christopherpayne@nbhandy.com"},{"name":"NB Handy Company","city":"Raleigh","state":"NC","category":"Associate","website":"http://www.nbhandy.com","email":"tperrigo@nbhandy.com"},{"name":"NB Handy Company","city":"Greensboro","state":"NC","category":"Associate","website":"www.nbhandy.com","email":"Tpoulos@nbhandy.com"},{"name":"NB Handy Company","city":"Charlotte","state":"NC","category":"Associate","website":"http://www.nbhandy.com","email":"bberkey@nbhandy.com"},{"name":"NB Handy Company","city":"Greenville","state":"SC","category":"Associate","website":"http://www.nbhandy.com","email":"Gwentz@nbhandy.com"},{"name":"NB Handy Company","city":"Columbia","state":"SC","category":"Associate","website":"www.nbhandy.com","email":"jhouze@nbhandy.com"},{"name":"Nobles Roofing and Sheet Metal, Inc.","city":"Myrtle Beach","state":"SC","category":"Contractor","website":"","email":"noblesroofing@gmail.com"},{"name":"Novagard","city":"Cleveland","state":"OH","category":"Associate","website":"www.novagard.com","email":"rwilliams@novagard.com"},{"name":"Oates Metal Deck & Building Products, Inc.","city":"Pelzer","state":"SC","category":"Associate","website":"www.oatesmetaldeck.com","email":"stoney@oatesmetaldeck.com"},{"name":"OBS Roofing, Inc.","city":"Mauldin","state":"SC","category":"Contractor","website":"www.obsroofing.com","email":"Markg@obsroofing.com"},{"name":"OMG, Inc.","city":"Agawam","state":"MA","category":"Associate","website":"www.omgroofing.com","email":"jcedeno@omginc.com"},{"name":"OMG, Inc.","city":"Athens","state":"GA","category":"Associate","website":"www.omgroofing.com","email":""},{"name":"OMG, Inc.","city":"Raleigh","state":"NC","category":"Associate","website":"http://www.jm.com","email":"sdougherty@omginc.com"},{"name":"Owens Roofing, Inc.","city":"Smithfield","state":"NC","category":"Contractor","website":"www.owensroofinginc.com","email":"brady@owensroofinginc.com"},{"name":"Palmetto State Roofing & Sheet Metal Company, Inc.","city":"Greenville","state":"SC","category":"Contractor","website":"www.psroof.com","email":"rjohnson@psroof.com"},{"name":"Peak Fall Protection, LLC","city":"Holly Springs","state":"NC","category":"Associate","website":"www.peak-fp.com","email":"Admin@peak-fp.com"},{"name":"Petersen Aluminum Corporation","city":"Huntersville","state":"NC","category":"Associate","website":"http://www.pac-clad.com","email":"Bjackson@petersenmail.com"},{"name":"Petersen Aluminum Corporation","city":"Acworth","state":"GA","category":"Associate","website":"www.pac-clad.com","email":"amedbery@petersenmail.com"},{"name":"Pickard Roofing Company, Inc.","city":"Durham","state":"NC","category":"Contractor","website":"http://www.pickardroofing.com","email":"tyler@pickardroofing.com"},{"name":"Pickens Contracting, Inc.","city":"Reidville","state":"SC","category":"Contractor","website":"http://www.pickenscontracting.com","email":"bert@pickensroofing.com"},{"name":"Picquet Roofing, Inc.","city":"Charleston","state":"SC","category":"Contractor","website":"","email":""},{"name":"Piedmont Commercial Roofing, Inc.","city":"Marshville","state":"NC","category":"Contractor","website":"","email":"Piedmontroofing@charlotte.twcbc.com"},{"name":"Porter Roofing Contractors, Inc.","city":"Martinez","state":"GA","category":"Contractor","website":"www.porter-roofing.com","email":"rodney@porter-roofing.com"},{"name":"Premier Building Products, Inc.","city":"Charlotte","state":"NC","category":"Associate","website":"http://www.premierbldgproducts.com","email":"Greg@premierbldgproducts.com"},{"name":"Premier Building Products, Inc.","city":"Raleigh","state":"NC","category":"Associate","website":"www.premierbldgproducts.com","email":"Jimmy@premierbldgproducts.com"},{"name":"Pro-Active Sales and Marketing, Inc.","city":"Mooresville","state":"NC","category":"Associate","website":"http://www.pro-activesales.com","email":"Dusty@pro-activesales.com"},{"name":"Professional Roofing Services, Inc.","city":"Mount Airy","state":"NC","category":"Contractor","website":"www.prsnc.com","email":"Bryant@prsnc.com"},{"name":"Progressive Materials","city":"Danville","state":"VA","category":"Associate","website":"www.pmsilicone.com","email":"shannon@pmsilicone.com"},{"name":"Quality Roofers & Guttering, Inc.","city":"Jacksonville","state":"NC","category":"Contractor","website":"www.qualityroofersinc.com","email":"Hughlanier@qualityroofersinc.com"},{"name":"R.E. Bengel Sheet Metal Company, Inc.","city":"New Bern","state":"NC","category":"Contractor","website":"www.rebengel.com","email":"steve@rebengel.com"},{"name":"R.K. Hydro-Vac, Inc.","city":"Charlotte","state":"NC","category":"Contractor","website":"http://www.rkhydrovac.com","email":"Rons@rkhydrovacnc.com"},{"name":"Radco Construction Services, Inc.","city":"Mount Holly","state":"NC","category":"Contractor","website":"http://www.radcoroofing.com","email":"strites@radcoroofing.com"},{"name":"REI Engineers, Inc.","city":"Raleigh","state":"NC","category":"Sustaining","website":"www.reiengineers.com","email":"Ktyner@reiengineers.com"},{"name":"Rike Roofing Services, Inc.","city":"Fort Mill","state":"SC","category":"Contractor","website":"www.rikeroofing.com","email":"Allen@rikeroofing.com"},{"name":"RooferMedia360","city":"Greer","state":"SC","category":"Sustaining","website":"www.roofersmedia360.com","email":"rstanton@roofermedia360.com"},{"name":"Roofing Tools & Equipment, Inc.","city":"Wilson","state":"NC","category":"Associate","website":"http://www.roofingtool.com","email":"Rustykent@roofingtool.com"},{"name":"Roofing Tools & Equipment, Inc.","city":"Wilmington","state":"NC","category":"Associate","website":"http://www.roofingtool.com","email":"chris@roofingtool.com"},{"name":"Roofing Tools & Equipment, Inc.","city":"Raleigh","state":"NC","category":"Associate","website":"http://www.roofingtool.com","email":"Darayl@roofingtool.com"},{"name":"Roofing Xchange, LLC","city":"Concord","state":"NC","category":"Sustaining","website":"","email":"roofingxchange@outlook.com"},{"name":"RSG | Beacon Building Products","city":"Greenville","state":"SC","category":"Associate","website":"http://www.rooferssupplyinc.com","email":""},{"name":"RSG | Beacon Building Products","city":"Charlotte","state":"NC","category":"Associate","website":"http://www.rooferssupplyinc.com","email":"Chris@rooferssupplyinc.com"},{"name":"RSG | Beacon Building Products","city":"Garner","state":"NC","category":"Associate","website":"http://www.rooferssupplyinc.com","email":"Patrick@rooferssupplyinc.com"},{"name":"Safran Law Offices","city":"Raleigh","state":"NC","category":"Sustaining","website":"http://www.safranlaw.com","email":"Psafran@safranlaw.com"},{"name":"Scorpion","city":"Mount Pleasant","state":"SC","category":"Sustaining","website":"www.scorpion.co","email":"ray.spellerberg@scorpion.co"},{"name":"Service Roofing & Sheet Metal Co. of Raleigh","city":"Raleigh","state":"NC","category":"Contractor","website":"http://www.tri-stateservicegroup.com","email":"Jfoltz@serviceroofing.com"},{"name":"Service Roofing & Sheet Metal Co. of Wilmington","city":"Wilmington","state":"NC","category":"Contractor","website":"http://www.tri-stateservicegroup.com","email":"pdickerson@serviceroofing.com"},{"name":"Service Roofing & Sheet Metal Company","city":"Greenville","state":"NC","category":"Contractor","website":"http://www.tri-stateservicegroup.com","email":"Mrichardson@serviceroofing.com"},{"name":"SFS intec, Inc.","city":"Wyomissing","state":"PA","category":"Associate","website":"www.sfsintecusa.com","email":""},{"name":"Shaver Roofing Services, LLC","city":"High Point","state":"NC","category":"Contractor","website":"http://www.shaverroofing.com","email":"Mike@shaverroofing.com"},{"name":"Sika Corporation - Sarnafil Roofing Division","city":"Orlando","state":"FL","category":"Associate","website":"www.usa.sarnafil.sika.com","email":"hanley.patrick@us.sika.com"},{"name":"Simple Wisdom Supplements, Inc.\ndba Summerfield Roofing Services","city":"Summerfield","state":"NC","category":"Contractor","website":"www.summerfieldroofing.com","email":"addison@summerfieldroofing.com"},{"name":"Skyline Roofing, Inc.","city":"Charleston","state":"SC","category":"Contractor","website":"","email":"wes@skylineroofinginc.net"},{"name":"Soprema, Inc.","city":"Greensboro","state":"NC","category":"Associate","website":"www.soprema.us","email":"Jdickens@soprema.us"},{"name":"Soprema, Inc.","city":"Cornelius","state":"NC","category":"Associate","website":"www.soprema.us","email":"mgreco@soprema.us"},{"name":"Southeastern Agency Group","city":"Greensboro","state":"NC","category":"Sustaining","website":"www.sagnc.com","email":"Tketron@sagnc.com"},{"name":"Southeastern Metals","city":"Jacksonville","state":"FL","category":"Associate","website":"www.semetals.com","email":"Ccobb@semetals.com"},{"name":"Southern Quality Company, LLC","city":"Brevard","state":"NC","category":"Contractor","website":"www.southernquality.com","email":"ben@southernquality.com"},{"name":"Southern Roofing Services, Inc.","city":"Sumter","state":"SC","category":"Contractor","website":"http://www.southernroofing.com","email":"mikey@southernroofing.com"},{"name":"Space Metal Fabricators, Inc.","city":"Columbia","state":"SC","category":"Contractor","website":"http://www.spacemetals.com","email":"jmosser@spacemetals.com"},{"name":"Spann Roofing & Sheet Metal, Inc.","city":"Conway","state":"SC","category":"Contractor","website":"http://www.spannroofing.com","email":"bgriffith@spannroofing.com"},{"name":"Specialized Roofing & Insulation, Inc.","city":"Spartanburg","state":"SC","category":"Contractor","website":"http://www.specializedroofer.com","email":""},{"name":"Splash Omnimedia","city":"Lexington","state":"SC","category":"Sustaining","website":"www.splashomnimedia.com","email":"freddy@splashomnimedia.com"},{"name":"SRI Roof Vacuuming, LLC","city":"Stoneville","state":"NC","category":"Associate","website":"www.sriroofvacuuming.com","email":"sriroofvac@triad.rr.com"},{"name":"SRS Distribution/Superior Distribution","city":"Raleigh","state":"NC","category":"Associate","website":"www.superiordistrubution.net","email":"Pgentry@superiordistribution.net"},{"name":"SRS Distribution/Superior Distribution","city":"Greensboro","state":"NC","category":"Associate","website":"www.superiordistrubution.net","email":"Pcaudle@superiordistribution.net"},{"name":"SRS Distribution/Superior Distribution","city":"Fayetteville","state":"NC","category":"Associate","website":"www.superiordistrubution.net","email":""},{"name":"SRS Distribution/Superior Distribution","city":"Statesville","state":"NC","category":"Associate","website":"www.superiordistrubution.net","email":""},{"name":"SRS Distribution/Superior Distribution","city":"Charlotte","state":"NC","category":"Associate","website":"www.superiordistrubution.net","email":"Bgriffith@superiordistribution.net"},{"name":"SRS Distribution/Superior Distribution","city":"Wilmington","state":"NC","category":"Associate","website":"www.superiordistrubution.net","email":"amaltos@superiordistribution.net"},{"name":"SRS Distribution/Superior Distribution","city":"Columbia","state":"SC","category":"Associate","website":"www.superiordistrubution.net","email":""},{"name":"SRS Distribution/Superior Distribution","city":"Greenville","state":"SC","category":"Associate","website":"www.superiordistrubution.net","email":"bmullinax@superiordistribution.net"},{"name":"SRS Distribution/Superior Distribution","city":"Ridgeland","state":"SC","category":"Associate","website":"www.superiordistrubution.net","email":"Jlynes@rowesupply.com"},{"name":"SRS Distribution/Superior Distribution","city":"Durham","state":"NC","category":"Associate","website":"www.superiordistrubution.net","email":""},{"name":"SRS Distribution/Superior Distribution","city":"Jacksonville","state":"NC","category":"Associate","website":"www.superiordistrubution.net","email":"ordersjacksonville@superiordistribution.net"},{"name":"SRS Distribution/Superior Distribution","city":"Asheville","state":"NC","category":"Associate","website":"www.superiordistrubution.net","email":""},{"name":"Statesville Roofing & Building Restoration, Inc.","city":"Statesville","state":"NC","category":"Contractor","website":"http://www.statesvilleroofing.com","email":"Dpope@statesvilleroofing.com"},{"name":"STI Polymer","city":"Apex","state":"NC","category":"Associate","website":"www.stipolymer.com","email":"scoring@stipolymer.com"},{"name":"Tecta America Carolinas, LLC","city":"Indian Trail","state":"NC","category":"Contractor","website":"http://www.tectaamerica.com","email":"Rwinecoff@tectaamerica.com"},{"name":"The Building Envelope Enclosure Group","city":"Hanahan","state":"SC","category":"Sustaining","website":"www.thebeegroup.org","email":"rickc@thebeegroup.org"},{"name":"The Ray Company, Inc.","city":"Charlotte","state":"NC","category":"Contractor","website":"http://www.raycompany.com","email":"Wwilkinson@raycompany.com"},{"name":"The Young Roofing Company, Inc.","city":"Durham","state":"NC","category":"Contractor","website":"","email":"youngroofing@frontier.com"},{"name":"Thompson Roofing Services, LLC","city":"Asheboro","state":"NC","category":"Contractor","website":"www.trs1llc.com","email":"bt@trs1llc.com"},{"name":"Tile Roofing Institute","city":"Seattle","state":"WA","category":"Associate","website":"www.tileroofing.org","email":"Rolson@tileroofing.org"},{"name":"TQM Roofing, Inc.","city":"Statesville","state":"NC","category":"Contractor","website":"www.tqmroofing.com","email":"Richard@tqmroofing.com"},{"name":"Tremco Roofing & Building Maintenance","city":"Beachwood","state":"OH","category":"Associate","website":"www.tremcoroofing.com","email":"pharper@tremcoinc.com"},{"name":"Triad Corrugated Metal, Inc.","city":"Asheboro","state":"NC","category":"Associate","website":"http://www.triadmetalroof.com","email":"Info@triadmetalroof.com"},{"name":"Triad Roofing Company, Inc.","city":"Winston-Salem","state":"NC","category":"Contractor","website":"http://www.triadroofing.com","email":"jacob@triadroofing.com"},{"name":"Triangle Fastener Corporation","city":"Charlotte","state":"NC","category":"Associate","website":"http://www.trianglefastener.com","email":"jgreer@trianglefastener.com"},{"name":"Tropical Roofing Products","city":"Hallandale","state":"FL","category":"Associate","website":"www.tropicalroofingproducts.com","email":""},{"name":"TRUFAST","city":"Bryan","state":"OH","category":"Associate","website":"www.trufast.com","email":"salesteam@trufast.com"},{"name":"Uniflex Fluid Applied Roof Systems","city":"Cleveland","state":"OH","category":"Associate","website":"www.uniflexroof.com","email":"bill.lavender@sherwin.com"},{"name":"Union Corrugating Company","city":"Fayetteville","state":"NC","category":"Associate","website":"www.unioncorrugating.com","email":"alexander.powers@cornerstone-bb.com"},{"name":"Velux America, LLC","city":"Greenwood","state":"SC","category":"Associate","website":"http://www.veluxusa.com","email":"mims.mobley@velux.com"},{"name":"Versico Roofing Systems","city":"Concord","state":"NC","category":"Associate","website":"www.versico.com","email":"tc@thescarlettegroup.com"},{"name":"Viking Products Group","city":"Belmont","state":"NC","category":"Associate","website":"www.vikingpg.com","email":"eramsey@vikingpg.com"},{"name":"Wallace Sheet Metal & Roofing Company, Inc.","city":"Hickory","state":"NC","category":"Contractor","website":"http://www.wallaceroofing.com","email":"Randy@wallaceroofing.com"},{"name":"Watts & Associates Roofing, Inc.","city":"Columbia","state":"SC","category":"Contractor","website":"www.wattsroofing.com","email":"Rick@wattsroofing.com"},{"name":"Wayne Roofing & Sheet Metal Company, Inc.","city":"Goldsboro","state":"NC","category":"Contractor","website":"","email":"carls@wayneroofingnc.com"},{"name":"Weathergard, Inc.","city":"Monroe","state":"NC","category":"Contractor","website":"http://www.weathergardnc.com","email":"Weathergard@weathergardnc.com"},{"name":"Westlake Royal Roofing Solutions - Unified Steel","city":"","state":"","category":"Associate","website":"www.westlake.net","email":"mheitsch@westlake.com"}];
 
-  /* ===== DIRECTORY ===== */
-  /* Live directory data is connected during final implementation. No sample companies are shown for client review. */
-  const directoryData = [];
+  const dirWebHref = (u) => !u ? '' : (/^https?:\/\//i.test(u) ? u : 'https://' + u);
 
   const directoryCardHTML = (item) => {
-    const logoBlock = item.logo
-      ? `<img src="${item.logo}" alt="${item.name} logo">`
-      : `<span class="dir-card__logo-placeholder">${item.name}</span>`;
-    const sponsoredBadge = item.featured ? '<span class="dir-card__sponsored">Featured Member</span>' : '';
+    const loc = [item.city, item.state].filter(Boolean).join(', ');
+    const website = item.website
+      ? `<a href="${dirWebHref(item.website)}" target="_blank" rel="noopener noreferrer">Visit Website</a>` : '';
+    const email = item.email
+      ? `<a href="mailto:${item.email}">Email</a>` : '';
+    const links = [website, email].filter(Boolean).join('<span class="dir-card__sep" aria-hidden="true">·</span>');
     return `
-    <article class="dir-card${item.featured ? ' dir-card--featured' : ''}">
-      ${sponsoredBadge}
-      <div class="dir-card__logo">${logoBlock}</div>
+    <article class="dir-card">
       <div class="dir-card__body">
         <h3 class="dir-card__name">${item.name}</h3>
-        <p class="dir-card__meta">${item.city}, ${item.state} · ${item.focus}</p>
-        <p class="dir-card__meta" style="color:var(--color-ink-3);font-size:0.78rem;text-transform:uppercase;letter-spacing:0.08em;">${item.tag}</p>
-        <div class="dir-card__cta">
-          <a href="#contact" data-page="contact">View profile →</a>
-        </div>
+        ${loc ? `<p class="dir-card__meta">${loc}</p>` : ''}
+        <p class="dir-card__cat">${item.category}</p>
+        ${links ? `<div class="dir-card__cta">${links}</div>` : ''}
       </div>
-    </article>
-    `;
+    </article>`;
   };
 
-  const renderDirectory = () => {
-    const activeChips = $$('.filter-chip[aria-pressed="true"]').map(c => (c.dataset.filter || '').toLowerCase());
-    const searchInput = $('#dirSearch');
-    const q = searchInput ? searchInput.value.trim().toLowerCase() : '';
-
-    const filtered = directoryData.filter(item => {
-      if (activeChips.length) {
-        const typeMap = { contractor: 'contractor', vendor: 'vendor', mfr: 'manufacturer', service: 'service' };
-        const focusMap = { residential: 'residential', commercial: 'commercial' };
-        const stateChips = activeChips.filter(c => c === 'nc' || c === 'sc');
-        const typeChips  = activeChips.filter(c => typeMap[c]);
-        const focusChips = activeChips.filter(c => focusMap[c]);
-
-        const itemType  = item.type.toLowerCase();
-        const itemState = item.state.toLowerCase();
-        const itemFocus = item.focus.toLowerCase();
-
-        if (stateChips.length && !stateChips.includes(itemState)) return false;
-        if (typeChips.length  && !typeChips.some(c => itemType.includes(typeMap[c]))) return false;
-        if (focusChips.length && !focusChips.some(c => itemFocus.includes(focusMap[c]))) return false;
-      }
-      if (q) {
-        const blob = `${item.name} ${item.city} ${item.state} ${item.type} ${item.focus}`.toLowerCase();
-        if (!blob.includes(q)) return false;
-      }
-      return true;
-    });
-
-    const html = filtered.length
-      ? filtered.map(directoryCardHTML).join('')
-      : '<p class="muted" style="grid-column:1/-1; padding:1.25rem 0;">The public member directory will display approved member information, including company name, member type/category, city/state, website, and email.</p>';
-
-    const grids = [$('#directoryGrid'), $('#directoryGridPage')].filter(Boolean);
-    grids.forEach(g => { g.innerHTML = html; });
+  const dirMatch = (item, q, chips) => {
+    if (chips.length) {
+      const stateChips = chips.filter(c => c === 'nc' || c === 'sc');
+      const catChips   = chips.filter(c => c === 'contractor' || c === 'associate' || c === 'sustaining');
+      if (stateChips.length && !stateChips.includes((item.state||'').toLowerCase())) return false;
+      if (catChips.length   && !catChips.includes((item.category||'').toLowerCase())) return false;
+    }
+    if (q) {
+      const blob = `${item.name} ${item.city} ${item.state} ${item.category}`.toLowerCase();
+      if (!blob.includes(q)) return false;
+    }
+    return true;
   };
 
-  const dirSearch = $('#dirSearch');
-  if (dirSearch) {
-    dirSearch.addEventListener('input', renderDirectory);
-    dirSearch.form && dirSearch.form.addEventListener('submit', (e) => { e.preventDefault(); renderDirectory(); });
-  }
-  renderDirectory();
+  const dirChipsActive = (wrap) => wrap ? $$('.filter-chip[aria-pressed="true"]', wrap).map(c => (c.dataset.filter||'').toLowerCase()) : [];
+
+  const dirRenderGrid = (grid, opts) => {
+    if (!grid) return;
+    const q = (opts.query || '').trim().toLowerCase();
+    let list = directoryData.filter(it => dirMatch(it, q, opts.chips || []));
+    const total = list.length;
+    if (opts.limit) list = list.slice(0, opts.limit);
+    grid.innerHTML = list.length
+      ? list.map(directoryCardHTML).join('')
+      : '<p class="muted" style="grid-column:1/-1; padding:1.25rem 0;">No member companies match your search. Try a different company, city, or category.</p>';
+    if (opts.countEl) {
+      opts.countEl.textContent = total === directoryData.length
+        ? `Showing all ${total} member companies`
+        : `${total} of ${directoryData.length} member companies`;
+    }
+  };
+
+  const dirHomeGrid   = $('#directoryGrid');
+  const dirHomeSearch = $('#dirSearch');
+  const dirHomeChips  = $('#filterChips');
+  const renderDirHome = () => dirRenderGrid(dirHomeGrid, { query: dirHomeSearch ? dirHomeSearch.value : '', chips: dirChipsActive(dirHomeChips), limit: 9 });
+
+  const dirPageGrid   = $('#directoryGridPage');
+  const dirPageSearch = $('#dirSearchPage');
+  const dirPageChips  = $('#filterChipsPage');
+  const dirPageCount  = $('#dirCountPage');
+  const renderDirPage = () => dirRenderGrid(dirPageGrid, { query: dirPageSearch ? dirPageSearch.value : '', chips: dirChipsActive(dirPageChips), countEl: dirPageCount });
+
+  if (dirHomeSearch) dirHomeSearch.addEventListener('input', renderDirHome);
+  if (dirPageSearch) dirPageSearch.addEventListener('input', renderDirPage);
+  document.addEventListener('click', (e) => {
+    const chip = e.target.closest('.filter-chip');
+    if (!chip) return;
+    chip.setAttribute('aria-pressed', chip.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
+    if (chip.closest('#filterChipsPage')) renderDirPage(); else renderDirHome();
+  });
+  renderDirHome();
+  renderDirPage();
 
   /* ===== REVEAL ON SCROLL ===== */
   if (!prefersReducedMotion && 'IntersectionObserver' in window) {
@@ -7524,7 +7840,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
       e.preventDefault();
       const status = $('#signinStatus');
       if (status) {
-        status.textContent = 'Member login access will be connected during final implementation.';
+        status.textContent = 'Member login access is coming soon.';
         status.classList.add('is-success');
       }
     });
