@@ -3065,6 +3065,51 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
 .aside-card--dark p { color: var(--color-on-dark-2); }
 .aside-card--dark .eyebrow { color: var(--color-gold) !important; }
 
+.download-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  background: var(--color-bone);
+  border: 1px solid var(--color-line);
+  border-radius: 14px;
+  padding: 22px 26px;
+  margin: 22px 0 8px;
+}
+.download-card__icon {
+  flex: 0 0 auto;
+  width: 54px;
+  height: 54px;
+  border-radius: 12px;
+  background: linear-gradient(155deg, var(--color-navy) 0%, var(--color-navy-ink) 100%);
+  color: #fff;
+  font-family: var(--font-headline);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.download-card__body { flex: 1 1 220px; }
+.download-card__body h3 {
+  font-family: var(--font-headline);
+  font-size: 1.15rem;
+  color: var(--color-navy);
+  margin-bottom: 4px;
+  line-height: 1.25;
+}
+.download-card__body p {
+  color: var(--color-ink-2);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  margin: 0;
+}
+.download-card .btn { flex: 0 0 auto; margin: 0; }
+@media (max-width: 540px) {
+  .download-card .btn { width: 100%; }
+}
+
 .page-cta-row {
   display: flex;
   flex-wrap: wrap;
@@ -5777,7 +5822,7 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
           </ol>
 
           <h2 id="benefits">Member benefits</h2>
-          <p>Membership delivers practical, year-round value for Carolinas roofing and sheet metal professionals:</p>
+          <p>Membership delivers practical, year-round value for Carolinas roofing professionals:</p>
           <ul class="page-list">
             <li>Access to the CRSMC Self-Insurers Fund workers' compensation program</li>
             <li>Participation in a health insurance program for employees and family members</li>
@@ -5786,12 +5831,22 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
             <li>Affinity Partner discounts on services for your business</li>
             <li>Access to legal counsel and legal assistance</li>
             <li>Sample contracts, forms, and guarantee forms</li>
-            <li>Networking with roofing industry professionals</li>
+            <li>Networking with roofing industry professionals to learn and share best practices</li>
             <li>Roofing and safety training and seminars</li>
+            <li>The <em>Carolinas Contacts</em> publication</li>
+            <li>Safety program templates</li>
             <li>Referrals</li>
             <li>Listing in the CRA Members Directory</li>
             <li>Legislative and regulatory issue support</li>
           </ul>
+          <div class="download-card">
+            <div class="download-card__icon" aria-hidden="true">PDF</div>
+            <div class="download-card__body">
+              <h3>Membership Brochure</h3>
+              <p>Download the full member benefits brochure to share with your team.</p>
+            </div>
+            <a class="btn btn--primary" href="downloads/CRA-Membership-Brochure.pdf" target="_blank" rel="noopener noreferrer" data-event="download-brochure">Download Brochure (PDF)</a>
+          </div>
 
           <h2 id="categories">Membership categories &amp; requirements</h2>
           <h3>Contractors</h3>
@@ -5837,6 +5892,12 @@ h1 em, h2 em, h3 em { font-family: inherit; color: var(--color-gold); font-style
             <p>Our team is happy to walk you through membership categories, dues, and what to expect after applying.</p>
             <a class="btn btn--primary" href="#apply" data-page="apply" data-event="cta-start-membership">Start Your Application</a>
             <a class="btn btn--ghost" href="#contact" data-page="contact">Talk to the Association</a>
+          </div>
+          <div class="aside-card">
+            <span class="eyebrow">Member benefits</span>
+            <h3>Membership Brochure</h3>
+            <p>A one-page overview of member benefits, programs, and how to join.</p>
+            <a class="btn btn--secondary" href="downloads/CRA-Membership-Brochure.pdf" target="_blank" rel="noopener noreferrer" data-event="download-brochure">Download Brochure (PDF)</a>
           </div>
           <div class="aside-card aside-card--dark">
             <span class="eyebrow" style="color: var(--color-gold);">Since 1943</span>
