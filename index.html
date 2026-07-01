@@ -9813,14 +9813,34 @@ html.mz-auth .mz-out { display: none; }
     setActivePage(pageId);
   });
 
+  // Section anchors that live inside a page (not standalone pages)
+  const sectionAnchors = { 'master-installers': 'education', 'calendar': 'events', 'membership-inquiry': 'membership', 'sif-safety': 'sif' };
+  const goToHash = (raw, opts) => {
+    opts = opts || {};
+    let page = raw, sec = null;
+    if (!validPageIds.includes(raw)) {
+      if (sectionAnchors[raw]) { page = sectionAnchors[raw]; sec = raw; }
+      else {
+        const el = document.getElementById(raw);
+        const pg = el && el.closest('.page');
+        if (pg) { page = pg.dataset.pageId; sec = raw; } else { page = 'home'; }
+      }
+    }
+    setActivePage(page, opts);
+    if (sec) {
+      const t = document.getElementById(sec);
+      if (t && t.scrollIntoView) setTimeout(() => { t.scrollIntoView({ behavior: 'auto', block: 'start' }); }, 60);
+    }
+  };
+
   window.addEventListener('popstate', (e) => {
-    const pageId = (e.state && e.state.page) || (window.location.hash || '#home').slice(1) || 'home';
-    setActivePage(pageId, { suppressScroll: true });
+    const raw = (e.state && e.state.page) || (window.location.hash || '#home').slice(1) || 'home';
+    goToHash(raw, { suppressScroll: true });
   });
 
-  // Initial page from hash
+  // Initial page from hash (supports direct links to in-page sections)
   const initialHash = (window.location.hash || '#home').slice(1) || 'home';
-  setActivePage(initialHash, { suppressScroll: true });
+  goToHash(initialHash, { suppressScroll: true });
 
   /* ===== FAQ ACCORDION ===== */
   $$('.faq-item__btn').forEach(btn => {
